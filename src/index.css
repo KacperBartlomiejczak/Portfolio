@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+.link {
+  position: relative;
+}
+@theme {
+  --color-primary: #ce4a4b;
+  --shadow-lg: 3px 3px 38px -10px rgba(0, 0, 0, 0.1);
+}
+.link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ce4a4b;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+.link:hover > span > p {
+  transition: color 0.3s;
+  color: #ce4a4b;
+}
+.link:hover::before {
+  transform: scale(1);
+  transform-origin: left;
+}
+button.link:hover {
+  cursor: pointer;
+}
+
+.gradient-container {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.gradient-container div {
+  position: absolute;
+  border-radius: 1em;
+  animation: gradient 3s infinite;
+}
+
+.gradient-container div:nth-child(1) {
+  height: 100%;
+  width: 100%;
+  background-color: #c0463f;
+}
+.gradient-container div:nth-child(2) {
+  height: 80%;
+  width: 70%;
+  background-color: #283540;
+  top: -12%;
+  right: 12%;
+  animation-delay: 2s;
+}
+.gradient-container div:nth-child(3) {
+  height: 50%;
+  width: 75%;
+  background-color: #2b2b2d;
+  bottom: -10%;
+  left: -5%;
+  animation-delay: 1s;
+}
+.gradient-container div:nth-child(4) {
+  height: 65%;
+  width: 80%;
+  background-color: #2a1209;
+  bottom: -15%;
+  right: -20%;
+  animation-delay: 3s;
+}
+.gradient-container div:nth-child(5) {
+  height: 70%;
+  width: 65%;
+  background-color: #cf8561;
+  bottom: 0%;
+  right: -50%;
+  animation-delay: 1s;
+}
+.gradient-container::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(200px);
+}
+
+@keyframes gradient {
+  50% {
+    transform: scale(1.5) translate(100px);
+  }
+}
