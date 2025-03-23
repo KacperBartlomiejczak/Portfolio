@@ -1,8 +1,18 @@
-import Header from "./components/Header.tsx";
+import Header from "./components/Header/Header.tsx";
+import Modal from "./components/Modal/Modal.tsx";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function openHandler() {
+    setIsOpen(true);
+  }
+  function closeHandler() {
+    setIsOpen(false);
+  }
   return (
-    <main className="min-h-screen flex justify-center items-center flex-col relative">
+    <main className="min-h-screen flex justify-center items-center flex-col relative max-h-screen">
       <div className="gradient-container">
         <div></div>
         <div></div>
@@ -10,20 +20,8 @@ function App() {
         <div></div>
         <div></div>
       </div>
-      {/* <Modal isOpen={isOpen}>
-        <form>
-          <h1>Contact me</h1>
-          <p>
-            <label htmlFor="Email">Your Email</label>
-            <input type="email" placeholder="Your email" />
-          </p>
-          <p>
-            <label htmlFor="Email">Email</label>
-            <input type="email" id="Email" />
-          </p>
-        </form>
-      </Modal> */}
-      <Header />
+      {isOpen ? <Modal onClose={closeHandler} /> : undefined}
+      <Header onOpen={openHandler} />
     </main>
   );
 }

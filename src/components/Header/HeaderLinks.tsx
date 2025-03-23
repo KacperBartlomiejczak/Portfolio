@@ -4,31 +4,29 @@ import { MdLocalPhone } from "react-icons/md";
 
 import HeaderLink from "./HeaderLink";
 
-export default function HeaderLinks() {
+interface HeaderLinksProps {
+  onOpen: () => void;
+}
+
+export default function HeaderLinks({ onOpen }: HeaderLinksProps) {
   const iconStyles =
     "text-white text-4xl hover:text-primary focus:text-primary transition-colors duration-300 md:mr-2 group-focus:text-primary group-hover:text-primary";
 
   return (
-    <div className="flex justify-center gap-4 mt-2 mb-3">
+    <div className="ml-5 flex justify-center items-center gap-8 mt-1 md:mt-2 md:mb-3">
       <HeaderLink
         link="https://github.com/KacperBartlomiejczak?tab=repositories"
         title="Projects"
-        isButton={false}
       >
         <FaGithub className={iconStyles} />
       </HeaderLink>
       <HeaderLink
         link="https://www.linkedin.com/in/kacper-bart%C5%82omiejczak-1315802b1/"
         title="LinkedIn"
-        isButton={false}
       >
         <FaLinkedin className={iconStyles} />
       </HeaderLink>
-      <HeaderLink
-        link="https://discord.gg/5eVDrE8NFp"
-        title="Contact me"
-        isButton={true}
-      >
+      <HeaderLink clickProp={onOpen} title="Contact me" isButton={true}>
         <MdLocalPhone className={iconStyles} />
       </HeaderLink>
     </div>

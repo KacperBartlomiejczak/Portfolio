@@ -1,5 +1,5 @@
 interface BasicPageProps {
-  link: string;
+  link?: string;
   title: string;
   isButton?: boolean;
   clickProp?: () => void;
@@ -17,7 +17,7 @@ export default function HeaderLink({
     return (
       <button
         onClick={clickProp}
-        className="group flex flex-col justify-center items-center text-white p-3 md:flex-row 
+        className="group flex flex-col justify-center items-center text-white  md:p-3 md:flex-row 
       hover:text-primary  focus:text-primary transition-colors duration-300 link"
       >
         <span className="flex justify-center items-center flex-col md:flex-row">
@@ -32,7 +32,7 @@ export default function HeaderLink({
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col justify-center items-center text-white p-3 md:flex-row 
+      className="group flex flex-col justify-center items-center text-white  md:p-3 md:flex-row 
   hover:text-primary  focus:text-primary transition-colors duration-300 link"
     >
       <span className="flex justify-center items-center flex-col md:flex-row">

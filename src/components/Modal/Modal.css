@@ -1,0 +1,17 @@
+textarea {
+  min-height: 50px;
+  max-height: 60px;
+}
+@media (width >= 768px) {
+  textarea {
+    min-height: 50px;
+    max-height: 80px;
+  }
+}
+
+@media (width >= 992px) {
+  textarea {
+    min-height: 80px;
+    max-height: 150px;
+  }
+}
