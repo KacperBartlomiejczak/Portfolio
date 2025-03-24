@@ -81,16 +81,16 @@ export default function Modal({ onClose }: ModalProps) {
             placeholder="Hey, I am interested in your services"
             ref={messageRef}
           />
-          <p className="flex gap-x-4 justify-end pb-3">
-            <button className="text-primary px-4 py-2" onClick={onClose}>
-              Exit
-            </button>
+          <p className="flex gap-x-4 justify-end pb-3 mt-1 md:mt-2 lg:mt-5">
             <button
               className="bg-primary text-white px-4 py-2 rounded-lg"
               type="submit"
               onClick={sendEmail}
             >
               Send
+            </button>
+            <button className="text-primary px-4 py-2" onClick={onClose}>
+              Exit
             </button>
           </p>
         </form>
