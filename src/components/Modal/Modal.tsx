@@ -82,6 +82,9 @@ export default function Modal({ onClose }: ModalProps) {
             ref={messageRef}
           />
           <p className="flex gap-x-4 justify-end pb-3">
+            <button className="text-primary px-4 py-2" onClick={onClose}>
+              Exit
+            </button>
             <button
               className="bg-primary text-white px-4 py-2 rounded-lg"
               type="submit"
@@ -89,15 +92,14 @@ export default function Modal({ onClose }: ModalProps) {
             >
               Send
             </button>
-            <button className="text-primary px-4 py-2" onClick={onClose}>
-              Exit
-            </button>
           </p>
         </form>
       ) : (
         <div className="text-center bg-white rounded-xl w-60 h-35 flex flex-col items-center justify-center">
           <h2 className="text-xl font-bold mb-1">Your mail was sent</h2>
-          <p className="text-base text-gray-400 mb-2 ">Thanks for contacting me!</p>
+          <p className="text-base text-gray-400 mb-2 ">
+            Thanks for contacting me!
+          </p>
           <button className="text-primary px-4 py-2" onClick={onClose}>
             Exit
           </button>
