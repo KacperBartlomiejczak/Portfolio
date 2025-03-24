@@ -2,9 +2,8 @@ export default function HeaderText() {
   return (
     <div className="p-2 flex flex-col justify-center items-center   md:ml-6 md:items-start">
       <h1 className="text-lg font-bold mb-1 text-wrap text-white text-center md:text-2xl md:text-left md:text-wrap md:mb-2 lg:text-3xl">
-        Your project deserves a flawless frontend.{" "}
         <span className="text-[#ce4a4b]">
-          Drop me a message, and let’s make it happen!
+          Increase your sales with a modern website! 🚀
         </span>
       </h1>
       <p className="text-sm text-center px-2 md:text-left  md:px-0 md:text-wrap md:text-lg/relaxed text-balance text-white">
