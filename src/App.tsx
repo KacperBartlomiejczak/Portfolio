@@ -20,7 +20,9 @@ function App() {
         <div></div>
         <div></div>
       </div>
-      {isOpen ? <Modal onClose={closeHandler} /> : undefined}
+      {isOpen ? (
+        <Modal onClose={closeHandler} />
+      ) : undefined}
       <Header onOpen={openHandler} />
     </main>
   );

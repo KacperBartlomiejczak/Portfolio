@@ -10,7 +10,7 @@
 .link::before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   width: 100%;
   height: 2px;
   background-color: #ce4a4b;

@@ -25,7 +25,6 @@ const ModalInput = forwardRef<
       placeholder={placeholder}
       className={classes}
       ref={ref as React.Ref<HTMLInputElement>}
-      required
     />
   );
 
@@ -36,14 +35,13 @@ const ModalInput = forwardRef<
         className={classes}
         defaultValue={placeholder}
         ref={ref as React.Ref<HTMLTextAreaElement>}
-        required
       ></textarea>
     );
   }
 
   return (
     <p className="flex flex-col gap-1">
-      <label htmlFor="Email" className="text-[2B2B2D] mb-1">
+      <label className="text-[2B2B2D] mb-1">
         {text}
       </label>
       {content}

@@ -13,7 +13,7 @@ export default function HeaderLinks({ onOpen }: HeaderLinksProps) {
     "text-white text-4xl hover:text-primary focus:text-primary transition-colors duration-300 md:mr-2 group-focus:text-primary group-hover:text-primary";
 
   return (
-    <div className="ml-5 flex justify-center items-center gap-8 mt-1 md:mt-2 md:mb-3">
+    <div className="ml-5 flex justify-center items-center gap-8 mt-3 md:mt-2 md:mb-3">
       <HeaderLink
         link="https://github.com/KacperBartlomiejczak?tab=repositories"
         title="Projects"
