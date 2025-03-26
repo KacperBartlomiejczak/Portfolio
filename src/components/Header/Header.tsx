@@ -1,13 +1,12 @@
 import HeaderText from "./HeaderText";
 import HeaderLinks from "./HeaderLinks";
+import { useDispatch } from "react-redux";
 
+import { openModal } from "../../redux/slices/modalSlice";
 import logo from "../../assets/images/logo.jpg";
 
-interface HeaderProps {
-  onOpen: () => void;
-}
-
-export default function Header({ onOpen }: HeaderProps) {
+export default function Header() {
+  const dispatch = useDispatch();
   return (
     <section className="w-full min-h-full flex items-start z-20">
       <div className=" mx-auto md:px-8 h-full lg:px-12 lg:max-w-[1200px]">
@@ -21,7 +20,7 @@ export default function Header({ onOpen }: HeaderProps) {
             <HeaderText />
           </div>
         </div>
-        <HeaderLinks onOpen={onOpen} />
+        <HeaderLinks onOpen={() => dispatch(openModal())} />
       </div>
     </section>
   );

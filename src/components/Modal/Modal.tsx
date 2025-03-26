@@ -4,14 +4,16 @@ import "./Modal.css";
 import ModalInput from "./ModalInput";
 import emailjs from "@emailjs/browser";
 
-interface ModalProps {
-  onClose: () => void;
-}
+import { useDispatch } from "react-redux";
 
-export default function Modal({ onClose }: ModalProps) {
+import { closeModal } from "../../redux/slices/modalSlice";
+
+export default function Modal() {
   const emailRef = useRef<HTMLInputElement>(null);
   const topicRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+
+  const dispatch = useDispatch();
 
   const [isSended, setIsSended] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -89,7 +91,10 @@ export default function Modal({ onClose }: ModalProps) {
             >
               Send
             </button>
-            <button className="text-primary px-4 py-2" onClick={onClose}>
+            <button
+              className="text-primary px-4 py-2"
+              onClick={() => dispatch(closeModal())}
+            >
               Exit
             </button>
           </p>
@@ -100,7 +105,10 @@ export default function Modal({ onClose }: ModalProps) {
           <p className="text-base text-gray-400 mb-2 ">
             Thanks for contacting me!
           </p>
-          <button className="text-primary px-4 py-2" onClick={onClose}>
+          <button
+            className="text-primary px-4 py-2"
+            onClick={() => dispatch(closeModal())}
+          >
             Exit
           </button>
         </div>
