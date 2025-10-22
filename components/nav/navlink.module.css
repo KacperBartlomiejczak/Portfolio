@@ -1,0 +1,22 @@
+.navLink {
+  position: relative;
+  padding: 0.5em;
+}
+.navLink::before {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6b46c1;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navLink:hover::before,
+.navLink:focus::before {
+  transform: scale(1);
+  transform-origin: left;
+}
