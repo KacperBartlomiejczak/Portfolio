@@ -13,7 +13,7 @@ export default function NavLink({ title, href, onOpen }: NavLinkProps) {
       <Link
         href={href}
         onClick={onOpen}
-        className={`hover:text-primary-color focus:text-primary-color text-lg ${classes.navLink}`}
+        className={`hover:text-primary-color focus:text-primary-color text-lg ${classes.navLink} md:text-xl`}
       >
         {title}
       </Link>
