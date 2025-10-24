@@ -15,6 +15,10 @@ export default function Nav() {
     setIsOpen((prevState) => !prevState);
   };
 
+  const closeNavHandler = () => {
+    setIsOpen(false);
+  };
+
   //Making body overflow hidden when navigation is open
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +35,7 @@ export default function Nav() {
   //adding background logic
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -49,7 +53,7 @@ export default function Nav() {
       <div className="container flex flex-row items-center justify-between z-20">
         <Link href="#">
           <p
-            className={`${inter.className} antialiased text-primary-color relative z-20 text-lg md:text-xl`}
+            className={`${inter.className} antialiased text-primary-color relative z-20 text-lg md:text-xl font-bold`}
           >
             Kacper Bartłomiejczak
           </p>
@@ -57,13 +61,13 @@ export default function Nav() {
         <Hamburger isOpen={isOpen} onOpen={openNavHandler} />
         <ul
           id="mobile-menu"
-          className={`fixed bg-white text-black flex flex-col justify-center items-center inset-0 gap-6 z-10 transition-transform duration-300 ${
+          className={`fixed bg-white lg:bg-transparent text-black flex flex-col justify-center items-center inset-0 gap-6 z-10 transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
-          } lg:relative lg:flex-row lg:translate-x-0"`}
+          } lg:relative lg:flex-row lg:translate-x-0`}
         >
-          <NavLink title="Projekty" href="#projects" onOpen={openNavHandler} />
-          <NavLink title="O mnie" href="#omnie" onOpen={openNavHandler} />
-          <NavLink title="Kontakt" href="#kontakt" onOpen={openNavHandler} />
+          <NavLink title="Projekty" href="#projects" onOpen={closeNavHandler} />
+          <NavLink title="O mnie" href="#omnie" onOpen={closeNavHandler} />
+          <NavLink title="Kontakt" href="#kontakt" onOpen={closeNavHandler} />
         </ul>
       </div>
     </nav>

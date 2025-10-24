@@ -9,7 +9,7 @@ export default function HeaderTitle() {
       >
         Tworzę interfejsy, z których chce się korzystać.
       </h1>
-      <p className="text-base/loose mb-4 md:text-lg/loose  xl:w-3/4">
+      <p className="text-sm/loose mb-4 md:text-lg/loose  xl:w-3/4">
         Nazywam się Kacper Bartłomiejczak i jako Frontend Developer specjalizuję
         się w budowaniu szybkich, responsywnych i intuicyjnych aplikacji
         internetowych.
