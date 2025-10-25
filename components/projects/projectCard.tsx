@@ -1,12 +1,28 @@
 import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
-import Link from "next/link";
-import classes from "@/components/ui/button.module.css";
 import ProjectTech from "./projectTech";
+import Button from "../ui/button";
 
-export default function ProjectCard() {
+interface CardProps {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  tags: string[];
+  websiteLink: string;
+  repoLink: string;
+}
+
+export default function ProjectCard({
+  title,
+  subtitle,
+  description,
+  tags,
+  websiteLink,
+  repoLink,
+}: CardProps) {
   return (
-    <div className=" w-[300px]  bg-white shadow-md shadow-black/20 rounded-lg">
+    <div className=" w-[300px] md:w-[350px]  bg-white shadow-md shadow-black/20 rounded-lg hover:scale-110 focus:scale-110 transition-[scale]">
       <div className="relative w-full h-46">
         <Image
           src="/project1.png"
@@ -17,39 +33,27 @@ export default function ProjectCard() {
       </div>
       <div className="p-2">
         <div>
-          <h3 className={`${inter.className} font-bold`}>To do manager</h3>
+          <h3 className={`${inter.className} font-bold md:text-lg`}>{title}</h3>
           <p
-            className={`${inter.className} font-regular text-[0.7rem] text-[#9F9F9F]`}
+            className={`${inter.className} font-regular text-[0.7rem] text-[#9F9F9F] md:text-sm`}
           >
-            Zarzadzanie codziennymi zadaniami
+            {subtitle}
           </p>
         </div>
-        <p className="text-[0.7rem] my-2">
-          Przekształć swoje "muszę" w "zrobione". Proste narzędzie do realizacji
-          codziennych celów.
-        </p>
+        <p className="text-[0.7rem] my-2 md:text-sm">{description}</p>
         <hr className="rounded-xl border my-4" />
-        <ul className="flex flex-wrap items-start gap-2 p-1 my-2">
-          <ProjectTech>React</ProjectTech>
-          <ProjectTech>Tailwind</ProjectTech>
-          <ProjectTech>Typescript</ProjectTech>
-          <ProjectTech>LocalStorage</ProjectTech>
+        <ul className="w-full flex flex-wrap items-start gap-2 p-1 my-2">
+          {tags.map((tag) => (
+            <ProjectTech key={tag}>{tag}</ProjectTech>
+          ))}
         </ul>
-        <div className="flex flex-row items-center justify-start mt-4 gap-2">
-          <Link
-            href="https://kacperbartlomiejczak.github.io/rn-task-manager/"
-            target="_blank"
-            className={`px-3 py-1 bg-primary-color rounded-xl border-2 border-transparent text-white ${inter.className} font-semibold ${classes.buttonAnimation}`}
-          >
+        <div className="flex flex-row items-end justify-start mt-4 gap-2 md:py-2">
+          <Button href={websiteLink} variant="primary">
             Strona
-          </Link>
-          <Link
-            href="https://kacperbartlomiejczak.github.io/rn-task-manager/"
-            target="_blank"
-            className={`px-2 py-1 bg-white rounded-xl text-primary-color ${inter.className} font-semibold border-2 border-primary-color hover:bg-primary-color hover:text-white transition-colors `}
-          >
+          </Button>
+          <Button href={repoLink} variant="secondary">
             Repozytorium
-          </Link>
+          </Button>
         </div>
       </div>
     </div>

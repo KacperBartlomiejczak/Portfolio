@@ -7,7 +7,7 @@ export default function ProjectTech({ children }: ProjectTechProps) {
   return (
     <li className="py-1 px-3 bg-secondary-bg rounded-full">
       <p
-        className={`${inter.className} text-[0.7rem] font-bold text-primary-color`}
+        className={`${inter.className} text-[0.7rem] font-bold text-primary-color md:text-sm `}
       >
         {children}
       </p>

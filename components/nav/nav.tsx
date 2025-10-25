@@ -66,8 +66,8 @@ export default function Nav() {
           } lg:relative lg:flex-row lg:translate-x-0`}
         >
           <NavLink title="Projekty" href="#projects" onOpen={closeNavHandler} />
-          <NavLink title="O mnie" href="#omnie" onOpen={closeNavHandler} />
-          <NavLink title="Kontakt" href="#kontakt" onOpen={closeNavHandler} />
+          <NavLink title="O mnie" href="#aboutme" onOpen={closeNavHandler} />
+          <NavLink title="Kontakt" href="#contact" onOpen={closeNavHandler} />
         </ul>
       </div>
     </nav>
