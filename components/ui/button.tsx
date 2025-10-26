@@ -2,9 +2,10 @@ import classes from "./button.module.css";
 
 import { inter } from "@/app/ui/fonts";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 interface ButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   href: string;
   variant?: string;
 }

@@ -53,7 +53,7 @@ export default function Nav() {
       <div className="container flex flex-row items-center justify-between z-20">
         <Link href="#">
           <p
-            className={`${inter.className} antialiased text-primary-color relative z-20 text-lg md:text-xl font-bold`}
+            className={`${inter.className} antialiased text-primary-color relative z-20 text-lg md:text-xl font-bold hover:text-cta transition-colors duration-500`}
           >
             Kacper Bartłomiejczak
           </p>

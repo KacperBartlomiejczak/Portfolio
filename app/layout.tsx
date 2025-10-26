@@ -8,7 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${firaCode.className} bg-bg-color`}>{children}</body>
+      <body
+        className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
