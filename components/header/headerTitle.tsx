@@ -14,7 +14,7 @@ export default function HeaderTitle() {
         się w budowaniu szybkich, responsywnych i intuicyjnych aplikacji
         internetowych.
       </p>
-      <Button href="#">Skontaktuj się</Button>
+      <Button href="#contact">Skontaktuj się</Button>
     </div>
   );
 }

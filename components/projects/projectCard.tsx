@@ -11,6 +11,7 @@ interface CardProps {
   tags: string[];
   websiteLink: string;
   repoLink: string;
+  projectImg: string;
 }
 
 export default function ProjectCard({
@@ -20,12 +21,13 @@ export default function ProjectCard({
   tags,
   websiteLink,
   repoLink,
+  projectImg,
 }: CardProps) {
   return (
     <div className=" w-[300px] md:w-[350px]  bg-white shadow-md shadow-black/20 rounded-lg hover:scale-110 focus:scale-110 transition-[scale]">
       <div className="relative w-full h-46">
         <Image
-          src="/project1.png"
+          src={projectImg}
           alt="project 1"
           fill
           className="rounded-t-lg object-cover"

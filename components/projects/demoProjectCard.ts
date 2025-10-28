@@ -8,25 +8,18 @@ export const demoProjectCard = [
     tags: ["React", "Tailwind", "Typescript", "LocalStorage"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
+    projectImg: "/project1.png",
   },
-  {
-    id: Math.random() * 100,
-    title: "To do manager",
-    subtitle: "Zarzadzanie codziennymi zadaniami",
-    description:
-      'Przekształć swoje "muszę" w "zrobione". Proste narzędzie do realizacji codziennych celów.',
-    tags: ["React", "Tailwind", "Typescript", "LocalStorage"],
-    websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
-    repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-  },
+
   {
     id: Math.random() * 100,
     title: "Portfolio",
-    subtitle: "Ta strona to też projekt",
+    subtitle: "Frontend web developer website",
     description:
-      'Przekształć swoje "muszę" w "zrobione". Proste narzędzie do realizacji codziennych celów.',
+      "Strona ukazująca programiste Kacpra Bartłomiejczaka jako frontend web developera.",
     tags: ["Nextjs", "Tailwind", "Typescript", "Css module"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
+    projectImg: "/project2.png",
   },
 ];

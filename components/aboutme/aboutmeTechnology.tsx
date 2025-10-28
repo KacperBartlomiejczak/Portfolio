@@ -13,7 +13,8 @@ export default function AboutMeTechnology() {
       <h3 className={`${inter.className} font-bold text-base md:text-lg`}>
         Technologie
       </h3>
-      <ul className="flex flex-row gap-4 flex-wrap">
+      {/* kolor bazowy = primary, a wszystkie svg użyją go jako fill/stroke */}
+      <ul className="flex flex-row gap-4 flex-wrap text-primary-color [&_svg]:fill-current">
         <li>
           <ReactLogo width="46" />
         </li>

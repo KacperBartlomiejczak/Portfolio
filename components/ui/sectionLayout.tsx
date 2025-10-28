@@ -4,16 +4,25 @@ interface SectionLayoutProps {
   children?: React.ReactNode;
   title: string;
   id: string;
+  center?: boolean;
 }
 
 export default function SectionLayout({
   title,
   id,
+  center,
   children,
 }: SectionLayoutProps) {
   return (
-    <section className="flex items-center p-4 justify-center scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40" id={id}>
-      <div className="container flex flex-col items-start gap-4">
+    <section
+      className="flex items-center p-4 justify-center scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40"
+      id={id}
+    >
+      <div
+        className={`container flex flex-col  gap-4 ${
+          center ? "items-center" : "items-start"
+        }`}
+      >
         <SectionHeader>{title}</SectionHeader>
         {children}
       </div>

@@ -1,19 +1,23 @@
-import { LinkedIn } from "@/public/svg/logos";
-
 import SectionLayout from "../ui/sectionLayout";
-import Link from "next/link";
+
+import ContactLinks from "./contactLinks";
+import { inter } from "@/app/ui/fonts";
+import ContactDialog from "./contactDialog";
+import ContactHr from "./contactHr";
 
 export default function Contact() {
   return (
-    <SectionLayout title="Skontaktuj się ze mną" id="contact">
-      <div className="w-full flex flex-row flex-wrap items-center">
-        <Link
-          className="border-2 border-primary-color w-full p-2 rounded-lg"
-          href=""
-        >
-          <LinkedIn width="24" />
-        </Link>
+    <SectionLayout title="Skontaktuj się ze mną" id="contact" center>
+      <ContactLinks />
+      <div className="flex flex-row items-center justify-center gap-6">
+        <ContactHr />
+        <p className={`${inter.className} text-base md:text-lg lg:text-xl`}>
+          lub
+        </p>
+        <ContactHr />
       </div>
+
+      <ContactDialog />
     </SectionLayout>
   );
 }
