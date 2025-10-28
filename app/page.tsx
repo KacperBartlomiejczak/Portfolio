@@ -2,6 +2,7 @@ import Nav from "@/components/nav/nav";
 import Header from "@/components/header/header";
 import Projects from "@/components/projects/projects";
 import AboutMe from "@/components/aboutme/aboutme";
+import Contact from "@/components/contact/contact";
 export default function Home() {
   return (
     <main className="w-screen relative">
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <Projects />
       <AboutMe />
+      <Contact />
     </main>
   );
 }
