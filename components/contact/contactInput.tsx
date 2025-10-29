@@ -28,13 +28,25 @@ export default function ContactInput({
         placeholder={htmlFor}
         className={`text-sm ${inter.className} antialiased`}
         {...props}
+        required
       />
     </>
   );
 
   if (textArea) {
     content = (
-      <Textarea placeholder="napisz wiadomość tutaj" className="text-sm" />
+      <>
+        <Label htmlFor={htmlFor} className={`${inter.className}`}>
+          {title}
+        </Label>
+        <Textarea
+          id={htmlFor}
+          placeholder="napisz wiadomość tutaj"
+          className={`text-sm ${inter.className} antialiased`}
+          {...props}
+          required
+        />
+      </>
     );
   }
 
