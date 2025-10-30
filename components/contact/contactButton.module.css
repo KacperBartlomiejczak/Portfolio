@@ -1,0 +1,14 @@
+.buttonIcon {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.button:hover > .buttonIcon {
+  opacity: 1;
+}
+.buttonText {
+  transform: translateX(0);
+  transition: transform 0.3s 0.1s;
+}
+.button:hover > .buttonText {
+  transform: translateX(-10);
+}

@@ -2,6 +2,22 @@ import "./globals.css";
 import { firaCode } from "@/app/ui/fonts";
 import { Toaster } from "react-hot-toast";
 import { inter } from "@/app/ui/fonts";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kacper Bartłomiejczak",
+  description: "Portfolio i projekty programistyczne Kacpra Bartłomiejczaka",
+  authors: [{ name: "Kacper Bartłomiejczak" }],
+
+  openGraph: {
+    title: "Kacper Bartłomiejczak",
+    description: "Portfolio frontend developera",
+
+    siteName: "Kacper Bartłomiejczak",
+    locale: "pl_PL",
+    type: "website",
+  },
+};
 
 export default function RootLayout({
   children,
@@ -9,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body
         className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24`}
       >

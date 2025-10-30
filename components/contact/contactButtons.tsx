@@ -1,5 +1,7 @@
 import { DialogClose, DialogFooter } from "@/components/ui/dialog";
 import { inter } from "@/app/ui/fonts";
+import { Send } from "@/public/svg/logos";
+import classes from "./contactButton.module.css";
 
 export default function ContactButtons() {
   return (
@@ -13,9 +15,15 @@ export default function ContactButtons() {
       </DialogClose>
       <button
         type="submit"
-        className={`px-4 py-2 bg-primary-color rounded-lg text-white border-2 border-primary-color hover:bg-secondary-bg hover:border-secondary-bg hover:text-black transition-colors cursor-pointer`}
+        className={`px-7 py-2 bg-primary-color rounded-lg text-white border-2 border-primary-color hover:bg-secondary-bg hover:border-secondary-bg hover:text-black transition-colors cursor-pointer text-left relative ${classes.button}`}
       >
-        Wyślij
+        <p className={`block text-left ${classes.buttonText}`}>Wyślij</p>
+
+        <div
+          className={`absolute top-1/2 right-4 translate-y-[-50%] ${classes.buttonIcon}`}
+        >
+          <Send width="18" />
+        </div>
       </button>
     </DialogFooter>
   );
