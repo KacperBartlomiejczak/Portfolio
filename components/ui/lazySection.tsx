@@ -42,14 +42,15 @@ export default function LazySection({ children }: LazySectionProps) {
   }, []);
 
   return (
-    <motion.div
-      ref={ref} // Attach ref directly to the motion component
-      variants={sectionVariants}
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      {children}
-    </motion.div>
+    <div ref={ref}>
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }
