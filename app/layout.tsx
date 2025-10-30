@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <link rel="preconnect" href="https://api.emailjs.com" />
-        <link rel="preload" href="/headerImg.png" as="image" />
+        <link rel="preload" href="/headerImg.jpg" as="image" />
       </head>
       <body
         className={`${inter.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}

@@ -11032,7 +11032,10 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", 384)
     ]),
     "qualities": ("TURBOPACK compile-time value", [
-        ("TURBOPACK compile-time value", 75)
+        ("TURBOPACK compile-time value", 25),
+        ("TURBOPACK compile-time value", 50),
+        ("TURBOPACK compile-time value", 75),
+        ("TURBOPACK compile-time value", 80)
     ]),
     "path": ("TURBOPACK compile-time value", "/_next/image"),
     "loader": ("TURBOPACK compile-time value", "default"),
