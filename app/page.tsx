@@ -8,7 +8,7 @@ import LazySection from "@/components/ui/lazySection";
 
 export default function Home() {
   return (
-    <main className="w-screen relative">
+    <main className="w-full relative">
       <Nav />
       <Header />
       <LazySection>

@@ -31,7 +31,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.emailjs.com" />
       </head>
       <body
-        className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24`}
+        className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}
       >
         {children}
         <Toaster
