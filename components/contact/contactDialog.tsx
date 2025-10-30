@@ -33,7 +33,7 @@ export default function ContactDialog() {
           email: data.email,
           message: data.message,
         },
-        "WOZX1rmbs_We_U3Bv"
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(
         (response) => {

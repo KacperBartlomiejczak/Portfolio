@@ -2,7 +2,9 @@ import SectionLayout from "../ui/sectionLayout";
 
 import ContactLinks from "./contactLinks";
 import { inter } from "@/app/ui/fonts";
-import ContactDialog from "./contactDialog";
+import dynamic from 'next/dynamic';
+
+const ContactDialog = dynamic(() => import('./contactDialog'));
 import ContactHr from "./contactHr";
 
 export default function Contact() {
