@@ -25,7 +25,16 @@ export default function ContactDialog() {
 
   const onSubmit: SubmitHandler<formInput> = (data) => {
     emailjs
-      .send("service_wv83fim", "template_wb1zldu", data, "WOZX1rmbs_We_U3Bv")
+      .send(
+        "service_wv83fim",
+        "template_wb1zldu",
+        {
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        },
+        "WOZX1rmbs_We_U3Bv"
+      )
       .then(
         (response) => {
           console.log("Succes!", response.status, response.text);
