@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        <link rel="preconnect" href="https://api.emailjs.com" />
+      </head>
       <body
         className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24`}
       >
