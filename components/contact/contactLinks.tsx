@@ -8,19 +8,21 @@ export default function ContactLinks() {
       <ContactLink
         href="https://www.linkedin.com/in/kacper-bartlomiejczak-b12a19385/"
         title="LinkedIn"
+        ariaLabel="Odwiedź mnie na LinkedIn"
       >
         <LinkedIn width="24" />
       </ContactLink>
       <ContactLink
         href="https://github.com/KacperBartlomiejczak"
         title="Github"
+        ariaLabel="Odwiedź mój profil na Githubie"
       >
         <Github width="24" />
       </ContactLink>
-      <ContactLink href="mailto:kacperbartlomiejczak@proton.me" title="Mail">
+      <ContactLink href="mailto:kacperbartlomiejczak@proton.me" title="Mail" ariaLabel="Wyślij mi do mnie maila">
         <Mail width="24" />
       </ContactLink>
-      <ContactLink href="https://discord.gg/ktx2zJ735w" title="Discord">
+      <ContactLink href="https://discord.gg/ktx2zJ735w" title="Discord" ariaLabel="Odwiedź mój serwer discord">
         <Discord width="24" />
       </ContactLink>
     </div>

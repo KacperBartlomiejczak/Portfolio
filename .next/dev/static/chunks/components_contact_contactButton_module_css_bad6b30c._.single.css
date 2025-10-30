@@ -1,0 +1,20 @@
+/* [project]/components/contact/contactButton.module.css [app-client] (css) */
+.contactButton-module__gJ4jmG__buttonIcon {
+  opacity: 0;
+  transition: opacity .3s;
+}
+
+.contactButton-module__gJ4jmG__button:hover > .contactButton-module__gJ4jmG__buttonIcon {
+  opacity: 1;
+}
+
+.contactButton-module__gJ4jmG__buttonText {
+  transition: transform .3s .1s;
+  transform: translateX(0);
+}
+
+.contactButton-module__gJ4jmG__button:hover > .contactButton-module__gJ4jmG__buttonText {
+  transform: translateX(-10px);
+}
+
+/*# sourceMappingURL=components_contact_contactButton_module_css_bad6b30c._.single.css.map*/

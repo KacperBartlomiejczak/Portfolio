@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/contact/contactButton.module.css"],"sourcesContent":[".buttonIcon {\n  opacity: 0;\n  transition: opacity 0.3s;\n}\n.button:hover > .buttonIcon {\n  opacity: 1;\n}\n.buttonText {\n  transform: translateX(0);\n  transition: transform 0.3s 0.1s;\n}\n.button:hover > .buttonText {\n  transform: translateX(-10);\n}\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;AAGA;;;;;AAIA"}}]
+}

@@ -32,6 +32,7 @@ const ProjectCard = ({ // Changed to a const
           alt={`Zrzut ekranu projektu ${title}`}
           fill
           className="rounded-t-lg object-cover"
+          sizes="(max-width: 768px) 300px, 350px"
         />
       </div>
       <div className="p-2">

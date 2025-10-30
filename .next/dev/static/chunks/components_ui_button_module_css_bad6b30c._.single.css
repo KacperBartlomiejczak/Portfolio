@@ -1,0 +1,22 @@
+/* [project]/components/ui/button.module.css [app-client] (css) */
+.button-module__2NABzW__buttonAnimation {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-module__2NABzW__buttonAnimation:before {
+  content: "";
+  background-color: #0003;
+  width: 100%;
+  height: 50%;
+  transition: right .5s;
+  position: absolute;
+  right: 100%;
+  transform: rotate(-50deg);
+}
+
+.button-module__2NABzW__buttonAnimation:hover:before, .button-module__2NABzW__buttonAnimation:focus:before {
+  right: -100%;
+}
+
+/*# sourceMappingURL=components_ui_button_module_css_bad6b30c._.single.css.map*/
