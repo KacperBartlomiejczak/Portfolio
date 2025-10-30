@@ -7,6 +7,7 @@ export default function HeaderImg() {
         fill
         alt="Man in suit"
         className="rounded-full object-cover object-center "
+        sizes="(max-width: 768px) 208px, (max-width: 1024px) 250px, (max-width: 1280px) 350px, 450px"
       />
     </figure>
   );

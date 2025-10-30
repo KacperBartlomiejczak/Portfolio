@@ -2,6 +2,7 @@ import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
 import ProjectTech from "./projectTech";
 import Button from "../ui/button";
+import React from "react";
 
 interface CardProps {
   id: number;
@@ -14,7 +15,7 @@ interface CardProps {
   projectImg: string;
 }
 
-export default function ProjectCard({
+const ProjectCard = ({ // Changed to a const
   title,
   subtitle,
   description,
@@ -22,7 +23,7 @@ export default function ProjectCard({
   websiteLink,
   repoLink,
   projectImg,
-}: CardProps) {
+}: CardProps) => {
   return (
     <div className=" w-[300px] md:w-[350px]  bg-white shadow-md shadow-black/20 rounded-lg hover:scale-110 focus:scale-110 transition-[scale]">
       <div className="relative w-full h-46">
@@ -60,4 +61,6 @@ export default function ProjectCard({
       </div>
     </div>
   );
-}
+};
+
+export default React.memo(ProjectCard); // Wrapped in React.memo
