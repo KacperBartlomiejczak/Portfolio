@@ -16,6 +16,7 @@ export default function Hamburger({
       onClick={onOpen}
       aria-expanded={isOpen}
       aria-controls="mobile-menu"
+      aria-label={isOpen ? "Zamknij menu" : "Otwórz menu"}
     >
       <span className="hamburger-box">
         <span className="hamburger-inner"></span>

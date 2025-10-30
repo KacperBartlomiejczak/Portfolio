@@ -29,7 +29,7 @@ const ProjectCard = ({ // Changed to a const
       <div className="relative w-full h-46">
         <Image
           src={projectImg}
-          alt="project 1"
+          alt={`Zrzut ekranu projektu ${title}`}
           fill
           className="rounded-t-lg object-cover"
         />
