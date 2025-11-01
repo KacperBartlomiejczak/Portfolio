@@ -10,7 +10,7 @@ import ContactButtons from "./contactButtons";
 import ContactDialogTrigger from "./contactDialogTrigger";
 import ContactDialogHeader from "./contactDialogHeader";
 import emailjs from "@emailjs/browser";
-import toast, { Toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 interface formInput {
   name: string;
@@ -78,7 +78,7 @@ export default function ContactDialog() {
       reset();
     } catch (error: any) {
       console.log("Failed...", error?.text ?? error);
-      // opcjonalnie: toast.error("Wystąpił błąd przy wysyłce");
+      toast.error("Wystąpił błąd przy wysyłce");
     } finally {
       setIsSended(false);
     }
