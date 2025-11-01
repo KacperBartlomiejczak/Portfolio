@@ -1,6 +1,5 @@
 import "./globals.css";
 
-import { firaCode } from "@/app/ui/fonts";
 import { Toaster } from "react-hot-toast";
 import { inter } from "@/app/ui/fonts";
 import { Metadata } from "next";

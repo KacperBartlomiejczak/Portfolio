@@ -156,4 +156,39 @@
   transform: translateX(-10px);
 }
 
+.contactButton-module__gJ4jmG__sending {
+  cursor: not-allowed;
+  flex-direction: row;
+  padding-right: 3ch;
+  display: flex;
+  position: relative;
+}
+
+.contactButton-module__gJ4jmG__sending:after {
+  content: "";
+  text-align: left;
+  width: 3ch;
+  animation: 1s steps(3, end) infinite contactButton-module__gJ4jmG__dots;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+@keyframes contactButton-module__gJ4jmG__dots {
+  0% {
+    content: ".";
+  }
+
+  50% {
+    content: "..";
+  }
+
+  100% {
+    content: "...";
+  }
+}
+
 /*# sourceMappingURL=components_7983676b._.css.map*/

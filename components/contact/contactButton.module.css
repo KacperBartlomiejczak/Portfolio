@@ -10,5 +10,38 @@
   transition: transform 0.3s 0.1s;
 }
 .button:hover > .buttonText {
-  transform: translateX(-10);
+  transform: translateX(-10px);
+}
+
+.sending {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-right: 3ch;
+  cursor: not-allowed;
+}
+.sending::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 3ch;
+  overflow: hidden;
+  text-align: left;
+
+  animation: dots 1s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
 }
