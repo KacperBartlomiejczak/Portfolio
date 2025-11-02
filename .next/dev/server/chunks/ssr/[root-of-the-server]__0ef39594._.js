@@ -1247,7 +1247,7 @@ function ContactDialog() {
             reset();
         } catch (error) {
             console.log("Failed...", error?.text ?? error);
-        // opcjonalnie: toast.error("Wystąpił błąd przy wysyłce");
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$react$2d$hot$2d$toast$40$2$2e$6$2e$0_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].error("Wystąpił błąd przy wysyłce");
         } finally{
             setIsSended(false);
         }

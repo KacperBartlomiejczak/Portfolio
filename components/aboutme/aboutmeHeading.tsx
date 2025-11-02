@@ -14,7 +14,14 @@ export default function AboutMeHeading() {
         wiek to gwarancja świeżego spojrzenia i biegłości w najnowszych
         technologiach.
       </p>
-      <Button href="#">Pobierz CV</Button>
+      <Button
+        href="/KacperCV.pdf"
+        variant="cta"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Pobierz CV
+      </Button>
     </div>
   );
 }

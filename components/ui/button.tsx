@@ -1,16 +1,25 @@
 import classes from "./button.module.css";
 
 import { inter } from "@/app/ui/fonts";
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import type { ReactNode } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends Omit<LinkProps, "href"> {
   children?: ReactNode;
   href?: string;
   variant?: string;
+  target?: string;
+  rel?: string;
 }
 
-export default function Button({ children, href = "", variant }: ButtonProps) {
+export default function Button({
+  children,
+  href = "",
+  variant,
+  target,
+  rel,
+  ...props
+}: ButtonProps) {
   let classNames = `flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl`;
 
   if (variant === "primary") {
@@ -21,7 +30,13 @@ export default function Button({ children, href = "", variant }: ButtonProps) {
   }
 
   return (
-    <Link href={href} className={classNames}>
+    <Link
+      href={href}
+      className={classNames}
+      target={target}
+      rel={rel}
+      {...props}
+    >
       {children}
     </Link>
   );

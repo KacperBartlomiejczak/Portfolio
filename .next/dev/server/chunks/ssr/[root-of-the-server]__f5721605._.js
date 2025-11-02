@@ -71,7 +71,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 ;
 ;
 ;
-function Button({ children, href = "", variant }) {
+function Button({ children, href = "", variant, target, rel, ...props }) {
     let classNames = `flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_ad3c97a1$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__inter$3e$__["inter"].className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl`;
     if (variant === "primary") {
         classNames = `px-3 py-1 bg-primary-color rounded-xl border-2 border-transparent text-white ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_ad3c97a1$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__inter$3e$__["inter"].className} font-semibold ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].buttonAnimation}`;
@@ -82,10 +82,13 @@ function Button({ children, href = "", variant }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
         href: href,
         className: classNames,
+        target: target,
+        rel: rel,
+        ...props,
         children: children
     }, void 0, false, {
         fileName: "[project]/components/ui/button.tsx",
-        lineNumber: 24,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
@@ -567,7 +570,10 @@ function AboutMeHeading() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                href: "#",
+                href: "https://www.canva.com/design/DAG3eEVZgO0/IoFxKJ_4OB65aBokAd18Jw/view?utm_content=DAG3eEVZgO0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1b4efd54ed",
+                variant: "cta",
+                target: "_blank",
+                rel: "noopener noreferrer",
                 children: "Pobierz CV"
             }, void 0, false, {
                 fileName: "[project]/components/aboutme/aboutmeHeading.tsx",
