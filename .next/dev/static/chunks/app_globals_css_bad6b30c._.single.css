@@ -80,16 +80,22 @@
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
     --default-font-family: var(--font-geist-sans);
     --default-mono-font-family: var(--font-geist-mono);
+    --color-background: #1d1d26;
+    --color-accent: #2cb67d;
+    --color-secondary: #94a1b2;
+    --color-primary: #f5f6fa;
+    --color-card: #242430;
     --color-primary-color: #6b46c1;
     --color-cta: #38b2ac;
     --color-secondary-color: #2d3748;
     --color-bg-color: #f7fafc;
     --color-secondary-bg: #e9d8fd;
+    --color-brand: #7f5af0;
   }
 
   @supports (color: lab(0% 0 0)) {
     :root, :host {
-      --color-red-400: lab(63.7053% 60.745 31.3109);
+      --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
     }
   }
@@ -352,7 +358,7 @@
   }
 
   body {
-    background-color: var(--background);
+    background-color: var(--color-background);
     color: var(--foreground);
   }
 }
@@ -558,6 +564,10 @@
     height: 3px;
   }
 
+  .h-\[50px\] {
+    height: 50px;
+  }
+
   .h-full {
     height: 100%;
   }
@@ -572,6 +582,10 @@
 
   .w-52 {
     width: calc(var(--spacing) * 52);
+  }
+
+  .w-\[50px\] {
+    width: 50px;
   }
 
   .w-\[100px\] {
@@ -762,11 +776,15 @@
   }
 
   .bg-background {
-    background-color: var(--background);
+    background-color: var(--color-background);
   }
 
   .bg-bg-color {
     background-color: var(--color-bg-color);
+  }
+
+  .bg-black {
+    background-color: var(--color-black);
   }
 
   .bg-black\/50 {
@@ -780,7 +798,7 @@
   }
 
   .bg-card {
-    background-color: var(--card);
+    background-color: var(--color-card);
   }
 
   .bg-cta {
@@ -795,6 +813,10 @@
     background-color: var(--color-secondary-bg);
   }
 
+  .bg-secondary-color {
+    background-color: var(--color-secondary-color);
+  }
+
   .bg-transparent {
     background-color: #0000;
   }
@@ -803,12 +825,20 @@
     background-color: var(--color-white);
   }
 
+  .fill-bg-color {
+    fill: var(--color-bg-color);
+  }
+
   .object-cover {
     object-fit: cover;
   }
 
   .object-center {
     object-position: center;
+  }
+
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
   }
 
   .p-1 {
@@ -986,16 +1016,6 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
-  .shadow-black\/20 {
-    --tw-shadow-color: #0003;
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    .shadow-black\/20 {
-      --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-black) 20%, transparent) var(--tw-shadow-alpha), transparent);
-    }
-  }
-
   .ring-primary-color {
     --tw-ring-color: var(--color-primary-color);
   }
@@ -1011,7 +1031,7 @@
   }
 
   .ring-offset-background {
-    --tw-ring-offset-color: var(--background);
+    --tw-ring-offset-color: var(--color-background);
   }
 
   .transition {
@@ -1107,7 +1127,7 @@
   }
 
   .selection\:bg-primary ::selection, .selection\:bg-primary::selection {
-    background-color: var(--primary);
+    background-color: var(--color-primary);
   }
 
   .selection\:text-primary-foreground ::selection, .selection\:text-primary-foreground::selection {
@@ -1195,6 +1215,11 @@
     border-radius: calc(var(--radius)  + 4px);
   }
 
+  .before\:bg-black:before {
+    content: var(--tw-content);
+    background-color: var(--color-black);
+  }
+
   .before\:bg-primary-color:before {
     content: var(--tw-content);
     background-color: var(--color-primary-color);
@@ -1216,6 +1241,11 @@
   .before\:content-\[\'\'\]:before {
     --tw-content: "";
     content: var(--tw-content);
+  }
+
+  .after\:bg-black:after {
+    content: var(--tw-content);
+    background-color: var(--color-black);
   }
 
   @media (hover: hover) {
@@ -1254,6 +1284,12 @@
   @media (hover: hover) {
     .hover\:bg-red-400:hover {
       background-color: var(--color-red-400);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-secondary:hover {
+      background-color: var(--color-secondary);
     }
   }
 
@@ -1422,7 +1458,7 @@
   }
 
   .data-\[state\=open\]\:bg-accent[data-state="open"] {
-    background-color: var(--accent);
+    background-color: var(--color-accent);
   }
 
   .data-\[state\=open\]\:text-muted-foreground[data-state="open"] {
@@ -1567,13 +1603,6 @@
     .md\:text-2xl {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
-    }
-  }
-
-  @media (min-width: 48rem) {
-    .md\:text-base {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
 
@@ -1767,9 +1796,9 @@
   }
 
   @media (min-width: 64rem) {
-    .lg\:text-lg {
-      font-size: var(--text-lg);
-      line-height: var(--tw-leading, var(--text-lg--line-height));
+    .lg\:text-base {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
 
@@ -1830,6 +1859,30 @@
     }
   }
 
+  .dark\:border-brand:is(.dark *) {
+    border-color: var(--color-brand);
+  }
+
+  .dark\:border-red-400:is(.dark *) {
+    border-color: var(--color-red-400);
+  }
+
+  .dark\:bg-accent:is(.dark *) {
+    background-color: var(--color-accent);
+  }
+
+  .dark\:bg-background:is(.dark *) {
+    background-color: var(--color-background);
+  }
+
+  .dark\:bg-brand:is(.dark *) {
+    background-color: var(--color-brand);
+  }
+
+  .dark\:bg-card:is(.dark *) {
+    background-color: var(--color-card);
+  }
+
   .dark\:bg-input\/30:is(.dark *) {
     background-color: var(--input);
   }
@@ -1837,6 +1890,87 @@
   @supports (color: color-mix(in lab, red, red)) {
     .dark\:bg-input\/30:is(.dark *) {
       background-color: color-mix(in oklab, var(--input) 30%, transparent);
+    }
+  }
+
+  .dark\:bg-transparent:is(.dark *) {
+    background-color: #0000;
+  }
+
+  .dark\:bg-white:is(.dark *) {
+    background-color: var(--color-white);
+  }
+
+  .dark\:fill-background:is(.dark *) {
+    fill: var(--color-background);
+  }
+
+  .dark\:text-brand:is(.dark *) {
+    color: var(--color-brand);
+  }
+
+  .dark\:text-primary:is(.dark *) {
+    color: var(--color-primary);
+  }
+
+  .dark\:text-secondary:is(.dark *) {
+    color: var(--color-secondary);
+  }
+
+  .dark\:text-white:is(.dark *) {
+    color: var(--color-white);
+  }
+
+  .dark\:ring-brand:is(.dark *) {
+    --tw-ring-color: var(--color-brand);
+  }
+
+  .dark\:ring-offset-background:is(.dark *) {
+    --tw-ring-offset-color: var(--color-background);
+  }
+
+  .dark\:before\:bg-brand:is(.dark *):before {
+    content: var(--tw-content);
+    background-color: var(--color-brand);
+  }
+
+  .dark\:before\:bg-white:is(.dark *):before {
+    content: var(--tw-content);
+    background-color: var(--color-white);
+  }
+
+  .dark\:after\:bg-white:is(.dark *):after {
+    content: var(--tw-content);
+    background-color: var(--color-white);
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:bg-\[\#2cb68d\]:is(.dark *):hover {
+      background-color: #2cb68d;
+    }
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:bg-brand:is(.dark *):hover {
+      background-color: var(--color-brand);
+    }
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:text-accent:is(.dark *):hover {
+      color: var(--color-accent);
+    }
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:text-brand:is(.dark *):hover {
+      color: var(--color-brand);
+    }
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:text-white:is(.dark *):hover {
+      color: var(--color-white);
     }
   }
 
@@ -1856,10 +1990,6 @@
 
   .\[\&_svg\]\:shrink-0 svg {
     flex-shrink: 0;
-  }
-
-  .\[\&_svg\]\:fill-current svg {
-    fill: currentColor;
   }
 
   .\[\&_svg\:not\(\[class\*\=\'size-\'\]\)\]\:size-4 svg:not([class*="size-"]) {
@@ -2026,15 +2156,15 @@ html {
     --popover-foreground: lab(2.75381% 0 0);
     --primary: lab(7.78201% -.0000149012 0);
     --primary-foreground: lab(98.26% 0 0);
-    --secondary: lab(96.52% -.0000298023 .0000119209);
+    --secondary: lab(96.52% -.0000596046 0);
     --secondary-foreground: lab(7.78201% -.0000149012 0);
-    --muted: lab(96.52% -.0000298023 .0000119209);
+    --muted: lab(96.52% -.0000596046 0);
     --muted-foreground: lab(48.496% 0 0);
-    --accent: lab(96.52% -.0000298023 .0000119209);
+    --accent: lab(96.52% -.0000596046 0);
     --accent-foreground: lab(7.78201% -.0000149012 0);
     --destructive: lab(48.4493% 77.4328 61.5452);
-    --border: lab(90.952% 0 -.0000119209);
-    --input: lab(90.952% 0 -.0000119209);
+    --border: lab(90.952% -.0000596046 0);
+    --input: lab(90.952% -.0000596046 0);
     --ring: lab(66.128% -.0000298023 .0000119209);
     --chart-1: lab(57.1026% 64.2584 89.8886);
     --chart-2: lab(55.0223% -41.0774 -3.90277);
@@ -2045,9 +2175,9 @@ html {
     --sidebar-foreground: lab(2.75381% 0 0);
     --sidebar-primary: lab(7.78201% -.0000149012 0);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(96.52% -.0000298023 .0000119209);
+    --sidebar-accent: lab(96.52% -.0000596046 0);
     --sidebar-accent-foreground: lab(7.78201% -.0000149012 0);
-    --sidebar-border: lab(90.952% 0 -.0000119209);
+    --sidebar-border: lab(90.952% -.0000596046 0);
     --sidebar-ring: lab(66.128% -.0000298023 .0000119209);
   }
 }
@@ -2094,15 +2224,15 @@ html {
     --card-foreground: lab(98.26% 0 0);
     --popover: lab(7.78201% -.0000149012 0);
     --popover-foreground: lab(98.26% 0 0);
-    --primary: lab(90.952% 0 -.0000119209);
+    --primary: lab(90.952% -.0000596046 0);
     --primary-foreground: lab(7.78201% -.0000149012 0);
-    --secondary: lab(15.204% 0 -.00000596046);
+    --secondary: lab(15.204% 0 0);
     --secondary-foreground: lab(98.26% 0 0);
-    --muted: lab(15.204% 0 -.00000596046);
+    --muted: lab(15.204% 0 0);
     --muted-foreground: lab(66.128% -.0000298023 .0000119209);
-    --accent: lab(15.204% 0 -.00000596046);
+    --accent: lab(15.204% 0 0);
     --accent-foreground: lab(98.26% 0 0);
-    --destructive: lab(63.7053% 60.745 31.3109);
+    --destructive: lab(63.7053% 60.7449 31.3109);
     --border: lab(100% 0 0 / .1);
     --input: lab(100% 0 0 / .15);
     --ring: lab(48.496% 0 0);
@@ -2110,12 +2240,12 @@ html {
     --chart-2: lab(66.9756% -58.27 19.5419);
     --chart-3: lab(72.7183% 31.8672 97.9407);
     --chart-4: lab(52.0183% 66.11 -78.2316);
-    --chart-5: lab(56.101% 79.4328 31.4532);
+    --chart-5: lab(56.101% 79.4329 31.4532);
     --sidebar: lab(7.78201% -.0000149012 0);
     --sidebar-foreground: lab(98.26% 0 0);
     --sidebar-primary: lab(36.9089% 35.0961 -85.6872);
     --sidebar-primary-foreground: lab(98.26% 0 0);
-    --sidebar-accent: lab(15.204% 0 -.00000596046);
+    --sidebar-accent: lab(15.204% 0 0);
     --sidebar-accent-foreground: lab(98.26% 0 0);
     --sidebar-border: lab(100% 0 0 / .1);
     --sidebar-ring: lab(48.496% 0 0);

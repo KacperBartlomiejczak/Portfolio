@@ -15,7 +15,8 @@ interface CardProps {
   projectImg: string;
 }
 
-const ProjectCard = ({ // Changed to a const
+const ProjectCard = ({
+  // Changed to a const
   title,
   subtitle,
   description,
@@ -25,7 +26,7 @@ const ProjectCard = ({ // Changed to a const
   projectImg,
 }: CardProps) => {
   return (
-    <div className=" w-[300px] md:w-[350px]  bg-white shadow-md shadow-black/20 rounded-lg hover:scale-110 focus:scale-110 transition-[scale]">
+    <div className=" w-[300px] md:w-[350px]  bg-white shadow-md shadow-dark/20 rounded-lg hover:scale-110 focus:scale-110 transition-[scale] dark:bg-card">
       <div className="relative w-full h-46">
         <Image
           src={projectImg}

@@ -11,7 +11,7 @@ export default function Hamburger({
     <button
       className={`hamburger hamburger--spin relative z-20 ${
         isOpen && "is-active"
-      } inline-block lg:hidden`}
+      } inline-block lg:hidden dark:bg-white`}
       type="button"
       onClick={onOpen}
       aria-expanded={isOpen}
@@ -19,7 +19,7 @@ export default function Hamburger({
       aria-label={isOpen ? "Zamknij menu" : "Otwórz menu"}
     >
       <span className="hamburger-box">
-        <span className="hamburger-inner"></span>
+        <span className="hamburger-inner bg-black before:bg-black after:bg-black dark:bg-white dark:before:bg-white dark:after:bg-white"></span>
       </span>
     </button>
   );

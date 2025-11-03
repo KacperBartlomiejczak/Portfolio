@@ -130,4 +130,12 @@ html {
   --color-secondary-color: #2d3748;
   --color-bg-color: #f7fafc;
   --color-secondary-bg: #e9d8fd;
+
+  /* Dark */
+  --color-background: #1d1d26;
+  --color-card: #242430;
+  --color-primary: #f5f6fa;
+  --color-secondary: #94a1b2;
+  --color-brand: #7f5af0;
+  --color-accent: #2cb67d;
 }

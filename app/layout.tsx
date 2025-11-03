@@ -1,8 +1,9 @@
 import "./globals.css";
 
 import { Toaster } from "react-hot-toast";
-import { inter } from "@/app/ui/fonts";
+import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Kacper Bartłomiejczak",
@@ -24,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="pl">
       <head>
@@ -31,9 +33,10 @@ export default function RootLayout({
         <link rel="preload" href="/headerImg.jpg" as="image" />
       </head>
       <body
-        className={`${inter.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}
+        className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}
       >
         {children}
+
         <Toaster
           position="top-right"
           toastOptions={{

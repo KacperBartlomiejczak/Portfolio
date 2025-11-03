@@ -14,7 +14,7 @@ export default function AboutMeTechnology() {
         Technologie
       </h3>
       {/* kolor bazowy = primary, a wszystkie svg użyją go jako fill/stroke */}
-      <ul className="flex flex-row gap-4 flex-wrap text-primary-color [&_svg]:fill-current">
+      <ul className="flex flex-row gap-4 flex-wrap text-primary-color dark:text-brand">
         <li>
           <ReactLogo width="46" />
         </li>

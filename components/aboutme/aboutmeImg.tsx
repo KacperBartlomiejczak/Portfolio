@@ -1,4 +1,4 @@
-import About from "/aboutmeImg.jpg"
+import About from "/aboutmeImg.jpg";
 
 import Image from "next/image";
 
@@ -9,7 +9,7 @@ export default function AboutMeImg() {
         src="/aboutmeImg.jpg"
         alt="Chłopak z koniem na kiju"
         fill
-        className="rounded-full object-cover object-center ring-offset-3 transition-all duration-300 hover:ring-2 focus:ring-2 ring-primary-color"
+        className="rounded-full object-cover object-center ring-offset-3 transition-all duration-300 hover:ring-2 focus:ring-2 ring-primary-color dark:ring-offset-background"
         sizes="(max-width: 768px) 208px, (max-width: 1024px) 288px, 320px"
       />
     </div>

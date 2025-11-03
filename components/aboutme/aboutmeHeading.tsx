@@ -4,7 +4,7 @@ export default function AboutMeHeading() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 mt-6 p-2 lg:items-start lg:max-w-[700px] flex-2">
       <h2
-        className={`${inter.className} text-secondary-color font-bold text-xl text-center md:text-2xl lg:text-left`}
+        className={`${inter.className} text-secondary-color font-bold text-xl text-center md:text-2xl lg:text-left dark:text-secondary`}
       >
         Pasja do kodu, obsesja na punkcie detali.
       </h2>

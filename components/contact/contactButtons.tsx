@@ -9,13 +9,13 @@ export default function ContactButtons({ isSended }: { isSended: boolean }) {
       className={`flex flex-row justify-end items-center gap-2 ${inter.className}`}
     >
       <DialogClose asChild>
-        <button className="px-4 py-2 border-2 hover:border-red-400 rounded-lg hover:bg-red-400 transition-colors cursor-pointer">
+        <button className="px-4 py-2 border-2 hover:border-red-400 rounded-lg hover:bg-red-400 transition-colors cursor-pointer dark:border-red-400">
           Odrzuć
         </button>
       </DialogClose>
       <button
         type="submit"
-        className={`px-7 py-2 bg-primary-color rounded-lg text-white border-2 border-primary-color hover:bg-secondary-bg hover:border-secondary-bg hover:text-black transition-colors cursor-pointer text-left relative  ${
+        className={`px-7 py-2 bg-primary-color rounded-lg text-white border-2 border-primary-color hover:bg-secondary-bg hover:border-secondary-bg hover:text-black transition-colors cursor-pointer text-left relative dark:bg-brand dark:border-brand dark:hover:text-white  ${
           isSended ? classes.sending : classes.button
         }`}
         disabled={isSended}
