@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
-
+import Nav from "@/components/nav/nav";
 
 export const metadata: Metadata = {
   title: "Kacper Bartłomiejczak",
@@ -25,7 +25,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html lang="pl">
       <head>
@@ -35,8 +34,10 @@ export default function RootLayout({
       <body
         className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}
       >
-        {children}
-
+        <main className="w-full relative bg-bg-color dark:bg-background">
+          <Nav />
+          {children}
+        </main>
         <Toaster
           position="top-right"
           toastOptions={{

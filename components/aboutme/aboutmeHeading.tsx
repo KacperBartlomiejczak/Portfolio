@@ -19,6 +19,7 @@ export default function AboutMeHeading() {
         variant="cta"
         target="_blank"
         rel="noopener noreferrer"
+        download
       >
         Pobierz CV
       </Button>

@@ -512,6 +512,10 @@
     margin-top: calc(var(--spacing) * 1);
   }
 
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
+
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -522,6 +526,10 @@
 
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
+  }
+
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
   }
 
   .block {
@@ -552,12 +560,20 @@
     height: calc(var(--spacing) * 9);
   }
 
+  .h-32 {
+    height: calc(var(--spacing) * 32);
+  }
+
   .h-46 {
     height: calc(var(--spacing) * 46);
   }
 
   .h-52 {
     height: calc(var(--spacing) * 52);
+  }
+
+  .h-64 {
+    height: calc(var(--spacing) * 64);
   }
 
   .h-\[3px\] {
@@ -568,8 +584,16 @@
     height: 50px;
   }
 
+  .h-auto {
+    height: auto;
+  }
+
   .h-full {
     height: 100%;
+  }
+
+  .h-screen {
+    height: 100vh;
   }
 
   .min-h-16 {
@@ -580,8 +604,20 @@
     min-height: 100vh;
   }
 
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
+
   .w-52 {
     width: calc(var(--spacing) * 52);
+  }
+
+  .w-64 {
+    width: calc(var(--spacing) * 64);
+  }
+
+  .w-72 {
+    width: calc(var(--spacing) * 72);
   }
 
   .w-\[50px\] {
@@ -598,6 +634,10 @@
 
   .w-full {
     width: 100%;
+  }
+
+  .w-screen {
+    width: 100vw;
   }
 
   .max-w-\[calc\(100\%-2rem\)\] {
@@ -803,6 +843,10 @@
 
   .bg-cta {
     background-color: var(--color-cta);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
   }
 
   .bg-primary-color {
@@ -1272,6 +1316,12 @@
   @media (hover: hover) {
     .hover\:bg-\[\#2b8883\]:hover {
       background-color: #2b8883;
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-accent:hover {
+      background-color: var(--color-accent);
     }
   }
 
@@ -1951,8 +2001,20 @@
   }
 
   @media (hover: hover) {
+    .dark\:hover\:bg-accent:is(.dark *):hover {
+      background-color: var(--color-accent);
+    }
+  }
+
+  @media (hover: hover) {
     .dark\:hover\:bg-brand:is(.dark *):hover {
       background-color: var(--color-brand);
+    }
+  }
+
+  @media (hover: hover) {
+    .dark\:hover\:bg-secondary:is(.dark *):hover {
+      background-color: var(--color-secondary);
     }
   }
 

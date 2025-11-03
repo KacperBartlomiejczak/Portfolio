@@ -96,7 +96,7 @@ export default function ContactDialog() {
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <ContactDialogTrigger />
-      <DialogContent>
+      <DialogContent className="bg-bg-color dark:bg-background">
         <form onSubmit={handleSubmit(onSubmit)}>
           <ContactDialogHeader />
           <ContactDialogInputs register={register} errors={errors} />

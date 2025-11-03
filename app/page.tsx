@@ -8,8 +8,7 @@ import LazySection from "@/components/ui/lazySection";
 
 export default function Home() {
   return (
-    <main className="w-full relative">
-      <Nav />
+    <>
       <Header />
       <LazySection>
         <Projects />
@@ -21,6 +20,6 @@ export default function Home() {
         <Contact />
       </LazySection>
       <Footer />
-    </main>
+    </>
   );
 }
