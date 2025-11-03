@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
+
 
 export const metadata: Metadata = {
   title: "Kacper Bartłomiejczak",
@@ -25,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
+
   return (
     <html lang="pl">
       <head>
