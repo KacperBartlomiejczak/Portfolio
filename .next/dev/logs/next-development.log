@@ -1,6 +1,2 @@
-[00:00:00.927] Server  LOG      ✓ Ready in 622ms
-[00:00:04.383] Browser WARN    Image with src "/404Img.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:31.386] Browser WARN    Image with src "/404Img.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:00:50.748] Server  LOG      ✓ Compiled in 25ms
+[00:00:01.480] Server  LOG      ✓ Ready in 1229ms
+[00:00:06.752] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
