@@ -43,7 +43,7 @@ export default function CookieConsent() {
         .
       </p>
 
-      <div className="flex gap-3 justify-end flex-shrink-0">
+      <div className="flex gap-3 justify-end shrink-0">
         <button
           onClick={() => handleConsent("necessary")}
           className="px-4 py-2 rounded-xl bg-secondary-bg text-secondary-color 
