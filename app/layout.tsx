@@ -7,6 +7,7 @@ import Nav from "@/components/nav/nav";
 
 export const metadata: Metadata = {
   title: "Kacper Bartłomiejczak – Frontend Developer",
+
   description:
     "Portfolio i projekty programistyczne Kacpra Bartłomiejczaka – frontend developera specjalizującego się w React, Next.js i nowoczesnych technologiach webowych.",
   authors: [
@@ -55,6 +56,9 @@ export const metadata: Metadata = {
   },
 
   category: "technology",
+  verification: {
+    google: "e3jI6WGBDgH3QQrRnuC0rzJSLs3UFBwhQmzYqKyfJaY",
+  },
 };
 
 export default function RootLayout({
