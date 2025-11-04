@@ -16,7 +16,7 @@ export const demoProjectCard = [
     title: "Portfolio",
     subtitle: "Frontend web developer website",
     description:
-      "Strona ukazująca programiste Kacpra Bartłomiejczaka jako frontend web developera.",
+      "Strona ukazująca programistę Kacpra Bartłomiejczaka jako frontend web developera.",
     tags: ["Nextjs", "Tailwind", "Typescript", "Css module"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",

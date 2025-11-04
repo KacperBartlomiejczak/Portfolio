@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
+import CookieConsent from "@/components/cookies/cookies";
 
 export const metadata: Metadata = {
   title: "Kacper Bartłomiejczak – Frontend Developer",
@@ -87,6 +88,7 @@ export default function RootLayout({
             },
           }}
         />
+        <CookieConsent />
       </body>
     </html>
   );
