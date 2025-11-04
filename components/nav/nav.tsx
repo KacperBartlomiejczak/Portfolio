@@ -10,7 +10,6 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   const [isDark, setIsDark] = useState(false);
 
   //Opening nav logic
@@ -103,7 +102,7 @@ export default function Nav() {
             onClick={toggleDarkHandler}
             className="w-[50px] h-[50px] p-0 rounded-full bg-secondary-color flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300 dark:bg-white dark:hover:bg-secondary"
             aria-pressed={isDark}
-            aria-label="Toggle dark mode"
+            aria-label="Zmiana motywu strony"
           ></button>
         </ul>
       </div>

@@ -9,7 +9,10 @@ export default function ContactButtons({ isSended }: { isSended: boolean }) {
       className={`flex flex-row justify-end items-center gap-2 ${inter.className}`}
     >
       <DialogClose asChild>
-        <button className="px-4 py-2 border-2 hover:border-red-400 rounded-lg hover:bg-red-400 transition-colors cursor-pointer dark:border-red-400">
+        <button
+          className="px-4 py-2 border-2 hover:border-red-400 rounded-lg hover:bg-red-400 transition-colors cursor-pointer dark:border-red-400"
+          aria-label="Zamknij formularz kontaktowy"
+        >
           Odrzuć
         </button>
       </DialogClose>
@@ -19,6 +22,7 @@ export default function ContactButtons({ isSended }: { isSended: boolean }) {
           isSended ? classes.sending : classes.button
         }`}
         disabled={isSended}
+        aria-label={isSended ? "Wysyłanie wiadomości…" : "Wyślij wiadomość"}
       >
         <p className={`block text-left ${!isSended && classes.buttonText}`}>
           {isSended ? "Wysyłanie" : "Wyślij"}

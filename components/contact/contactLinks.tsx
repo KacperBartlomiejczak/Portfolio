@@ -19,10 +19,18 @@ export default function ContactLinks() {
       >
         <Github width="24" />
       </ContactLink>
-      <ContactLink href="mailto:kacperbartlomiejczak@proton.me" title="Mail" ariaLabel="Wyślij mi do mnie maila">
+      <ContactLink
+        href="mailto:kacperbartlomiejczak@proton.me"
+        title="Mail"
+        ariaLabel="Wyślij do mnie maila"
+      >
         <Mail width="24" />
       </ContactLink>
-      <ContactLink href="https://discord.gg/ktx2zJ735w" title="Discord" ariaLabel="Odwiedź mój serwer discord">
+      <ContactLink
+        href="https://discord.gg/ktx2zJ735w"
+        title="Discord"
+        ariaLabel="Odwiedź mój serwer discord"
+      >
         <Discord width="24" />
       </ContactLink>
     </div>

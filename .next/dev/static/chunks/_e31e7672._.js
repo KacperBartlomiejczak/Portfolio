@@ -833,6 +833,7 @@ function ContactButtons({ isSended }) {
                 asChild: true,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     className: "px-4 py-2 border-2 hover:border-red-400 rounded-lg hover:bg-red-400 transition-colors cursor-pointer dark:border-red-400",
+                    "aria-label": "Zamknij formularz kontaktowy",
                     children: "Odrzuć"
                 }, void 0, false, {
                     fileName: "[project]/components/contact/contactButtons.tsx",
@@ -848,13 +849,14 @@ function ContactButtons({ isSended }) {
                 type: "submit",
                 className: `px-7 py-2 bg-primary-color rounded-lg text-white border-2 border-primary-color hover:bg-secondary-bg hover:border-secondary-bg hover:text-black transition-colors cursor-pointer text-left relative dark:bg-brand dark:border-brand dark:hover:text-white  ${isSended ? __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$contact$2f$contactButton$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].sending : __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$contact$2f$contactButton$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].button}`,
                 disabled: isSended,
+                "aria-label": isSended ? "Wysyłanie wiadomości…" : "Wyślij wiadomość",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: `block text-left ${!isSended && __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$contact$2f$contactButton$2e$module$2e$css__$5b$app$2d$client$5d$__$28$css__module$29$__["default"].buttonText}`,
                         children: isSended ? "Wysyłanie" : "Wyślij"
                     }, void 0, false, {
                         fileName: "[project]/components/contact/contactButtons.tsx",
-                        lineNumber: 23,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -863,18 +865,18 @@ function ContactButtons({ isSended }) {
                             width: "18"
                         }, void 0, false, {
                             fileName: "[project]/components/contact/contactButtons.tsx",
-                            lineNumber: 30,
+                            lineNumber: 34,
                             columnNumber: 25
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/contact/contactButtons.tsx",
-                        lineNumber: 27,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/contact/contactButtons.tsx",
-                lineNumber: 16,
+                lineNumber: 19,
                 columnNumber: 7
             }, this)
         ]

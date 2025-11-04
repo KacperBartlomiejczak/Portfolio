@@ -11,6 +11,7 @@ interface ButtonProps extends Omit<LinkProps, "href"> {
   target?: string;
   rel?: string;
   download?: boolean;
+  ariaLabel?: string;
 }
 
 export default function Button({
@@ -20,6 +21,7 @@ export default function Button({
   target,
   rel,
   download,
+  ariaLabel,
   ...props
 }: ButtonProps) {
   let classNames = `flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`;
@@ -38,6 +40,7 @@ export default function Button({
       target={target}
       rel={rel}
       download={download}
+      aria-label={ariaLabel}
     >
       {children}
     </Link>

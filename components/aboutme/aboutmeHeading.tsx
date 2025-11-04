@@ -20,6 +20,7 @@ export default function AboutMeHeading() {
         target="_blank"
         rel="noopener noreferrer"
         download
+        aria-label="Sprawdź moje cv"
       >
         Pobierz CV
       </Button>

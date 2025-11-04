@@ -8,7 +8,7 @@ export const demoProjectCard = [
     tags: ["React", "Tailwind", "Typescript", "LocalStorage"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-    projectImg: "/project1.png",
+    projectImg: "/project1.webp",
   },
 
   {
@@ -20,6 +20,6 @@ export const demoProjectCard = [
     tags: ["Nextjs", "Tailwind", "Typescript", "Css module"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-    projectImg: "/project2.png",
+    projectImg: "/project2.webp",
   },
 ];

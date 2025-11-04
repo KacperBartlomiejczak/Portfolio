@@ -39,7 +39,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 ;
 ;
 ;
-function Button({ children, href = "", variant, target, rel, download, ...props }) {
+function Button({ children, href = "", variant, target, rel, download, ariaLabel, ...props }) {
     let classNames = `flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_ad3c97a1$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__inter$3e$__["inter"].className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`;
     if (variant === "primary") {
         classNames = `px-3 py-1 bg-primary-color rounded-xl border-2 border-transparent text-white ${__TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$inter_ad3c97a1$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__inter$3e$__["inter"].className} font-semibold ${__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$module$2e$css__$5b$app$2d$rsc$5d$__$28$css__module$29$__["default"].buttonAnimation} dark:bg-brand`;
@@ -53,10 +53,11 @@ function Button({ children, href = "", variant, target, rel, download, ...props 
         target: target,
         rel: rel,
         download: download,
+        "aria-label": ariaLabel,
         children: children
     }, void 0, false, {
         fileName: "[project]/components/ui/button.tsx",
-        lineNumber: 35,
+        lineNumber: 37,
         columnNumber: 5
     }, this);
 }
@@ -97,6 +98,7 @@ function HeaderTitle() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "#contact",
+                ariaLabel: "Przejdź do sekcji kontaktowej",
                 children: "Skontaktuj się"
             }, void 0, false, {
                 fileName: "[project]/components/header/headerTitle.tsx",
@@ -126,7 +128,7 @@ function HeaderImg() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("figure", {
         className: "relative bg-transparent w-52 h-52 z-0 md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[350px] xl:w-[450px] xl:h-[450px] rounded-full hover:ring-2 ring-primary-color ring-offset-4 transition-all duration-300 focus:ring-2 dark:ring-brand dark:ring-offset-background",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-            src: "/headerImg.jpg",
+            src: "/headerImg.webp",
             fill: true,
             alt: "Man in suit",
             className: "rounded-full object-cover object-center ",
@@ -443,7 +445,7 @@ const demoProjectCard = [
         ],
         websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
         repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-        projectImg: "/project1.png"
+        projectImg: "/project1.webp"
     },
     {
         id: Math.random() * 100,
@@ -458,7 +460,7 @@ const demoProjectCard = [
         ],
         websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
         repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-        projectImg: "/project2.png"
+        projectImg: "/project2.webp"
     }
 ];
 }),
@@ -544,6 +546,7 @@ function AboutMeHeading() {
                 target: "_blank",
                 rel: "noopener noreferrer",
                 download: true,
+                "aria-label": "Sprawdź moje cv",
                 children: "Pobierz CV"
             }, void 0, false, {
                 fileName: "[project]/components/aboutme/aboutmeHeading.tsx",
@@ -573,7 +576,7 @@ function AboutMeImg() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "relative block w-52 h-52 transition-transform duration-300 hover:scale-110 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-90 xl:w-90",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-            src: "/aboutmeImg.jpg",
+            src: "/aboutmeImg.webp",
             alt: "Chłopak z koniem na kiju",
             fill: true,
             className: "rounded-full object-cover object-center ring-offset-3 transition-all duration-300 hover:ring-2 focus:ring-2 ring-primary-color dark:ring-offset-background",
@@ -1144,12 +1147,12 @@ function ContactLinks() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$contact$2f$contactLink$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                 href: "mailto:kacperbartlomiejczak@proton.me",
                 title: "Mail",
-                ariaLabel: "Wyślij mi do mnie maila",
+                ariaLabel: "Wyślij do mnie maila",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$public$2f$svg$2f$logos$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Mail"], {
                     width: "24"
                 }, void 0, false, {
                     fileName: "[project]/components/contact/contactLinks.tsx",
-                    lineNumber: 23,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
@@ -1165,12 +1168,12 @@ function ContactLinks() {
                     width: "24"
                 }, void 0, false, {
                     fileName: "[project]/components/contact/contactLinks.tsx",
-                    lineNumber: 26,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/contact/contactLinks.tsx",
-                lineNumber: 25,
+                lineNumber: 29,
                 columnNumber: 7
             }, this)
         ]
