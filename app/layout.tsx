@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/headerImg.jpg",
+        url: "/headerImg.webp",
         width: 1200,
         height: 630,
         alt: "Kacper Bartłomiejczak – portfolio frontend developera",
@@ -70,7 +70,6 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <link rel="preconnect" href="https://api.emailjs.com" />
-        <link rel="preload" href="/headerImg.jpg" as="image" />
       </head>
       <body
         className={`${firaCode.className} bg-bg-color scroll-pt-24 md:scroll-pt-24 overflow-hidden`}
