@@ -10,7 +10,8 @@ export default function AboutMeImg() {
         alt="Chłopak z koniem na kiju"
         fill
         className="rounded-full object-cover object-center ring-offset-3 transition-all duration-300 hover:ring-2 focus:ring-2 ring-primary-color dark:ring-offset-background"
-        sizes="(max-width: 768px) 208px, (max-width: 1024px) 288px, 320px"
+        sizes="(max-width: 768px) 208px, (max-width: 1024px) 288px, (max-width: 1280px) 320px, 360px"
+        quality={75}
       />
     </div>
   );
