@@ -6,18 +6,55 @@ import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
 
 export const metadata: Metadata = {
-  title: "Kacper Bartłomiejczak",
-  description: "Portfolio i projekty programistyczne Kacpra Bartłomiejczaka",
-  authors: [{ name: "Kacper Bartłomiejczak" }],
+  title: "Kacper Bartłomiejczak – Frontend Developer",
+  description:
+    "Portfolio i projekty programistyczne Kacpra Bartłomiejczaka – frontend developera specjalizującego się w React, Next.js i nowoczesnych technologiach webowych.",
+  authors: [
+    {
+      name: "Kacper Bartłomiejczak",
+      url: "https://www.kacperbartlomiejczak.pl",
+    },
+  ],
+  keywords: [
+    "Kacper Bartłomiejczak",
+    "Frontend Developer",
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Portfolio",
+    "Web Developer",
+    "Programista",
+  ],
+  metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
 
   openGraph: {
-    title: "Kacper Bartłomiejczak",
-    description: "Portfolio frontend developera",
-
+    title: "Kacper Bartłomiejczak – Portfolio Frontend Developera",
+    description:
+      "Zobacz moje projekty, aplikacje webowe i doświadczenie w technologiach React, Next.js, TypeScript i Tailwind CSS.",
+    url: "https://www.kacperbartlomiejczak.pl",
     siteName: "Kacper Bartłomiejczak",
     locale: "pl_PL",
     type: "website",
+    images: [
+      {
+        url: "/headerImg.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kacper Bartłomiejczak – portfolio frontend developera",
+      },
+    ],
   },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  alternates: {
+    canonical: "https://www.kacperbartlomiejczak.pl",
+  },
+
+  category: "technology",
 };
 
 export default function RootLayout({
