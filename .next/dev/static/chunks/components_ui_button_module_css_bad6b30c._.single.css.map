@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/ui/button.module.css"],"sourcesContent":[".buttonAnimation {\n  position: relative;\n  overflow: hidden;\n}\n.buttonAnimation::before {\n  content: \"\";\n  position: absolute;\n  width: 100%;\n  height: 50%;\n  right: 100%;\n  background-color: rgba(0, 0, 0, 0.2);\n  transform: rotate(-50deg);\n  transition: right 0.5s;\n}\n.buttonAnimation:hover::before,\n.buttonAnimation:focus::before {\n  right: -100%;\n}\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;;;;;;;;AAUA"}}]
-}
