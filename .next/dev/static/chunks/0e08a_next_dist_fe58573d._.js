@@ -2829,6 +2829,7 @@ const configEnv = ("TURBOPACK compile-time value", {
     "qualities": ("TURBOPACK compile-time value", [
         ("TURBOPACK compile-time value", 25),
         ("TURBOPACK compile-time value", 50),
+        ("TURBOPACK compile-time value", 60),
         ("TURBOPACK compile-time value", 75),
         ("TURBOPACK compile-time value", 80)
     ]),

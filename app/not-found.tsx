@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="container flex flex-col justify-center items-center  gap-4">
         <div className="relative w-64 h-64">
           <Image
-            src="/404Img.jpg"
+            src="/404Img.webp"
             fill
             alt="sad cat"
             className="object-cover object-center rounded-full"

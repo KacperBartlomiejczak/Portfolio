@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/nav/navlink.module.css"],"sourcesContent":[".navLink {\n  position: relative;\n  padding: 0.5em;\n}\n.navLink::before {\n  content: \"\";\n  position: absolute;\n  display: block;\n  bottom: 0;\n  width: 100%;\n  height: 2px;\n  background-color: #6b46c1;\n  transform: scale(0);\n  transform-origin: right;\n  transition: transform 0.3s ease-in-out;\n}\n\n.navLink:hover::before,\n.navLink:focus::before {\n  transform: scale(1);\n  transform-origin: left;\n}\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;;;;;;;;;;AAaA"}}]
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/components/nav/navlink.module.css"],"sourcesContent":[".navLink {\r\n  position: relative;\r\n  padding: 0.5em;\r\n}\r\n.navLink::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  display: block;\r\n  bottom: 0;\r\n  width: 100%;\r\n  height: 2px;\r\n  background-color: #6b46c1;\r\n  transform: scale(0);\r\n  transform-origin: right;\r\n  transition: transform 0.3s ease-in-out;\r\n}\r\n\r\n.navLink:hover::before,\r\n.navLink:focus::before {\r\n  transform: scale(1);\r\n  transform-origin: left;\r\n}\r\n"],"names":[],"mappings":"AAAA;;;;;AAIA;;;;;;;;;;;;;AAaA"}}]
 }

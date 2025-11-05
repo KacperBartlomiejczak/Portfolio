@@ -20,7 +20,7 @@ export default function ContactLinks() {
         <Github width="24" />
       </ContactLink>
       <ContactLink
-        href="mailto:kacperbartlomiejczak@proton.me"
+        href="mailto:kacperbartlomiejczak@proton.me?subject=Mam pytanie odnośnie strony&body=Mam pytanie"
         title="Mail"
         ariaLabel="Wyślij do mnie maila"
       >

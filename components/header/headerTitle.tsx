@@ -8,12 +8,12 @@ export default function HeaderTitle() {
       <h1
         className={`${inter.className} text-secondary-color font-extrabold antialiased text-base md:text-2xl lg:text-3xl xl:text-4xl dark:text-secondary`}
       >
-        Tworzę interfejsy, z których chce się korzystać.
+        Twoja nowa strona będzie szybka, czytelna i prosta w codziennym użyciu.
       </h1>
       <p className="text-sm/loose mb-4 md:text-lg/loose  xl:w-3/4 dark:text-white">
-        Nazywam się Kacper Bartłomiejczak i jako Frontend Developer specjalizuję
-        się w budowaniu szybkich, responsywnych i intuicyjnych aplikacji
-        internetowych.
+        Jestem Kacper, Frontend Developer — robię strony i aplikacje, które
+        szybko się ładują, dobrze wyglądają na każdym urządzeniu i są łatwe w
+        użyciu.
       </p>
       <Button href="#contact" ariaLabel="Przejdź do sekcji kontaktowej">
         Skontaktuj się

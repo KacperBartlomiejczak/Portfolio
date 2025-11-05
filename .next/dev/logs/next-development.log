@@ -1,7 +1,7 @@
-[00:00:01.180] Server  LOG      ✓ Ready in 888ms
-[00:01:59.004] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:01.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:54.533] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:34.550] Server  LOG      ✓ Compiled in 937ms
-[00:03:45.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:59.221] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:00.911] Server  LOG      ✓ Ready in 628ms
+[00:00:07.704] Server  WARN     ⚠ Unsupported metadata themeColor is configured in metadata export in /. Please move it to viewport export instead.
+Read more: https://nextjs.org/docs/app/api-reference/functions/generate-viewport
+[00:00:08.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:02.154] Server  LOG      ✓ Compiled in 57ms
+[00:02:06.141] Server  LOG      ✓ Compiled in 26ms
+[00:02:16.406] Server  LOG      ✓ Compiled in 25ms
