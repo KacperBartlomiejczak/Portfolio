@@ -222,10 +222,10 @@ export function ArrowTopRight({
       viewBox="0 0 21 21"
     >
       <path
-        fill="none"
+        fill="currentColor"
+        fillRule="evenodd"
         stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        
         d="M14.5 13.5v-7h-7m7 0l-8 8"
       />
     </svg>

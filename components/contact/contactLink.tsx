@@ -25,7 +25,7 @@ export default function ContactLink({
         {children}
         <p>{title}</p>
       </div>
-      <ArrowTopRight width="24" />
+      <ArrowTopRight width="24" className="fill-current stroke-current z-10" />
     </Link>
   );
 }

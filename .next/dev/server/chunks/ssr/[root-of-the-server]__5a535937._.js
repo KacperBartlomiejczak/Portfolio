@@ -178,8 +178,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cookies$2f$coo
 ;
 ;
 const metadata = {
-    title: "Kacper Bartłomiejczak – Frontend Developer",
-    description: "Portfolio i projekty programistyczne Kacpra Bartłomiejczaka – frontend developera specjalizującego się w React, Next.js i nowoczesnych technologiach webowych.",
+    metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
+    title: "Kacper Bartłomiejczak – Frontend developer",
+    description: "Portfolio i projekty Kacpra Bartłomiejczaka – frontend developera (React, Next.js, TypeScript, Tailwind). Szybkie, czytelne i skuteczne strony internetowe.",
     authors: [
         {
             name: "Kacper Bartłomiejczak",
@@ -188,42 +189,78 @@ const metadata = {
     ],
     keywords: [
         "Kacper Bartłomiejczak",
-        "Frontend Developer",
-        "Next.js",
+        "frontend developer",
         "React",
-        "JavaScript",
-        "Portfolio",
-        "Web Developer",
-        "Programista"
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Toruń",
+        "Poland",
+        "portfolio",
+        "web developer",
+        "programista front-end"
     ],
-    metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
     openGraph: {
-        title: "Kacper Bartłomiejczak – Portfolio Frontend Developera",
-        description: "Zobacz moje projekty, aplikacje webowe i doświadczenie w technologiach React, Next.js, TypeScript i Tailwind CSS.",
+        type: "website",
         url: "https://www.kacperbartlomiejczak.pl",
         siteName: "Kacper Bartłomiejczak",
         locale: "pl_PL",
-        type: "website",
+        title: "Kacper Bartłomiejczak – Portfolio Frontend developera",
+        description: "Zobacz projekty i doświadczenie w technologiach React, Next.js, TypeScript i Tailwind CSS.",
         images: [
             {
-                url: "/headerImg.webp",
+                url: "https://www.kacperbartlomiejczak.pl/headerImg.webp",
                 width: 1200,
                 height: 630,
                 alt: "Kacper Bartłomiejczak – portfolio frontend developera"
             }
         ]
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Kacper Bartłomiejczak – Frontend developer",
+        description: "Szybkie, czytelne i skuteczne strony w React/Next.js. Portfolio i projekty.",
+        images: [
+            "https://www.kacperbartlomiejczak.pl/headerImg.webp"
+        ]
+    },
     robots: {
         index: true,
-        follow: true
+        follow: true,
+        googleBot: "index: true, follow: true, maxSnippet: -1, maxImagePreview: large,maxVideoPreview: -1,"
     },
     alternates: {
         canonical: "https://www.kacperbartlomiejczak.pl"
     },
-    category: "technology",
+    referrer: "origin-when-cross-origin",
+    icons: {
+        icon: [
+            {
+                url: "/favicon-32.png",
+                sizes: "32x32",
+                type: "image/png"
+            },
+            {
+                url: "/favicon-192.png",
+                sizes: "192x192",
+                type: "image/png"
+            }
+        ],
+        apple: [
+            {
+                url: "/apple-touch-icon.png",
+                sizes: "180x180",
+                type: "image/png"
+            }
+        ],
+        shortcut: [
+            "/favicon.ico"
+        ]
+    },
     verification: {
         google: "e3jI6WGBDgH3QQrRnuC0rzJSLs3UFBwhQmzYqKyfJaY"
-    }
+    },
+    category: "technology"
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -235,12 +272,12 @@ function RootLayout({ children }) {
                     href: "https://api.emailjs.com"
                 }, void 0, false, {
                     fileName: "[project]/app/layout.tsx",
-                    lineNumber: 73,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 72,
+                lineNumber: 98,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -251,14 +288,14 @@ function RootLayout({ children }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$nav$2f$nav$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/app/layout.tsx",
-                                lineNumber: 79,
+                                lineNumber: 105,
                                 columnNumber: 11
                             }, this),
                             children
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 78,
+                        lineNumber: 104,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$react$2d$hot$2d$toast$40$2$2e$6$2e$0_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$react$2d$hot$2d$toast$2f$dist$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Toaster"], {
@@ -271,24 +308,24 @@ function RootLayout({ children }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 82,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$0_$40$babel$2b$core$40$7$2e$28$2e$4_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$cookies$2f$cookies$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/layout.tsx",
-                        lineNumber: 91,
+                        lineNumber: 117,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/layout.tsx",
-                lineNumber: 75,
+                lineNumber: 101,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 71,
+        lineNumber: 97,
         columnNumber: 5
     }, this);
 }

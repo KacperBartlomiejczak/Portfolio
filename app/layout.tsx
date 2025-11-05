@@ -68,7 +68,6 @@ export const metadata: Metadata = {
     canonical: "https://www.kacperbartlomiejczak.pl",
   },
 
-  themeColor: "#1d1d26",
   referrer: "origin-when-cross-origin",
 
   icons: {
