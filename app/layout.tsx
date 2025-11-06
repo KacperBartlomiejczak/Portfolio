@@ -99,7 +99,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.emailjs.com" />
       </head>
       <body
-        className={`${firaCode.variable} ${inter.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}
+        className={`${firaCode.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}
       >
         <main className="w-full relative bg-bg-color dark:bg-background ">
           <Nav />

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import classes from "./navlink.module.css";
+import { firaCode } from "@/app/ui/fonts";
 
 interface NavLinkProps {
   title: string;
@@ -13,7 +14,7 @@ export default function NavLink({ title, href, onOpen }: NavLinkProps) {
       <Link
         href={href}
         onClick={onOpen}
-        className={`hover:text-primary-color focus:text-primary-color text-lg ${classes.navLink} md:text-xl`}
+        className={`${firaCode.className} hover:text-primary-color focus:text-primary-color text-lg ${classes.navLink} md:text-xl`}
       >
         {title}
       </Link>

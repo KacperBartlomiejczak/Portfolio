@@ -1,4 +1,4 @@
-import { inter } from "@/app/ui/fonts";
+import { inter, firaCode } from "@/app/ui/fonts";
 
 import Button from "../ui/button";
 
@@ -10,7 +10,9 @@ export default function HeaderTitle() {
       >
         Twoja nowa strona będzie szybka, czytelna i prosta w codziennym użyciu.
       </h1>
-      <p className="text-sm/loose mb-4 md:text-lg/loose  xl:w-3/4 dark:text-white">
+      <p
+        className={`${firaCode.className} text-sm/loose mb-4 md:text-lg/loose  xl:w-3/4 dark:text-white`}
+      >
         Jestem Kacper, Frontend Developer — robię strony i aplikacje, które
         szybko się ładują, dobrze wyglądają na każdym urządzeniu i są łatwe w
         użyciu.

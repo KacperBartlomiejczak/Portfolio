@@ -1,5 +1,6 @@
 import Button from "../ui/button";
-import { inter } from "@/app/ui/fonts";
+import { inter, firaCode } from "@/app/ui/fonts";
+
 export default function AboutMeHeading() {
   return (
     <div className="flex flex-col items-center justify-center gap-4 mt-6 p-2 lg:items-start lg:max-w-[700px] flex-2">
@@ -8,7 +9,9 @@ export default function AboutMeHeading() {
       >
         Pasja do kodu, obsesja na punkcie detali.
       </h2>
-      <p className="text-sm/loose text-center mb-4 px-2 md:text-base/loose lg:text-left md:px-0">
+      <p
+        className={`${firaCode.className} text-sm/loose text-center mb-4 px-2 md:text-base/loose lg:text-left md:px-0`}
+      >
         Cześć, tu Kacper — frontend developer z Torunia. Buduję szybkie i
         dostępne strony w React/Next.js, dbając o SEO, wydajność i czysty kod.
         Na co dzień studiuję informatykę na UMK, a po godzinach testuję pomysły
