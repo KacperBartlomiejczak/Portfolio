@@ -1,5 +1,6 @@
 import NavLink from "./navLink";
-
+import { navData } from "./listInfo";
+import { Moon, Sun } from "lucide-react";
 interface NavListProps {
   isOpen: boolean;
   isDark: boolean;
@@ -20,15 +21,26 @@ export default function NavList({
         isOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
       } lg:relative lg:flex-row lg:translate-x-0`}
     >
-      <NavLink title="Projekty" href="/#projects" onOpen={onClose} />
-      <NavLink title="O mnie" href="/#aboutme" onOpen={onClose} />
-      <NavLink title="Kontakt" href="/#contact" onOpen={onClose} />
+      {navData.map((link) => (
+        <NavLink
+          title={link.title}
+          href={link.href}
+          onOpen={onClose}
+          key={link.href}
+        />
+      ))}
       <button
         onClick={onToggleDark}
-        className="w-[50px] h-[50px] p-0 rounded-full bg-secondary-color flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300 dark:bg-white dark:hover:bg-secondary"
+        className="w-[35px] h-[35px] p-0 rounded-full bg-secondary-color flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300 dark:bg-white dark:hover:bg-secondary"
         aria-pressed={isDark}
         aria-label="Zmiana motywu strony"
-      ></button>
+      >
+        {isDark ? (
+          <Sun className="text-background" />
+        ) : (
+          <Moon className="text-bg-color" />
+        )}
+      </button>
     </ul>
   );
 }
