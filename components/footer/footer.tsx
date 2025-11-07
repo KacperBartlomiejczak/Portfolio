@@ -5,8 +5,7 @@ export default function Footer() {
       <p
         className={`${inter.className} text-center text-sm md:text-sm lg:text-base`}
       >
-        © 2025 Kacper Bartłomiejczak. Zaprojektowano i zakodowano z dbałością o
-        każdy detal.
+        © 2025 Kacper Bartłomiejczak
       </p>
     </footer>
   );
