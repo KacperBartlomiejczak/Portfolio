@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
 import CookieConsent from "@/components/cookies/cookies";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
@@ -130,6 +131,7 @@ export default function RootLayout({
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
+        <SpeedInsights />
       </body>
     </html>
   );
