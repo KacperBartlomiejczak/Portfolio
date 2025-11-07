@@ -26,13 +26,13 @@ export default function CookieConsent() {
   return (
     <div
       className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 
-                 max-w-3xl w-[95%] p-5 rounded-2xl shadow-xl
+                 max-w-3xl w-[95%] p-5 rounded-2xl shadow-xl bg-bg-color
                  flex flex-col  md:items-center md:justify-between gap-4
-                 bg-card text-primary border border-secondary"
+                 dark:bg-card text-primary border border-secondary"
     >
-      <p className="text-sm md:text-base leading-snug text-secondary">
-        Używamy plików cookie, aby zapewnić najlepsze wrażenia na stronie.
-        Niektóre są niezbędne, inne pomagają nam analizować ruch i ulepszać
+      <p className="text-sm md:text-base leading-snug text-black dark:text-white">
+        Używam plików cookie, aby zapewnić najlepsze wrażenia na stronie.
+        Niektóre są niezbędne, inne pomagają mi analizować ruch i ulepszać
         treści. Więcej informacji znajdziesz w{" "}
         <a
           href="/polityka-prywatnosci"
@@ -47,14 +47,14 @@ export default function CookieConsent() {
         <button
           onClick={() => handleConsent("necessary")}
           className="px-4 py-2 rounded-xl bg-secondary-bg text-secondary-color 
-                     hover:bg-bg-color border border-secondary-color transition font-medium"
+                     hover:bg-bg-color border border-secondary-color transition font-medium cursor-pointer"
         >
           Tylko niezbędne
         </button>
         <button
           onClick={() => handleConsent("all")}
-          className="px-4 py-2 rounded-xl bg-cta text-white font-semibold 
-                     hover:opacity-90 transition"
+          className="px-4 py-2 rounded-xl bg-accent text-white font-semibold 
+                     hover:opacity-90 transition cursor-pointer"
         >
           Akceptuję wszystkie
         </button>
