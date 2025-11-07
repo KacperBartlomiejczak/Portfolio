@@ -25,7 +25,7 @@ export default function LazySection({ children }: LazySectionProps) {
         }
       },
       {
-        rootMargin: "-100px", // Start animation when 100px of the section is visible
+        rootMargin: "100px", // Start animation when 100px of the section is visible
       }
     );
 

@@ -5,6 +5,7 @@ import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
 import CookieConsent from "@/components/cookies/cookies";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
@@ -116,6 +117,19 @@ export default function RootLayout({
           }}
         />
         <CookieConsent />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="lazyOnload"
+        />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
       </body>
     </html>
   );

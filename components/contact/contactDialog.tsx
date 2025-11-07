@@ -1,15 +1,12 @@
 "use client";
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-
 import { useState } from "react";
-
 import { SubmitHandler, useForm } from "react-hook-form";
 import ContactDialogInputs from "./contactDialogInputs";
 import ContactButtons from "./contactButtons";
 import ContactDialogTrigger from "./contactDialogTrigger";
 import ContactDialogHeader from "./contactDialogHeader";
-import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 
 interface formInput {
@@ -57,9 +54,10 @@ export default function ContactDialog() {
     setIsEmpty(hadEmpty);
     if (hadEmpty) return;
 
-    // dalej: wysyłaj - użyj try/catch/finally żeby zawsze zresetować isSended
     setIsSended(true);
     try {
+      const emailjs = (await import("@emailjs/browser")).default;
+
       const response = await emailjs.send(
         "service_wv83fim",
         "template_wb1zldu",

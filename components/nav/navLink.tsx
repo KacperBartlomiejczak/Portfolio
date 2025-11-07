@@ -15,6 +15,7 @@ export default function NavLink({ title, href, onOpen }: NavLinkProps) {
         href={href}
         onClick={onOpen}
         className={`${firaCode.className} hover:text-primary-color focus:text-primary-color text-lg ${classes.navLink} md:text-xl`}
+        prefetch
       >
         {title}
       </Link>
