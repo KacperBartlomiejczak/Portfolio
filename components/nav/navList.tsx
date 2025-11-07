@@ -17,9 +17,9 @@ export default function NavList({
   return (
     <ul
       id="mobile-menu"
-      className={`fixed bg-transparent dark:bg-transparent lg:bg-transparent text-black dark:text-secondary flex flex-col justify-center items-center inset-0 gap-6 z-10 transition-transform duration-300 ${
+      className={`fixed bg-bg-color dark:bg-background lg:bg-transparent text-black dark:text-secondary flex flex-col justify-center items-center inset-0 gap-6 z-10 transition-transform duration-300 ${
         isOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
-      } lg:relative lg:flex-row lg:translate-x-0`}
+      } lg:relative lg:flex-row lg:translate-x-0 lg:bg-transparent lg:dark:bg-transparent`}
     >
       {navData.map((link) => (
         <NavLink
