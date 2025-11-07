@@ -107,6 +107,13 @@ export default function RootLayout({
           crossOrigin=""
         />
         <link rel="preconnect" href="https://api.emailjs.com" />
+        <link
+          rel="preload"
+          as="font"
+          href="/_next/static/media/1bfad...woff2"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${firaCode.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}

@@ -44,6 +44,20 @@ html {
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* My colors */
+  --color-primary-color: #6b46c1;
+  --color-cta: #38b2ac;
+  --color-secondary-color: #2d3748;
+  --color-bg-color: #f7fafc;
+  --color-secondary-bg: #e9d8fd;
+  /* Dark */
+  --color-background: #1d1d26;
+  --color-card: #242430;
+  --color-primary: #f5f6fa;
+  --color-secondary: #94a1b2;
+  --color-brand: #7f5af0;
+  --color-accent: #2cb67d;
 }
 
 :root {
@@ -113,6 +127,13 @@ html {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  --color-background: #1d1d26;
+  --color-card: #242430;
+  --color-primary: #f5f6fa;
+  --color-secondary: #94a1b2;
+  --color-brand: #7f5af0;
+  --color-accent: #2cb67d;
 }
 
 @layer base {
@@ -122,19 +143,4 @@ html {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-@theme {
-  --color-primary-color: #6b46c1;
-  --color-cta: #38b2ac;
-  --color-secondary-color: #2d3748;
-  --color-bg-color: #f7fafc;
-  --color-secondary-bg: #e9d8fd;
-  /* Dark */
-  --color-background: #1d1d26;
-  --color-card: #242430;
-  --color-primary: #f5f6fa;
-  --color-secondary: #94a1b2;
-  --color-brand: #7f5af0;
-  --color-accent: #2cb67d;
 }
