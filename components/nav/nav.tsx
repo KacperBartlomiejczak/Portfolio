@@ -80,6 +80,7 @@ export default function Nav() {
       className={`p-6 w-full flex flex-row justify-center items-center fixed top-0  ${
         isScrolled ? "bg-bg-color dark:bg-background" : "transparent"
       } transition-colors z-30`}
+      aria-label="Główna nawigacja"
     >
       <div className="container flex flex-row items-center justify-between z-20">
         <NavBrandText />

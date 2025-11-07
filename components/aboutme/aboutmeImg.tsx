@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function AboutMeImg() {
   return (
-    <div className="relative block w-52 h-52 transition-transform duration-300 hover:scale-110 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-90 xl:w-90">
+    <div className="relative block w-52 h-52 transition-transform duration-300 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-90 xl:w-90">
       <Image
         src="/aboutmeImg.webp"
         alt="Chłopak z koniem na kiju"
