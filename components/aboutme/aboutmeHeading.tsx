@@ -1,5 +1,6 @@
 import Button from "../ui/button";
 import { inter, firaCode } from "@/app/ui/fonts";
+import classes from "@/components/ui/button.module.css";
 
 export default function AboutMeHeading() {
   return (
@@ -20,16 +21,16 @@ export default function AboutMeHeading() {
         spotyka się z użytecznością: czytelna nawigacja, porządny Lighthouse i
         realny wpływ na biznes.
       </p>
-      <Button
+      <a
         href="/KacperCV.pdf"
-        variant="cta"
         target="_blank"
         rel="noopener noreferrer"
         download
         aria-label="Sprawdź moje cv"
+        className={`flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`}
       >
         Pobierz CV
-      </Button>
+      </a>
     </div>
   );
 }
