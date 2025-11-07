@@ -16,7 +16,6 @@ interface CardProps {
 }
 
 const ProjectCard = ({
-  // Changed to a const
   title,
   subtitle,
   description,
@@ -40,12 +39,14 @@ const ProjectCard = ({
         <div>
           <h3 className={`${inter.className} font-bold md:text-lg`}>{title}</h3>
           <p
-            className={`${inter.className} font-regular text-[0.7rem] text-[#9F9F9F] md:text-sm`}
+            className={`${inter.className} font-regular text-[0.7rem] text-gray-600 md:text-sm`}
           >
             {subtitle}
           </p>
         </div>
-        <p className="text-[0.7rem] my-2 md:text-sm">{description}</p>
+        <p className="text-[0.7rem] my-2 md:text-sm text-gray-700 dark:text-gray-300">
+          {description}
+        </p>
         <hr className="rounded-xl border my-4" />
         <ul className="w-full flex flex-wrap items-start gap-2 p-1 my-2">
           {tags.map((tag) => (
@@ -65,4 +66,4 @@ const ProjectCard = ({
   );
 };
 
-export default React.memo(ProjectCard); // Wrapped in React.memo
+export default React.memo(ProjectCard);
