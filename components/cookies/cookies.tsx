@@ -1,24 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { initAnalytics } from "@/lib/analystics";
+import { useAnalytics } from "@/context/analysticsContext";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const { enableAnalytics } = useAnalytics();
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
-    if (!consent) {
-      setVisible(true);
-    } else if (consent === "all") {
-      initAnalytics();
-    }
+    if (!consent) setVisible(true);
   }, []);
 
   const handleConsent = (type: "all" | "necessary") => {
     localStorage.setItem("cookie-consent", type);
     setVisible(false);
-    if (type === "all") initAnalytics();
+    if (type === "all") enableAnalytics();
   };
 
   if (!visible) return null;
@@ -27,7 +24,7 @@ export default function CookieConsent() {
     <div
       className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 
                  max-w-3xl w-[95%] p-5 rounded-2xl shadow-xl bg-card
-                 flex flex-col  md:items-center md:justify-between gap-4
+                 flex flex-col md:items-center md:justify-between gap-4
                  dark:bg-card text-primary border dark:border-secondary border-card"
     >
       <p className="text-sm md:text-base leading-snug text-white dark:text-white">

@@ -7,6 +7,7 @@ import Nav from "@/components/nav/nav";
 import CookieConsent from "@/components/cookies/cookies";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AnalyticsProvider } from "@/context/analysticsContext";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
@@ -103,39 +104,25 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://api.emailjs.com" />
-        
       </head>
       <body
         className={`${firaCode.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}
       >
-        <main className="w-full relative bg-bg-color dark:bg-background ">
-          <Nav />
-          {children}
-        </main>
-        <Toaster
-          position="top-right"
-          toastOptions={{
-            duration: 3000,
-            style: {
-              fontFamily: inter.style.fontFamily,
-            },
-          }}
-        />
-        <CookieConsent />
-
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
-        <SpeedInsights />
+        <AnalyticsProvider>
+          <main className="w-full relative bg-bg-color dark:bg-background ">
+            <Nav />
+            {children}
+          </main>
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 3000,
+              style: {
+                fontFamily: inter.style.fontFamily,
+              },
+            }}
+          />
+        </AnalyticsProvider>
       </body>
     </html>
   );
