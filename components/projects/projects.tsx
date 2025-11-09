@@ -1,4 +1,4 @@
-import SectionLayout from "../ui/sectionLayout";
+import SectionLayout from "../section/sectionLayout";
 import ProjectCard from "./projectCard";
 import { demoProjectCard } from "./demoProjectCard";
 

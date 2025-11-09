@@ -1,6 +1,22 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: var(--font-fira-code);
+  }
+}
+@supports not (font-variation-settings: normal) {
+  body {
+    font-family: "Fira Code", monospace;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 html {
   scroll-behavior: smooth;
 }

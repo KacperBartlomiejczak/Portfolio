@@ -1,4 +1,4 @@
-import SectionLayout from "../ui/sectionLayout";
+import SectionLayout from "../section/sectionLayout";
 
 import ContactLinks from "./contactLinks";
 import { inter } from "@/app/ui/fonts";

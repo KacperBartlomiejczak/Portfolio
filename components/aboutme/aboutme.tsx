@@ -1,4 +1,4 @@
-import SectionLayout from "../ui/sectionLayout";
+import SectionLayout from "../section/sectionLayout";
 import AboutMeHeading from "./aboutmeHeading";
 import AboutMeImg from "./aboutmeImg";
 
