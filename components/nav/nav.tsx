@@ -77,9 +77,9 @@ export default function Nav() {
 
   return (
     <nav
-      className={`p-6 w-full flex flex-row justify-center items-center fixed top-0  ${
+      className={`p-3 w-full flex flex-row justify-center items-center fixed top-0  ${
         isScrolled ? "bg-bg-color dark:bg-background" : "transparent"
-      } transition-colors z-30`}
+      } transition-colors z-30 lg:p-6`}
       aria-label="Główna nawigacja"
     >
       <div className="container flex flex-row items-center justify-between z-20">
