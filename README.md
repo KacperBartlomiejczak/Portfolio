@@ -1,61 +1,64 @@
-# Portfolio Website
+# 🌐 Portfolio Website
 
-This is a personal portfolio website created to showcase my skills, projects, and experience. It was built using modern web technologies to ensure speed, responsiveness, and interactivity.
+This is my personal portfolio – a place where I showcase who I am, what
+I build, and what I’ve learned so far as a developer.
+It’s fast, responsive, and a bit overengineered on purpose – because
+that’s the fun part. 😄
 
-## ✨ Features
+# ✨ Features
 
-*   **Modern Design:** A clean and aesthetic user interface.
-*   **Responsive:** The site is fully responsive and works on various devices.
-*   **Smooth Animations:** Uses `framer-motion` to create engaging animations and transitions.
-*   **Sections:** The main sections are "About Me", "Projects", and "Contact".
-*   **Contact Form:** Allows for easy contact via a form.
+-   Modern UI – Clean, minimal design focused on readability and smooth
+    navigation.
+-   Responsive layout – Works smoothly on desktop, tablet, and mobile.
+-   Smooth animations – Powered by Framer Motion.
+-   Core sections:
+    -   About Me
+    -   Projects
+    -   Contact
+-   Contact form with React Hook Form.
 
-## 🛠️ Technologies Used
+# 🛠️ Tech Stack
 
-*   **Framework:** [Next.js](https://nextjs.org/)
-*   **Language:** [TypeScript](https://www.typescriptlang.org/)
-*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-*   **Animations:** [Framer Motion](https://www.framer.com/motion/)
-*   **UI Components:** [Radix UI](https://www.radix-ui.com/)
-*   **Forms:** [React Hook Form](https://react-hook-form.com/)
-*   **Package Manager:** [pnpm](https://pnpm.io/)
+-   Next.js (App Router)
+-   TypeScript
+-   Tailwind CSS
+-   Framer Motion
+-   Radix UI
+-   React Hook Form
+-   pnpm
 
-## 🚀 Getting Started
+# 🚀 Getting Started
+📌 Prerequisites
+- Node.js
+- pnpm
 
-To get a local copy up and running, follow these simple steps.
-
-### Prerequisites
-
-Make sure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/installation) installed.
-
-### Installation
-
-1.  Clone the repo:
-    ```sh
-    git clone https://github.com/your-username/your-repository.git
-    ```
-2.  Navigate to the project directory:
-    ```sh
-    cd Portfolio
-    ```
-3.  Install dependencies:
-    ```sh
-    pnpm install
-    ```
-
-### Usage
-
-To run the development server:
-
-```sh
-pnpm dev
+📥 Installation
+Clone the repository:
+```
+https://github.com/kacperbartlomiejczak/Portfolio.git 
+cd Portfolio pnpm
+```
+Instal dependecies
+```
+pnpm install
+```
+▶️ Run the app
+```
+pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 📂 Project Structure
 
-## 📂 Project Structure
+-   app/
+-   components/
+-   public/
+-   lib/
 
-*   `app/`: Core application logic and pages (using the App Router).
-*   `components/`: Reusable React components, organized by feature.
-*   `public/`: Static assets like images and icons.
-*   `lib/`: Utility functions and helpers.
+# 🧠 Future Improvements
+
+-   Blog section
+-   Dark/light theme toggle
+-   Case studies
+-   Better contact form email integration
+
+
