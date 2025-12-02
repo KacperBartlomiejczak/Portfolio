@@ -7,6 +7,7 @@ interface NavListProps {
   onClose: () => void;
   onToggleDark: () => void;
 }
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavList({
   isOpen,
@@ -30,18 +31,28 @@ export default function NavList({
         />
       ))}
       <li>
-        <button
-          onClick={onToggleDark}
-          className="w-[35px] h-[35px] p-0 rounded-full bg-secondary-color flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300 dark:bg-white dark:hover:bg-secondary"
-          aria-pressed={isDark}
-          aria-label="Zmiana motywu strony"
-        >
-          {isDark ? (
-            <Sun className="text-background" />
-          ) : (
-            <Moon className="text-bg-color" />
-          )}
-        </button>
+        <AnimatePresence mode="wait">
+          <button
+            onClick={onToggleDark}
+            className="w-[35px] h-[35px] p-0 rounded-full bg-secondary-color flex items-center justify-center cursor-pointer hover:bg-secondary transition-colors duration-300 dark:bg-white dark:hover:bg-secondary"
+            aria-pressed={isDark}
+            aria-label="Zmiana motywu strony"
+          >
+            <motion.div
+              key={isDark ? "dark" : "light"}
+              initial={{ rotate: 0, opacity: 0 }}
+              animate={{ rotate: -360, opacity: 1 }}
+              exit={{ rotate: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {isDark ? (
+                <Sun className="text-background" />
+              ) : (
+                <Moon className="text-bg-color" />
+              )}
+            </motion.div>
+          </button>
+        </AnimatePresence>
       </li>
     </ul>
   );
