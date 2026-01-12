@@ -1,6 +1,6 @@
 export const demoProjectCard = [
   {
-    id: Math.random() * 100,
+    id: 1,
     title: "To do manager",
     subtitle: "Zarzadzanie codziennymi zadaniami",
     description:
@@ -12,14 +12,14 @@ export const demoProjectCard = [
   },
 
   {
-    id: Math.random() * 100,
-    title: "Portfolio",
-    subtitle: "Frontend web developer website",
+    id: 2,
+    title: "HelloAnime!",
+    subtitle: "Twoje centrum świata Anime",
     description:
-      "Strona ukazująca programistę Kacpra Bartłomiejczaka jako frontend web developera.",
-    tags: ["Nextjs", "Tailwind", "Typescript", "Css module"],
-    websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
-    repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
-    projectImg: "/project2.webp",
+      "HelloAnime! to nowoczesna platforma do odkrywania anime, wykorzystująca Jikan API. Przeglądaj, szukaj i sprawdzaj szczegóły swoich ulubionych serii w pięknym, responsywnym interfejsie.",
+    tags: ["Next.js", "Jikan API", "Tailwind CSS", "Framer Motion"],
+    websiteLink: "https://helloanime.com", // Placeholder, user can update
+    repoLink: "https://github.com/KacperBartlomiejczak/HelloAnime", // Placeholder
+    projectImg: "/project2.webp", // Keeping the image for now, user might want to change it later
   },
 ];
