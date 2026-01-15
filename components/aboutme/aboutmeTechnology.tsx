@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   ReactLogo,
   TailwindLogo,
@@ -7,30 +10,58 @@ import {
 } from "@/public/svg/logos";
 import { inter } from "@/app/ui/fonts";
 
+const TECHNOLOGIES = [
+  { id: 1, name: "React", Component: ReactLogo },
+  { id: 2, name: "Tailwind CSS", Component: TailwindLogo },
+  { id: 3, name: "Next.js", Component: NextjsLogo },
+  { id: 4, name: "SCSS", Component: ScssLogo },
+  { id: 5, name: "TypeScript", Component: TypescriptLogo },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function AboutMeTechnology() {
   return (
-    <div className="w-full flex flex-col gap-4 items-center justify-center p-4 my-4">
+    <div className="w-full flex flex-col gap-6 items-center justify-center p-4 my-4">
       <h3 className={`${inter.className} font-bold text-base md:text-lg`}>
         Technologie
       </h3>
       {/* kolor bazowy = primary, a wszystkie svg użyją go jako fill/stroke */}
-      <ul className="flex flex-row gap-4 flex-wrap text-primary-color dark:text-brand">
-        <li>
-          <ReactLogo width="46" />
-        </li>
-        <li>
-          <TailwindLogo width="46" />
-        </li>
-        <li>
-          <NextjsLogo width="46" />
-        </li>
-        <li>
-          <ScssLogo width="46" />
-        </li>
-        <li>
-          <TypescriptLogo width="46" />
-        </li>
-      </ul>
+      <motion.ul
+        className="flex flex-row gap-6 flex-wrap justify-center items-center text-primary-color dark:text-brand"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        {TECHNOLOGIES.map(({ id, name, Component }) => (
+          <motion.li
+            key={id}
+            variants={itemVariants}
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.95 }}
+            className="relative group cursor-pointer"
+          >
+            <Component width="46" />
+            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs md:text-sm font-medium whitespace-nowrap bg-gray-900 text-white px-2 py-1 rounded shadow-lg dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+              {name}
+            </span>
+          </motion.li>
+        ))}
+      </motion.ul>
     </div>
   );
 }
