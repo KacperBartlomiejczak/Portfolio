@@ -53,7 +53,7 @@ export default function ProjectDetails({
         layoutId={`card-${id}`}
         layout // Enable layout animation
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative w-full max-w-5xl bg-[#1a1a2e] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row border border-white/10"
+        className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-[#1a1a2e] rounded-3xl overflow-y-auto scrollbar-hide shadow-2xl flex flex-col md:flex-row border border-white/10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -64,7 +64,7 @@ export default function ProjectDetails({
         </button>
 
         {/* Hero Image Section */}
-        <div className="w-full md:w-3/5 relative min-h-[300px] md:min-h-[500px]">
+        <div className="w-full md:w-3/5 relative h-52 min-h-[200px] md:h-auto md:min-h-[500px] shrink-0">
           <motion.div
             layoutId={`image-${id}`}
             className="absolute inset-0 w-full h-full"
@@ -82,7 +82,7 @@ export default function ProjectDetails({
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-2/5 p-8 flex flex-col justify-center relative z-10">
+        <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-center relative z-10">
           <motion.div layoutId={`content-${id}`}>
             <motion.h2
               layoutId={`title-${id}`}
