@@ -46,13 +46,15 @@ export default function ContactInput({
   const placeholder = t(htmlFor as any);
 
   let content = (
-    <>
+    <div className="group">
       <Label
         htmlFor={htmlFor}
-        className={`flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white mb-2 ${inter.className}`}
+        className={`flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white mb-2 transition-colors group-focus-within:text-primary-color dark:group-focus-within:text-brand ${inter.className}`}
       >
         {icon && (
-          <span className="text-primary-color dark:text-brand">{icon}</span>
+          <span className="text-primary-color dark:text-brand transition-colors">
+            {icon}
+          </span>
         )}
         {title}
       </Label>
@@ -64,7 +66,7 @@ export default function ContactInput({
           type={type}
           id={htmlFor}
           placeholder={placeholder}
-          className={`text-sm ${inter.className} antialiased bg-white dark:bg-card/30 border-gray-300 dark:border-white/10 focus:border-primary-color dark:focus:border-brand transition-colors text-gray-900 dark:text-white`}
+          className={`text-sm ${inter.className} antialiased bg-white dark:bg-card/30 border-gray-300 dark:border-white/10 focus:border-primary-color dark:focus:border-brand focus:ring-4 focus:ring-primary-color/10 dark:focus:ring-brand/10 focus:shadow-lg transition-all text-gray-900 dark:text-white`}
           {...props}
           required
         />
@@ -79,18 +81,20 @@ export default function ContactInput({
           {error}
         </motion.p>
       ) : null}
-    </>
+    </div>
   );
 
   if (textArea) {
     content = (
-      <>
+      <div className="group">
         <Label
           htmlFor={htmlFor}
-          className={`flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white mb-2 ${inter.className}`}
+          className={`flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-white mb-2 transition-colors group-focus-within:text-primary-color dark:group-focus-within:text-brand ${inter.className}`}
         >
           {icon && (
-            <span className="text-primary-color dark:text-brand">{icon}</span>
+            <span className="text-primary-color dark:text-brand transition-colors">
+              {icon}
+            </span>
           )}
           {title}
         </Label>
@@ -101,7 +105,7 @@ export default function ContactInput({
           <Textarea
             id={htmlFor}
             placeholder={placeholder}
-            className={`text-sm ${inter.className} antialiased min-h-[120px] bg-white dark:bg-card/30 border-gray-300 dark:border-white/10 focus:border-primary-color dark:focus:border-brand transition-colors resize-none text-gray-900 dark:text-white`}
+            className={`text-sm ${inter.className} antialiased min-h-[120px] bg-white dark:bg-card/30 border-gray-300 dark:border-white/10 focus:border-primary-color dark:focus:border-brand focus:ring-4 focus:ring-primary-color/10 dark:focus:ring-brand/10 focus:shadow-lg transition-all resize-none text-gray-900 dark:text-white`}
             {...props}
             required
           />
@@ -116,7 +120,7 @@ export default function ContactInput({
             {error}
           </motion.p>
         ) : null}
-      </>
+      </div>
     );
   }
 

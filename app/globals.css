@@ -16,9 +16,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 @custom-variant dark (&:is(.dark *));
 

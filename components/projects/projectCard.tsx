@@ -96,15 +96,15 @@ const ProjectCard = ({
       onClick={onClick}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onTouchMove={handleTouchMove}
+      onTouchMove={isMobile ? undefined : handleTouchMove}
       onTouchEnd={handleTouchEnd}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
       aria-label={t("aria.open_details", { title })}
       style={{
-        rotateX,
-        rotateY,
+        rotateX: isMobile ? 0 : rotateX,
+        rotateY: isMobile ? 0 : rotateY,
         transformStyle: "preserve-3d",
         willChange: "transform",
       }}

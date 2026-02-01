@@ -9,6 +9,7 @@ import {
   TypescriptLogo,
 } from "@/public/svg/logos";
 import { inter } from "@/app/ui/fonts";
+import { useState, useEffect } from "react";
 
 const TECHNOLOGIES = [
   { id: 1, name: "React", Component: ReactLogo },
@@ -34,6 +35,13 @@ const itemVariants = {
 };
 
 export default function AboutMeTechnology() {
+  // Detect if device is mobile/touch-enabled
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   return (
     <div className="w-full flex flex-col gap-6 items-center justify-center p-4 my-4">
       <h3 className={`${inter.className} font-bold text-base md:text-lg`}>
@@ -51,18 +59,26 @@ export default function AboutMeTechnology() {
           <motion.li
             key={id}
             variants={itemVariants}
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              y: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: index * 0.2, // Offset floating for natural effect
-              },
-            }}
-            whileHover={{ scale: 1.2, rotate: 5, y: -15 }}
+            animate={
+              isMobile
+                ? undefined
+                : {
+                    y: [0, -10, 0],
+                  }
+            }
+            transition={
+              isMobile
+                ? undefined
+                : {
+                    y: {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.2, // Offset floating for natural effect
+                    },
+                  }
+            }
+            whileHover={{ scale: 1.1, rotate: 5, y: -15 }}
             whileTap={{ scale: 0.95 }}
             className="relative group cursor-pointer"
           >

@@ -128,7 +128,7 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider messages={messages}>
           <AnalyticsProvider>
-            <main className="w-full relative bg-bg-color dark:bg-background ">
+            <main className="w-full relative bg-bg-color dark:bg-background overflow-x-hidden">
               <Nav />
               {children}
             </main>

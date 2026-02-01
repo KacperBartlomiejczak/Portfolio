@@ -26,7 +26,7 @@ export default function LazySection({ children }: LazySectionProps) {
       },
       {
         rootMargin: "100px", // Start animation when 100px of the section is visible
-      }
+      },
     );
 
     const currentRef = ref.current;
@@ -42,7 +42,7 @@ export default function LazySection({ children }: LazySectionProps) {
   }, []);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="w-full">
       <motion.div
         variants={sectionVariants}
         initial="hidden"

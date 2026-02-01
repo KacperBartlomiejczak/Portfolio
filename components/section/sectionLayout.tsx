@@ -17,11 +17,11 @@ export default function SectionLayout({
 }: SectionLayoutProps) {
   return (
     <section
-      className={`flex items-center p-4 justify-center scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40 bg-bg-color dark:bg-background ${className}`}
+      className={`w-full p-4 scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40 bg-bg-color dark:bg-background ${className}`}
       id={id}
     >
       <div
-        className={`container flex flex-col  gap-4 ${
+        className={`container mx-auto flex flex-col gap-4 ${
           center ? "items-center" : "items-start"
         }`}
       >
