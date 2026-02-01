@@ -47,15 +47,28 @@ export default function AboutMeTechnology() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
-        {TECHNOLOGIES.map(({ id, name, Component }) => (
+        {TECHNOLOGIES.map(({ id, name, Component }, index) => (
           <motion.li
             key={id}
             variants={itemVariants}
-            whileHover={{ scale: 1.15, rotate: 5 }}
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              y: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: index * 0.2, // Offset floating for natural effect
+              },
+            }}
+            whileHover={{ scale: 1.2, rotate: 5, y: -15 }}
             whileTap={{ scale: 0.95 }}
             className="relative group cursor-pointer"
           >
-            <Component width="46" />
+            <div className="p-2 bg-white/5 rounded-2xl backdrop-blur-sm border border-transparent hover:border-primary-color/20 dark:hover:border-brand/20 transition-colors">
+              <Component width="46" />
+            </div>
             <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs md:text-sm font-medium whitespace-nowrap bg-gray-900 text-white px-2 py-1 rounded shadow-lg dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
               {name}
             </span>

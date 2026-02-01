@@ -5,6 +5,7 @@ interface SectionLayoutProps {
   title: string;
   id: string;
   center?: boolean;
+  className?: string;
 }
 
 export default function SectionLayout({
@@ -12,10 +13,11 @@ export default function SectionLayout({
   id,
   center,
   children,
+  className = "",
 }: SectionLayoutProps) {
   return (
     <section
-      className="flex items-center p-4 justify-center scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40 bg-bg-color dark:bg-background "
+      className={`flex items-center p-4 justify-center scroll-mt-32 md:scroll-mt-36 lg:scroll-mt-40 bg-bg-color dark:bg-background ${className}`}
       id={id}
     >
       <div

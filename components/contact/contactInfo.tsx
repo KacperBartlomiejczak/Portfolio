@@ -154,7 +154,7 @@ export default function ContactInfo() {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-linear-to-r from-primary-color to-primary-color/80 dark:from-brand dark:to-brand/70 pb-1">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-linear-to-r from-primary-color via-brand to-cta dark:from-brand dark:via-primary-color dark:to-cta pb-1">
           {t("title")}
         </h2>
         <p

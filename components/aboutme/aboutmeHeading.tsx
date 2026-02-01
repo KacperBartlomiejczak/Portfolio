@@ -45,16 +45,32 @@ export default function AboutMeHeading() {
       >
         {t("description")}
       </motion.p>
-      <motion.div variants={itemVariants}>
+      <motion.div
+        variants={itemVariants}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
         <a
           href="/KacperCV.pdf"
           target="_blank"
           rel="noopener noreferrer"
           download
           aria-label={t("cv_aria")}
-          className={`flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`}
+          className={`relative group overflow-hidden flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`}
         >
-          {t("cv_button")}
+          {/* Shimmer effect */}
+          <motion.div
+            initial={{ x: "-100%" }}
+            animate={{ x: "100%" }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              repeatDelay: 3,
+              ease: "linear",
+            }}
+            className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"
+          />
+          <span className="relative z-10">{t("cv_button")}</span>
         </a>
       </motion.div>
     </motion.div>

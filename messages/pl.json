@@ -61,6 +61,11 @@
       "write_to_me": "Napisz do mnie"
     }
   },
+  "NotFound": {
+    "title": "Ups! Nie znaleźliśmy twojej strony",
+    "description": "Przepraszam, ale ta strona nie istnieje",
+    "button": "Wróć do strony głównej"
+  },
   "Contact": {
     "form": {
       "name": "Imię",

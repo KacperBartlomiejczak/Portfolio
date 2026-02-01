@@ -61,6 +61,11 @@
       "write_to_me": "Write to me"
     }
   },
+  "NotFound": {
+    "title": "Oops! We couldn't find your page",
+    "description": "Sorry, but this page does not exist",
+    "button": "Back to Home"
+  },
   "Contact": {
     "form": {
       "name": "Name",

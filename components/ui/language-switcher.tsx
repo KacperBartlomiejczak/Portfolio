@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
       onClick={toggleLanguage}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="px-3 py-1 bg-transparent border border-zinc-700 hover:border-zinc-500 rounded-md text-sm font-medium transition-colors text-zinc-300 hover:text-white"
+      className="px-3 py-1 bg-transparent border border-black/10 hover:border-black/30 dark:border-white/20 dark:hover:border-white/50 rounded-md text-sm font-medium transition-colors text-black/70 hover:text-black dark:text-zinc-300 dark:hover:text-white"
     >
       {locale === "pl" ? "EN" : "PL"}
     </motion.button>
