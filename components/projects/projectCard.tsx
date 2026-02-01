@@ -1,8 +1,8 @@
 import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Github, ExternalLink, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface CardProps {
   id: number;
@@ -23,9 +23,14 @@ const ProjectCard = ({
   tags,
   projectImg,
   onClick,
-  websiteLink,
-  repoLink,
 }: CardProps & { onClick: () => void }) => {
+  // Detect if device is mobile/touch-enabled
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
   // 3D Tilt Effect Setup
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -33,41 +38,95 @@ const ProjectCard = ({
   const mouseX = useSpring(x, { stiffness: 500, damping: 100 });
   const mouseY = useSpring(y, { stiffness: 500, damping: 100 });
 
-  function onMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-    const { left, top, width, height } = currentTarget.getBoundingClientRect();
-    x.set(clientX - left - width / 2);
-    y.set(clientY - top - height / 2);
-  }
+  const handleMouseMove = useCallback(
+    ({ currentTarget, clientX, clientY }: React.MouseEvent) => {
+      const { left, top, width, height } =
+        currentTarget.getBoundingClientRect();
+      x.set(clientX - left - width / 2);
+      y.set(clientY - top - height / 2);
+    },
+    [x, y],
+  );
 
-  function onMouseLeave() {
+  const handleMouseLeave = useCallback(() => {
     x.set(0);
     y.set(0);
-  }
+  }, [x, y]);
 
-  const rotateX = useTransform(mouseY, [-300, 300], [5, -5]); // Inverted for natural tilt
+  // Touch handlers for mobile 3D tilt
+  const handleTouchMove = useCallback(
+    (e: React.TouchEvent) => {
+      if (e.touches.length === 1) {
+        const touch = e.touches[0];
+        const { left, top, width, height } =
+          e.currentTarget.getBoundingClientRect();
+        x.set(touch.clientX - left - width / 2);
+        y.set(touch.clientY - top - height / 2);
+      }
+    },
+    [x, y],
+  );
+
+  const handleTouchEnd = useCallback(() => {
+    x.set(0);
+    y.set(0);
+  }, [x, y]);
+
+  // Keyboard handler for accessibility
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        onClick();
+      }
+    },
+    [onClick],
+  );
+
+  const rotateX = useTransform(mouseY, [-300, 300], [5, -5]);
   const rotateY = useTransform(mouseX, [-300, 300], [-5, 5]);
 
   return (
     <motion.div
       layoutId={`card-${id}`}
       onClick={onClick}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={`Otwórz szczegóły projektu ${title}`}
       style={{
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        willChange: "transform",
       }}
-      className="group relative w-full rounded-2xl cursor-pointer perspective-1000 md:h-[400px] lg:h-[450px]"
+      className="group relative w-full rounded-2xl cursor-pointer perspective-1000 md:h-[400px] lg:h-[450px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-color focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
       whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+      whileTap={{
+        scale: 0.98,
+        rotateX: 0,
+        rotateY: 0,
+        transition: { duration: 0.1 },
+      }}
+      transition={{
+        type: "spring",
+        stiffness: isMobile ? 500 : 400,
+        damping: isMobile ? 35 : 30,
+      }}
     >
+      {/* Glow Effect Layer */}
+      <div className="absolute inset-0 rounded-2xl bg-primary-color/0 blur-2xl transition-all duration-300 group-hover:bg-primary-color/20 group-active:bg-primary-color/30 pointer-events-none" />
+
       {/* Card Container */}
-      <div className="relative h-full flex flex-col md:block bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-all duration-300 hover:shadow-primary-color/20">
+      <div className="relative h-full flex flex-col md:block bg-gray-900/40 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_25px_60px_-12px_rgba(107,70,193,0.6)] active:shadow-[0_35px_80px_-12px_rgba(107,70,193,0.8)] transition-all duration-300 group-hover:border-primary-color/30 group-active:border-primary-color/50">
         {/* Image Section */}
         <motion.div
           layoutId={`image-${id}`}
-          className="relative w-full h-48 md:h-[400px] lg:h-[450px] md:absolute md:inset-0"
+          className="relative w-full h-56 md:h-[400px] lg:h-[450px] md:absolute md:inset-0"
         >
           <Image
             src={projectImg}
@@ -75,55 +134,57 @@ const ProjectCard = ({
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 500px"
+            loading="lazy"
           />
-          {/* Overlay Gradient - Stronger on all screens for readability */}
-          <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent md:from-black/90 md:via-black/50 md:to-transparent/10 transition-opacity duration-300" />
+          {/* Overlay Gradient - Enhanced for better contrast */}
+          <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/50 to-transparent md:from-black/95 md:via-black/60 md:to-transparent/20 transition-opacity duration-300 group-hover:via-gray-900/40" />
         </motion.div>
 
         {/* Content Section - Overlay on Desktop */}
-        <div className="relative p-5 flex flex-col gap-3 h-full justify-end md:absolute md:inset-0 md:p-8 z-30">
+        <div className="relative p-6 flex flex-col gap-3 h-full justify-end md:absolute md:inset-0 md:p-8 z-30">
           <div className="flex flex-col gap-1">
-            {/* Top accent - Always visible but styled */}
+            {/* Top accent - Enhanced visibility */}
             <motion.div
-              className="w-10 h-1 bg-primary-color rounded-full mb-2 hidden md:block" // Removed opacity-0 to make it always visible
+              className="w-12 h-1 bg-primary-color rounded-full mb-2 shadow-[0_0_10px_rgba(107,70,193,0.6)] hidden md:block"
+              initial={{ width: 40 }}
+              whileHover={{ width: 60 }}
+              transition={{ duration: 0.3 }}
             />
 
             <motion.h3
               layoutId={`title-${id}`}
-              className={`${inter.className} text-xl md:text-3xl font-bold text-white tracking-tight drop-shadow-lg`}
+              className={`${inter.className} text-xl md:text-3xl font-bold text-white tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]`}
             >
               {title}
             </motion.h3>
 
             <motion.p
               layoutId={`subtitle-${id}`}
-              className="text-primary-color/90 font-medium text-sm md:text-base"
+              className="text-primary-color font-semibold text-sm md:text-base drop-shadow-lg"
             >
               {subtitle}
             </motion.p>
           </div>
 
-          <motion.div
-            className="md:translate-y-0 md:opacity-100 transition-all duration-500 ease-out flex flex-col gap-4" // Made description always visible
-          >
-            <p className="text-gray-300 text-sm line-clamp-3 md:line-clamp-3 leading-relaxed drop-shadow-md">
+          <motion.div className="flex flex-col gap-4 transition-all duration-500 ease-out">
+            <p className="text-gray-200 text-sm line-clamp-3 md:line-clamp-3 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               {description}
             </p>
 
-            {/* Tags */}
+            {/* Tags - Enhanced styling */}
             <div className="flex flex-wrap gap-2">
               {tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] md:text-xs font-semibold text-white/90 bg-white/10 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 hover:bg-white/20 transition-colors"
+                  className="text-[10px] md:text-xs font-semibold text-white bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 hover:bg-white/25 hover:border-primary-color/40 transition-all duration-200 shadow-lg"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            {/* Quick Actions */}
-            <div className="flex items-center gap-3 pt-2 text-white/60 text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {/* Quick Actions - Enhanced visibility on mobile */}
+            <div className="flex items-center gap-3 pt-2 text-white/70 text-xs font-mono opacity-0 md:group-hover:opacity-100 md:opacity-0 group-active:opacity-100 transition-opacity duration-300">
               <span className="flex items-center gap-1 hover:text-primary-color transition-colors">
                 Kliknij aby zobaczyć szczegóły <ArrowUpRight size={14} />
               </span>
