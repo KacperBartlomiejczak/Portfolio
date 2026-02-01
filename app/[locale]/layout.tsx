@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 
 import { Toaster } from "react-hot-toast";
 import { firaCode, inter } from "@/app/ui/fonts";
@@ -8,6 +8,10 @@ import CookieConsent from "@/components/cookies/cookies";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsProvider } from "@/context/analysticsContext";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
@@ -92,13 +96,23 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="pl">
+    <html lang={locale}>
       <head>
         <link rel="preconnect" href="https://www.kacperbartlomiejczak.pl" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,21 +122,23 @@ export default function RootLayout({
       <body
         className={`${firaCode.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}
       >
-        <AnalyticsProvider>
-          <main className="w-full relative bg-bg-color dark:bg-background ">
-            <Nav />
-            {children}
-          </main>
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              duration: 3000,
-              style: {
-                fontFamily: inter.style.fontFamily,
-              },
-            }}
-          />
-        </AnalyticsProvider>
+        <NextIntlClientProvider messages={messages}>
+          <AnalyticsProvider>
+            <main className="w-full relative bg-bg-color dark:bg-background ">
+              <Nav />
+              {children}
+            </main>
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 3000,
+                style: {
+                  fontFamily: inter.style.fontFamily,
+                },
+              }}
+            />
+          </AnalyticsProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

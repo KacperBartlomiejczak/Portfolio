@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { inter } from "./ui/fonts";
+import { inter } from "@/app/ui/fonts";
 
 export default function NotFound() {
   return (

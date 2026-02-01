@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import classes from "./navlink.module.css";
 import { firaCode } from "@/app/ui/fonts";
 

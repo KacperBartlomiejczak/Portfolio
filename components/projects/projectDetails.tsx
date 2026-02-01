@@ -5,12 +5,11 @@ import { X, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import ProjectTech from "./projectTech";
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 interface ProjectDetailsProps {
   id: number;
-  title: string;
-  subtitle: string;
-  description: string;
+  translationKey: string;
   tags: string[];
   websiteLink: string;
   repoLink: string;
@@ -20,15 +19,20 @@ interface ProjectDetailsProps {
 
 export default function ProjectDetails({
   id,
-  title,
-  subtitle,
-  description,
+  translationKey,
   tags,
   websiteLink,
   repoLink,
   projectImg,
   onClose,
 }: ProjectDetailsProps) {
+  const t = useTranslations("Projects");
+  const tItem = useTranslations(`Projects.items.${translationKey}`);
+
+  const title = tItem("title");
+  const subtitle = tItem("subtitle");
+  const description = tItem("description");
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -106,7 +110,7 @@ export default function ProjectDetails({
 
             <div>
               <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">
-                Stack
+                {t("labels.stack")}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {tags.map((tag) => (
@@ -128,7 +132,7 @@ export default function ProjectDetails({
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-primary-color text-white rounded-xl hover:bg-purple-600 transition-all font-medium"
               >
                 <ExternalLink size={18} />
-                Live Demo
+                {t("buttons.live")}
               </a>
               <a
                 href={repoLink}
@@ -137,7 +141,7 @@ export default function ProjectDetails({
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white/5 text-white rounded-xl hover:bg-white/10 transition-all font-medium border border-white/5"
               >
                 <Github size={18} />
-                Kod
+                {t("buttons.code")}
               </a>
             </div>
           </motion.div>

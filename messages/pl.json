@@ -1,0 +1,132 @@
+{
+  "Header": {
+    "title": "Bartłomiejczak",
+    "nav": {
+      "projects": "Projekty",
+      "about": "O mnie",
+      "contact": "Kontakt"
+    }
+  },
+  "Locale": {
+    "switcher": "Zmień Język",
+    "pl": "Polski",
+    "en": "English"
+  },
+  "Hero": {
+    "headline": "Twoja nowa strona będzie szybka, czytelna i prosta w codziennym użyciu.",
+    "subheadline": "Jestem Kacper, Frontend Developer — robię strony i aplikacje, które szybko się ładują, dobrze wyglądają na każdym urządzeniu i są łatwe w użyciu.",
+    "cta": "Skontaktuj się"
+  },
+  "About": {
+    "title": "O mnie",
+    "heading": "Pasja do kodu, obsesja na punkcie detali.",
+    "description": "Cześć, tu Kacper — frontend developer z Torunia. Buduję szybkie i dostępne strony w React/Next.js, dbając o SEO, wydajność i czysty kod. Na co dzień studiuję informatykę na UMK, a po godzinach testuję pomysły na hackathonach i w podróży (lubię kodować tam, gdzie kawiarnia ma dobry internet i jeszcze lepszą kawę). Lubię projekty, w których design spotyka się z użytecznością: czytelna nawigacja, porządny Lighthouse i realny wpływ na biznes.",
+    "cv_button": "Pobierz CV",
+    "cv_aria": "Sprawdź moje cv"
+  },
+  "Projects": {
+    "title": "Projekty",
+    "buttons": {
+      "details": "Kliknij aby zobaczyć szczegóły",
+      "live": "Live Demo",
+      "code": "Kod"
+    },
+    "labels": {
+      "stack": "Technologie"
+    },
+    "aria": {
+      "open_details": "Otwórz szczegóły projektu {title}"
+    },
+    "items": {
+      "todo": {
+        "title": "To do manager",
+        "subtitle": "Zarządzanie codziennymi zadaniami",
+        "description": "Przekształć swoje \"muszę\" w \"zrobione\". Proste narzędzie do realizacji codziennych celów."
+      },
+      "anime": {
+        "title": "HelloAnime!",
+        "subtitle": "Twoje centrum świata Anime",
+        "description": "HelloAnime! to nowoczesna platforma do odkrywania anime, wykorzystująca Jikan API. Przeglądaj, szukaj i sprawdzaj szczegóły swoich ulubionych serii w pięknym, responsywnym interfejsie."
+      }
+    }
+  },
+  "Contact": {
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "send": "Rozpocznij współpracę",
+      "sending": "Wysyłanie",
+      "success": "Pomyślnie wysłaliśmy twojego maila",
+      "error": "Wystąpił błąd przy wysyłce",
+      "validation": {
+        "name": "Pole imię nie może być puste",
+        "email": "Pole email nie może być puste",
+        "subject": "Pole temat nie może być puste",
+        "message": "Pole wiadomość nie może być puste"
+      },
+      "placeholders": {
+        "name": "Wpisz swoje imię",
+        "email": "Wpisz swój email",
+        "subject": "Temat wiadomości",
+        "message": "Powiedz nam co masz na myśli..."
+      }
+    },
+    "info": {
+      "title": "Zbudujmy Twój Sukces",
+      "description": "Szukasz profesjonalnych rozwiązań, które wyróżnią Twoją firmę na rynku? Nie czekaj na lepszy moment. Napisz do mnie, a wspólnie stworzymy projekt, który zachwyci Twoich klientów i przyniesie realne zyski.",
+      "email": "Email",
+      "discord": "Discord",
+      "linkedin": "LinkedIn",
+      "github": "Github",
+      "discord_desc": "Dołącz do serwera",
+      "linkedin_desc": "Sprawdź mój profil",
+      "github_desc": "Zobacz moje projekty",
+      "quotes": {
+        "q1": {
+          "text": "Najlepszy sposób na przewidzenie przyszłości to ją stworzyć.",
+          "author": "Peter Drucker"
+        },
+        "q2": {
+          "text": "Kod jest jak humor. Gdy musisz go wyjaśniać, jest kiepski.",
+          "author": "Cory House"
+        },
+        "q3": {
+          "text": "Najpierw rozwiąż problem. Potem napisz kod.",
+          "author": "John Johnson"
+        },
+        "q4": {
+          "text": "Doświadczenie to nazwa, którą każdy nadaje swoim błędom.",
+          "author": "Oscar Wilde"
+        }
+      }
+    },
+    "dialog": {
+      "title": "Skontaktuj się ze mną",
+      "name_label": "Twoje Imię",
+      "email_label": "Twoj email",
+      "message_label": "Wiadomość",
+      "success": "Pomyślnie wysłaliśmy twojego maila",
+      "error": "Wystąpił błąd przy wysyłce",
+      "validation": {
+        "name": "Pole imię nie może być puste",
+        "email": "Pole email nie może być puste",
+        "message": "Pole wiadomość nie może być puste"
+      }
+    },
+    "links": {
+      "mail_aria": "Wyślij do mnia maila",
+      "linkedin_aria": "Odwiedź mnie na LinkedIn",
+      "github_aria": "Odwiedź mój profil na Githubie",
+      "discord_aria": "Odwiedź mój serwer discord"
+    }
+  },
+  "Footer": {
+    "sitemap": "Mapa strony",
+    "legal": "Informacje prawne",
+    "privacy": "Polityka Prywatności",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "brand_desc": "Portfolio & Projekty"
+  }
+}

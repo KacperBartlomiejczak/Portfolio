@@ -1,0 +1,132 @@
+{
+  "Header": {
+    "title": "Bartłomiejczak",
+    "nav": {
+      "projects": "Projects",
+      "about": "About Me",
+      "contact": "Contact"
+    }
+  },
+  "Locale": {
+    "switcher": "Switch Language",
+    "pl": "Polski",
+    "en": "English"
+  },
+  "Hero": {
+    "headline": "Your new website will be fast, readable and simple to use every day.",
+    "subheadline": "I'm Kacper, Frontend Developer — I make websites and applications that load fast, look good on every device and are easy to use.",
+    "cta": "Contact me"
+  },
+  "About": {
+    "title": "About Me",
+    "heading": "Passion for code, obsession with details.",
+    "description": "Hi, I'm Kacper — a frontend developer from Toruń. I build fast and accessible sites in React/Next.js, caring about SEO, performance and clean code. Every day I study computer science at UMK, and after hours I test ideas at hackathons and while traveling (I like coding where the cafe has good internet and even better coffee). I like projects where design meets usability: clear navigation, decent Lighthouse and real impact on business.",
+    "cv_button": "Download CV",
+    "cv_aria": "Check my CV"
+  },
+  "Projects": {
+    "title": "Projects",
+    "buttons": {
+      "details": "Click to see details",
+      "live": "Live Demo",
+      "code": "Code"
+    },
+    "labels": {
+      "stack": "Stack"
+    },
+    "aria": {
+      "open_details": "Open details for {title}"
+    },
+    "items": {
+      "todo": {
+        "title": "To do manager",
+        "subtitle": "Daily task management",
+        "description": "Transform your 'musts' into 'dones'. A simple tool for achieving daily goals."
+      },
+      "anime": {
+        "title": "HelloAnime!",
+        "subtitle": "Your Anime world center",
+        "description": "HelloAnime! is a modern platform for discovering anime, using the Jikan API. Browse, search, and check details of your favorite series in a beautiful, responsive interface."
+      }
+    }
+  },
+  "Contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Start cooperation",
+      "sending": "Sending...",
+      "success": "Email sent successfully",
+      "error": "Error sending email",
+      "validation": {
+        "name": "Name is required",
+        "email": "Email is required",
+        "subject": "Subject is required",
+        "message": "Message is required"
+      },
+      "placeholders": {
+        "name": "Enter your name",
+        "email": "Enter your email",
+        "subject": "Subject of message",
+        "message": "Tell us what you have in mind..."
+      }
+    },
+    "info": {
+      "title": "Let's Build Your Success",
+      "description": "Looking for professional solutions that will make your company stand out on the market? Don't wait for a better moment. Write to me, and together we will create a project that will delight your customers and bring real profits.",
+      "email": "Email",
+      "discord": "Discord",
+      "linkedin": "LinkedIn",
+      "github": "Github",
+      "discord_desc": "Join the server",
+      "linkedin_desc": "Check my profile",
+      "github_desc": "See my projects",
+      "quotes": {
+        "q1": {
+          "text": "The best way to predict the future is to create it.",
+          "author": "Peter Drucker"
+        },
+        "q2": {
+          "text": "Code is like humor. When you have to explain it, it’s bad.",
+          "author": "Cory House"
+        },
+        "q3": {
+          "text": "First, solve the problem. Then, write the code.",
+          "author": "John Johnson"
+        },
+        "q4": {
+          "text": "Experience is the name everyone gives to their mistakes.",
+          "author": "Oscar Wilde"
+        }
+      }
+    },
+    "dialog": {
+      "title": "Contact Me",
+      "name_label": "Your Name",
+      "email_label": "Your Email",
+      "message_label": "Message",
+      "success": "Email sent successfully",
+      "error": "Error sending email",
+      "validation": {
+        "name": "Name is required",
+        "email": "Email is required",
+        "message": "Message is required"
+      }
+    },
+    "links": {
+      "mail_aria": "Send me an email",
+      "linkedin_aria": "Visit me on LinkedIn",
+      "github_aria": "Visit my Github profile",
+      "discord_aria": "Visit my discord server"
+    }
+  },
+  "Footer": {
+    "sitemap": "Sitemap",
+    "legal": "Legal Info",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved.",
+    "brand_desc": "Portfolio & Projects"
+  }
+}

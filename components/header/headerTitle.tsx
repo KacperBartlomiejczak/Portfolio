@@ -2,8 +2,11 @@
 import { inter, firaCode } from "@/app/ui/fonts";
 import Button from "../ui/button";
 import { motion, Variants } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function HeaderTitle() {
+  const t = useTranslations("Hero");
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,19 +38,17 @@ export default function HeaderTitle() {
         variants={itemVariants}
         className={`${inter.className} text-secondary-color font-extrabold antialiased text-base md:text-2xl lg:text-3xl xl:text-4xl dark:text-secondary`}
       >
-        Twoja nowa strona będzie szybka, czytelna i prosta w codziennym użyciu.
+        {t("headline")}
       </motion.h1>
       <motion.p
         variants={itemVariants}
         className={`${firaCode.className} text-sm/loose mb-4 md:text-lg/loose  xl:w-3/4 dark:text-white`}
       >
-        Jestem Kacper, Frontend Developer — robię strony i aplikacje, które
-        szybko się ładują, dobrze wyglądają na każdym urządzeniu i są łatwe w
-        użyciu.
+        {t("subheadline")}
       </motion.p>
       <motion.div variants={itemVariants}>
-        <Button href="#contact" ariaLabel="Przejdź do sekcji kontaktowej">
-          Skontaktuj się
+        <Button href="#contact" ariaLabel={t("cta")}>
+          {t("cta")}
         </Button>
       </motion.div>
     </motion.div>

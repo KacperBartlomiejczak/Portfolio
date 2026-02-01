@@ -3,12 +3,11 @@ import Image from "next/image";
 import React, { useCallback, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface CardProps {
   id: number;
-  title: string;
-  subtitle: string;
-  description: string;
+  translationKey: string;
   tags: string[];
   websiteLink: string;
   repoLink: string;
@@ -17,13 +16,18 @@ interface CardProps {
 
 const ProjectCard = ({
   id,
-  title,
-  subtitle,
-  description,
+  translationKey,
   tags,
   projectImg,
   onClick,
 }: CardProps & { onClick: () => void }) => {
+  const t = useTranslations("Projects");
+  const tItem = useTranslations(`Projects.items.${translationKey}`);
+
+  const title = tItem("title");
+  const subtitle = tItem("subtitle");
+  const description = tItem("description");
+
   // Detect if device is mobile/touch-enabled
   const [isMobile, setIsMobile] = useState(false);
 
@@ -97,7 +101,7 @@ const ProjectCard = ({
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
-      aria-label={`Otwórz szczegóły projektu ${title}`}
+      aria-label={t("aria.open_details", { title })}
       style={{
         rotateX,
         rotateY,
@@ -126,11 +130,11 @@ const ProjectCard = ({
         {/* Image Section */}
         <motion.div
           layoutId={`image-${id}`}
-          className="relative w-full h-56 md:h-[400px] lg:h-[450px] md:absolute md:inset-0"
+          className="relative w-full h-52 md:h-[400px] lg:h-[450px] md:absolute md:inset-0"
         >
           <Image
             src={projectImg}
-            alt={`Projekt ${title}`}
+            alt={`Projekt ${title}`} // Assuming this is fine to keep partially untranslated or use t('image_alt', {title}) if needed.
             fill
             className="object-cover transition-transform duration-700 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 500px"
@@ -141,7 +145,7 @@ const ProjectCard = ({
         </motion.div>
 
         {/* Content Section - Overlay on Desktop */}
-        <div className="relative p-6 flex flex-col gap-3 h-full justify-end md:absolute md:inset-0 md:p-8 z-30">
+        <div className="relative p-5 flex flex-col gap-3 md:h-full md:justify-end md:absolute md:inset-0 md:p-8 z-30">
           <div className="flex flex-col gap-1">
             {/* Top accent - Enhanced visibility */}
             <motion.div
@@ -186,7 +190,7 @@ const ProjectCard = ({
             {/* Quick Actions - Enhanced visibility on mobile */}
             <div className="flex items-center gap-3 pt-2 text-white/70 text-xs font-mono opacity-0 md:group-hover:opacity-100 md:opacity-0 group-active:opacity-100 transition-opacity duration-300">
               <span className="flex items-center gap-1 hover:text-primary-color transition-colors">
-                Kliknij aby zobaczyć szczegóły <ArrowUpRight size={14} />
+                {t("buttons.details")} <ArrowUpRight size={14} />
               </span>
             </div>
           </motion.div>

@@ -1,10 +1,11 @@
+// We keep the structure but remove hardcoded text where possible, or we will map it in the component.
+// Actually, to use useTranslations, we need to map over keys or use a key in this object.
+// Let's add a 'key' property to link to translation files.
+
 export const demoProjectCard = [
   {
     id: 1,
-    title: "To do manager",
-    subtitle: "Zarzadzanie codziennymi zadaniami",
-    description:
-      'Przekształć swoje "muszę" w "zrobione". Proste narzędzie do realizacji codziennych celów.',
+    translationKey: "todo",
     tags: ["React", "Tailwind", "Typescript", "LocalStorage"],
     websiteLink: "https://kacperbartlomiejczak.github.io/rn-task-manager/",
     repoLink: "https://github.com/KacperBartlomiejczak/rn-task-manager",
@@ -13,13 +14,10 @@ export const demoProjectCard = [
 
   {
     id: 2,
-    title: "HelloAnime!",
-    subtitle: "Twoje centrum świata Anime",
-    description:
-      "HelloAnime! to nowoczesna platforma do odkrywania anime, wykorzystująca Jikan API. Przeglądaj, szukaj i sprawdzaj szczegóły swoich ulubionych serii w pięknym, responsywnym interfejsie.",
+    translationKey: "anime",
     tags: ["Next.js", "Jikan API", "Tailwind CSS", "Framer Motion"],
-    websiteLink: "https://helloanime.com", // Placeholder, user can update
-    repoLink: "https://github.com/KacperBartlomiejczak/HelloAnime", // Placeholder
-    projectImg: "/project2.webp", // Keeping the image for now, user might want to change it later
+    websiteLink: "https://helloanime.com",
+    repoLink: "https://github.com/KacperBartlomiejczak/HelloAnime",
+    projectImg: "/project2.webp",
   },
 ];

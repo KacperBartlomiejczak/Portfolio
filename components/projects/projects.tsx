@@ -6,14 +6,16 @@ import { demoProjectCard } from "./demoProjectCard";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import ProjectDetails from "./projectDetails";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
   const [selectedId, setSelectedId] = useState<number | null>(null);
+  const t = useTranslations("Projects");
 
   const selectedProject = demoProjectCard.find((p) => p.id === selectedId);
 
   return (
-    <SectionLayout id="projects" title="Projekty">
+    <SectionLayout id="projects" title={t("title")}>
       <div className="w-full relative min-h-[500px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center mb-12">
           {demoProjectCard.map((project) => (

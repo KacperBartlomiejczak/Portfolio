@@ -8,6 +8,7 @@ import ContactButtons from "./contactButtons";
 import ContactDialogTrigger from "./contactDialogTrigger";
 import ContactDialogHeader from "./contactDialogHeader";
 import toast from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
 interface formInput {
   name: string;
@@ -19,6 +20,7 @@ export default function ContactDialog() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSended, setIsSended] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
+  const t = useTranslations("Contact.dialog");
   const {
     register,
     handleSubmit,
@@ -33,21 +35,21 @@ export default function ContactDialog() {
     if (!data.name || !data.name.trim()) {
       setError("name", {
         type: "manual",
-        message: "Pole imię nie może być puste",
+        message: t("validation.name"),
       });
       hadEmpty = true;
     }
     if (!data.email || !data.email.trim()) {
       setError("email", {
         type: "manual",
-        message: "Pole email nie może być puste",
+        message: t("validation.email"),
       });
       hadEmpty = true;
     }
     if (!data.message || !data.message.trim()) {
       setError("message", {
         type: "manual",
-        message: "Pole wiadomość nie może być puste",
+        message: t("validation.message"),
       });
       hadEmpty = true;
     }
@@ -66,17 +68,17 @@ export default function ContactDialog() {
           email: data.email,
           message: data.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
       console.log("Succes!", response.status, response.text);
-      toast.success("Pomyślnie wysłaliśmy twojego maila");
+      toast.success(t("success"));
 
       setIsOpen(false);
       setIsEmpty(false);
       reset();
     } catch (error: any) {
       console.log("Failed...", error?.text ?? error);
-      toast.error("Wystąpił błąd przy wysyłce");
+      toast.error(t("error"));
     } finally {
       setIsSended(false);
     }

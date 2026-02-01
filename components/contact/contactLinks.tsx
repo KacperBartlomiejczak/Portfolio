@@ -11,8 +11,10 @@ import {
 import ContactLink from "./contactLink";
 import { firaCode } from "@/app/ui/fonts";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ContactLinks() {
+  const t = useTranslations("Contact.links");
   const linkVariants = {
     initial: { scale: 1 },
     hover: {
@@ -62,7 +64,7 @@ export default function ContactLinks() {
     <div className="w-full flex flex-row flex-wrap items-center my-5 p-4 gap-5 justify-center md:gap-8">
       <a
         href="mailto:kacperbartlomiejczak@proton.me"
-        aria-label="Wyślij do mnia maila"
+        aria-label={t("mail_aria")}
         className="relative w-full md:w-[40%]"
         target="_blank"
       >
@@ -109,14 +111,14 @@ export default function ContactLinks() {
       <ContactLink
         href="https://www.linkedin.com/in/kacper-bartlomiejczak-b12a19385/"
         title="LinkedIn"
-        ariaLabel="Odwiedź mnie na LinkedIn"
+        ariaLabel={t("linkedin_aria")}
       >
         <LinkedIn width="24" />
       </ContactLink>
       <ContactLink
         href="https://github.com/KacperBartlomiejczak"
         title="Github"
-        ariaLabel="Odwiedź mój profil na Githubie"
+        ariaLabel={t("github_aria")}
       >
         <Github width="24" />
       </ContactLink>
@@ -124,7 +126,7 @@ export default function ContactLinks() {
       <ContactLink
         href="https://discord.gg/ktx2zJ735w"
         title="Discord"
-        ariaLabel="Odwiedź mój serwer discord"
+        ariaLabel={t("discord_aria")}
       >
         <Discord width="24" />
       </ContactLink>

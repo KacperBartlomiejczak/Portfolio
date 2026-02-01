@@ -1,5 +1,4 @@
 import NavLink from "./navLink";
-import { navData } from "./listInfo";
 import { Moon, Sun } from "lucide-react";
 interface NavListProps {
   isOpen: boolean;
@@ -8,6 +7,8 @@ interface NavListProps {
   onToggleDark: () => void;
 }
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "../ui/language-switcher";
 
 export default function NavList({
   isOpen,
@@ -15,6 +16,14 @@ export default function NavList({
   onToggleDark,
   isDark,
 }: NavListProps) {
+  const t = useTranslations("Header.nav");
+
+  const navLinks = [
+    { titleKey: "projects", href: "/#projects" },
+    { titleKey: "about", href: "/#aboutme" },
+    { titleKey: "contact", href: "/#contact" },
+  ];
+
   return (
     <ul
       id="mobile-menu"
@@ -22,14 +31,17 @@ export default function NavList({
         isOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"
       } lg:relative lg:flex-row lg:translate-x-0 lg:bg-transparent lg:dark:bg-transparent`}
     >
-      {navData.map((link) => (
+      {navLinks.map((link) => (
         <NavLink
-          title={link.title}
+          title={t(link.titleKey)}
           href={link.href}
           onOpen={onClose}
           key={link.href}
         />
       ))}
+      <li>
+        <LanguageSwitcher />
+      </li>
       <li>
         <AnimatePresence mode="wait">
           <button

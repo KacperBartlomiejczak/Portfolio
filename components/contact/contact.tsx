@@ -1,25 +1,19 @@
 import SectionLayout from "../section/sectionLayout";
-
-import ContactLinks from "./contactLinks";
-import { inter } from "@/app/ui/fonts";
-import dynamic from 'next/dynamic';
-
-const ContactDialog = dynamic(() => import('./contactDialog'));
-import ContactHr from "./contactHr";
+import ContactForm from "./contactForm";
+import ContactInfo from "./contactInfo";
 
 export default function Contact() {
   return (
-    <SectionLayout title="Skontaktuj się ze mną" id="contact" center>
-      <ContactLinks />
-      <div className="flex flex-row items-center justify-center gap-6">
-        <ContactHr />
-        <p className={`${inter.className} text-base md:text-lg lg:text-xl`}>
-          lub
-        </p>
-        <ContactHr />
-      </div>
+    <SectionLayout title="" id="contact" center={false}>
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-8">
+          {/* Left Column - Contact Info */}
+          <ContactInfo />
 
-      <ContactDialog />
+          {/* Right Column - Contact Form */}
+          <ContactForm />
+        </div>
+      </div>
     </SectionLayout>
   );
 }
