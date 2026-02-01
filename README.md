@@ -1,93 +1,98 @@
-# 🌐 Portfolio Website
+# 🌐 Modern Portfolio Website
 
 ![Project Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwindcss)
 
 > **Welcome to my digital playground!**  
-> This is my personal portfolio – a showcase of my projects, skills, and journey as a developer. Built with passion, precision, and a bit of overengineering (because that's the fun part 😄).
+> This is a high-performance, multi-language personal portfolio built with a focus on modern aesthetics (Deep Space Glassmorphism) and cutting-edge web technologies.
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- **🎨 Modern UI/UX** – A clean, minimalist design focused on readability, aesthetic appeal, and user experience.
-- **📱 Fully Responsive** – Flawless display across all devices: desktop, tablet, and mobile.
-- **⚡ High Performance** – Powered by Next.js App Router for blazing-fast page loads.
-- **🎞️ Smooth Animations** – Immersive interactions and transitions utilizing **Framer Motion**.
-- **🛠️ Robust Forms** – Contact form validation and handling using **React Hook Form**.
+- **� Full Internationalization (i18n)** – Seamlessly switch between **English** and **Polish** thanks to `next-intl`.
+- **� Deep Space Glassmorphism** – A bespoke design system utilizing modern CSS features and **Tailwind CSS 4** for a premium, translucent aesthetic.
+- **📱 Responsive by Design** – Optimized for every screen size, from high-resolution monitors to mobile devices.
+- **🎞️ Fluid Animations** – Integrated **Framer Motion** and **tw-animate-css** for immersive user interactions.
+- **� Robust Communication** – Contact forms powered by **React Hook Form** with dual support for **EmailJS** (client-side) and **Nodemailer** (server-side).
+- **🚀 Peak Performance** – Leveraging Next.js App Router, Speed Insights, and advanced CSS optimization for near-instant load times.
 
 ---
 
 ## 🛠️ Tech Stack
 
-This project is built using the latest modern web technologies:
+### Core
 
-![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Tailwind CSS](https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-![Radix UI](https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white)
-![pnpm](https://img.shields.io/badge/pnpm-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) + [PostCSS](https://postcss.org/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
----
+### Tools & Libraries
 
-## 🚀 Getting Started
-
-Follow these steps to set up the project locally on your machine.
-
-### 📌 Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
-- [pnpm](https://pnpm.io/) (Preferred package manager)
-
-### 📥 Installation
-
-1.  **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/kacperbartlomiejczak/Portfolio.git
-    cd Portfolio
-    ```
-
-2.  **Install dependencies:**
-
-    ```bash
-    pnpm install
-    ```
-
-3.  **Run the development server:**
-
-    ```bash
-    pnpm run dev
-    ```
-
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **i18n**: [next-intl](https://next-intl-docs.vercel.app/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/)
+- **Mailing**: [EmailJS](https://www.emailjs.com/) & [Nodemailer](https://nodemailer.com/)
+- **Performance**: [@vercel/speed-insights](https://vercel.com/docs/speed-insights)
 
 ---
 
-## 📂 Project Structure
+## � Project Structure
 
 ```bash
-├── app/            # Next.js App Router pages and layouts
-├── components/     # Reusable UI components
-├── public/         # Static assets (images, icons)
-├── lib/            # Utility functions and shared logic
-└── ...
+├── app/                  # Next.js App Router
+│   ├── [locale]/         # Internationalization routing
+│   ├── globals.css       # Design system & Tailwind 4 config
+│   └── sitemap.ts        # Dynamic sitemap generation
+├── components/           # Modular UI architecture
+│   ├── contact/          # Multi-provider contact system
+│   ├── projects/         # Dynamic project gallery
+│   └── ui/               # Reusable Radix-based primitives
+├── i18n/                 # Configuration for next-intl
+├── messages/             # Translation dictionaries (EN, PL)
+├── public/               # Optimized assets (WebP format)
+└── lib/                  # Shared utilities & configurations
 ```
 
 ---
 
-## 🧠 Future Improvements
+## 🚀 Development
 
-Things I plan to add or improve:
+### Prerequisites
 
-- [ ] 📝 **Blog Section** – To share thoughts and tutorials.
-- [ ] 🌗 **Dark/Light Theme Toggle** – For better accessibility.
-- [ ] 📊 **Case Studies** – Deep dives into specific projects.
-- [ ] 📧 **Enhanced Contact Form** – Better email integration and feedback.
+- **Node.js**: Latest LTS
+- **Package Manager**: [pnpm](https://pnpm.io/)
+
+### Getting Started
+
+1. **Clone & Enter**:
+
+   ```bash
+   git clone https://github.com/kacperbartlomiejczak/Portfolio.git
+   cd Portfolio
+   ```
+
+2. **Install**:
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Launch**:
+   ```bash
+   pnpm run dev
+   ```
+
+### Scripts
+
+- `pnpm run dev`: Start development server.
+- `pnpm run build`: Production build.
+- `pnpm run analyze`: Visualize bundle size.
+- `pnpm run lint`: Run ESLint checks.
 
 ---
 
@@ -99,4 +104,4 @@ Things I plan to add or improve:
 
 ---
 
-_Thanks for stopping by! 🚀_
+_Built with passion for clean code and beautiful design. 🚀_
