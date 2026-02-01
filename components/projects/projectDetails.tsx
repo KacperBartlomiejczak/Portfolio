@@ -53,12 +53,12 @@ export default function ProjectDetails({
         layoutId={`card-${id}`}
         layout // Enable layout animation
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-[#1a1a2e] rounded-3xl overflow-y-auto scrollbar-hide shadow-2xl flex flex-col md:flex-row border border-white/10"
+        className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-white dark:bg-[#1a1a2e] rounded-3xl overflow-y-auto scrollbar-hide shadow-2xl flex flex-col md:flex-row border border-gray-200 dark:border-white/10"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-black/40 hover:bg-black/60 backdrop-blur-md rounded-full transition-colors text-white"
+          className="absolute top-4 right-4 z-20 p-2 bg-white/80 dark:bg-black/40 hover:bg-white dark:hover:bg-black/60 backdrop-blur-md rounded-full transition-colors text-gray-900 dark:text-white shadow-sm"
         >
           <X className="w-6 h-6" />
         </button>
@@ -76,8 +76,8 @@ export default function ProjectDetails({
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-linear-to-r from-[#1a1a2e] via-transparent to-transparent opacity-90 md:opacity-100" />
-            <div className="absolute inset-0 bg-linear-to-t from-[#1a1a2e] to-transparent md:hidden" />
+            <div className="absolute inset-0 bg-linear-to-r from-white via-transparent to-transparent opacity-90 dark:from-[#1a1a2e] dark:opacity-90 md:opacity-100" />
+            <div className="absolute inset-0 bg-linear-to-t from-white to-transparent dark:from-[#1a1a2e] md:hidden" />
           </motion.div>
         </div>
 
@@ -86,7 +86,7 @@ export default function ProjectDetails({
           <motion.div layoutId={`content-${id}`}>
             <motion.h2
               layoutId={`title-${id}`}
-              className="text-4xl md:text-5xl font-bold text-white mb-2"
+              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
             >
               {title}
             </motion.h2>
@@ -104,7 +104,7 @@ export default function ProjectDetails({
             transition={{ delay: 0.2 }}
             className="space-y-6"
           >
-            <p className="text-gray-300 leading-relaxed text-base">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
               {description}
             </p>
 
@@ -116,7 +116,7 @@ export default function ProjectDetails({
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-semibold text-white bg-white/5 px-3 py-1.5 rounded-full border border-white/10"
+                    className="text-xs font-semibold text-gray-700 dark:text-white bg-gray-100 dark:bg-white/5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/10"
                   >
                     {tag}
                   </span>
@@ -124,12 +124,12 @@ export default function ProjectDetails({
               </div>
             </div>
 
-            <div className="flex gap-4 pt-4 mt-4 border-t border-white/5">
+            <div className="flex gap-4 pt-4 mt-4 border-t border-gray-100 dark:border-white/5">
               <a
                 href={websiteLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-primary-color text-white rounded-xl hover:bg-purple-600 transition-all font-medium"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-primary-color text-white rounded-xl hover:bg-purple-600 transition-all font-medium shadow-md shadow-primary-color/20"
               >
                 <ExternalLink size={18} />
                 {t("buttons.live")}
@@ -138,7 +138,7 @@ export default function ProjectDetails({
                 href={repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white/5 text-white rounded-xl hover:bg-white/10 transition-all font-medium border border-white/5"
+                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-white/10 transition-all font-medium border border-gray-200 dark:border-white/5"
               >
                 <Github size={18} />
                 {t("buttons.code")}

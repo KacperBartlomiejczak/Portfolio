@@ -108,7 +108,7 @@ const ProjectCard = ({
         transformStyle: "preserve-3d",
         willChange: "transform",
       }}
-      className="group relative w-full rounded-2xl cursor-pointer perspective-1000 md:h-[400px] lg:h-[450px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-color focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
+      className="group relative w-full rounded-2xl cursor-pointer perspective-1000 md:h-[400px] lg:h-[450px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-color focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-gray-900"
       whileHover={{ scale: 1.02 }}
       whileTap={{
         scale: 0.98,
@@ -126,7 +126,7 @@ const ProjectCard = ({
       <div className="absolute inset-0 rounded-2xl bg-primary-color/0 blur-2xl transition-all duration-300 group-hover:bg-primary-color/20 group-active:bg-primary-color/30 pointer-events-none" />
 
       {/* Card Container */}
-      <div className="relative h-full flex flex-col md:block bg-gray-900/40 backdrop-blur-2xl border border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_25px_60px_-12px_rgba(107,70,193,0.6)] active:shadow-[0_35px_80px_-12px_rgba(107,70,193,0.8)] transition-all duration-300 group-hover:border-primary-color/30 group-active:border-primary-color/50">
+      <div className="relative h-full flex flex-col md:block bg-white/80 dark:bg-gray-900/40 backdrop-blur-2xl border border-gray-200 dark:border-white/10 rounded-2xl overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.4)] hover:shadow-[0_25px_60px_-12px_rgba(107,70,193,0.4)] dark:hover:shadow-[0_25px_60px_-12px_rgba(107,70,193,0.6)] active:shadow-[0_35px_80px_-12px_rgba(107,70,193,0.8)] transition-all duration-300 group-hover:border-primary-color/30 group-active:border-primary-color/50">
         {/* Image Section */}
         <motion.div
           layoutId={`image-${id}`}
@@ -157,7 +157,7 @@ const ProjectCard = ({
 
             <motion.h3
               layoutId={`title-${id}`}
-              className={`${inter.className} text-xl md:text-3xl font-bold text-white tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]`}
+              className={`${inter.className} text-xl md:text-3xl font-bold text-gray-900 dark:text-white md:text-white tracking-tight drop-shadow-sm dark:drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] md:drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]`}
             >
               {title}
             </motion.h3>
@@ -171,7 +171,7 @@ const ProjectCard = ({
           </div>
 
           <motion.div className="flex flex-col gap-4 transition-all duration-500 ease-out">
-            <p className="text-gray-200 text-sm line-clamp-3 md:line-clamp-3 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            <p className="text-gray-600 dark:text-gray-200 md:text-gray-200 text-sm line-clamp-3 md:line-clamp-3 leading-relaxed drop-shadow-sm dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] md:drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               {description}
             </p>
 
@@ -180,7 +180,7 @@ const ProjectCard = ({
               {tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-[10px] md:text-xs font-semibold text-white bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 hover:bg-white/25 hover:border-primary-color/40 transition-all duration-200 shadow-lg"
+                  className="text-[10px] md:text-xs font-semibold text-gray-700 dark:text-white md:text-white bg-gray-100 dark:bg-white/15 md:bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/20 md:border-white/20 hover:bg-gray-200 dark:hover:bg-white/25 md:hover:bg-white/25 hover:border-primary-color/40 transition-all duration-200 shadow-sm dark:shadow-lg md:shadow-lg"
                 >
                   {tag}
                 </span>
@@ -188,7 +188,7 @@ const ProjectCard = ({
             </div>
 
             {/* Quick Actions - Enhanced visibility on mobile */}
-            <div className="flex items-center gap-3 pt-2 text-white/70 text-xs font-mono opacity-0 md:group-hover:opacity-100 md:opacity-0 group-active:opacity-100 transition-opacity duration-300">
+            <div className="flex items-center gap-3 pt-2 text-gray-500 dark:text-white/70 md:text-white/70 text-xs font-mono opacity-0 md:group-hover:opacity-100 md:opacity-0 group-active:opacity-100 transition-opacity duration-300">
               <span className="flex items-center gap-1 hover:text-primary-color transition-colors">
                 {t("buttons.details")} <ArrowUpRight size={14} />
               </span>
