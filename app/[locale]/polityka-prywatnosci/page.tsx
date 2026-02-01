@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { marked } from "marked";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowLeft, Calendar, Mail, Globe, Shield, Scale } from "lucide-react";
 import * as motion from "framer-motion/client";
+import { getTranslations } from "next-intl/server";
 
 // Define strict types for our extracted data
 interface PrivacyData {
@@ -19,12 +20,18 @@ interface PrivacyData {
 /**
  * Parses the raw markdown to extract metadata and generate a clean HTML body.
  */
-async function getPrivacyData(): Promise<PrivacyData> {
-  const filePath = path.join(
-    process.cwd(),
-    "content",
-    "polityka-prywatnosci.md"
-  );
+async function getPrivacyData(locale: string): Promise<PrivacyData> {
+  // Map locale to exact filename
+  // pl -> privacy-policy.pl.md
+  // en -> privacy-policy.en.md
+  const fileName = `privacy-policy.${locale}.md`;
+  let filePath = path.join(process.cwd(), "content", fileName);
+
+  // Fallback to Polish if specific locale file doesn't exist
+  if (!fs.existsSync(filePath)) {
+    filePath = path.join(process.cwd(), "content", "privacy-policy.pl.md");
+  }
+
   const fileContent = fs.readFileSync(filePath, "utf-8");
 
   // Split metadata (before first ---) and content (after)
@@ -35,16 +42,19 @@ async function getPrivacyData(): Promise<PrivacyData> {
   const contentParts = parts.length > 1 ? parts.slice(1) : parts;
   const rawContent = contentParts.join("---");
 
-  // Manual Parsing of the simple metadata header used in the markdown
-  // Expected format:
-  // # **Title**
-  // **Label:** Value
+  // Manual Parsing of simple metadata header
   const titleMatch = metaSection.match(/# \*\*(.*?)\*\*/);
-  const updatedMatch = metaSection.match(/Ostatnia aktualizacja:\*\*\s*(.*)/);
-  const ownerMatch = metaSection.match(/Właściciel strony:\*\*\s*(.*)/);
-  const siteMatch = metaSection.match(/Adres strony:\*\*\s*\[(.*?)\]/);
+  // Match both Polish and English label patterns
+  const updatedMatch = metaSection.match(
+    /(?:Ostatnia aktualizacja|Last updated):\*\*\s*(.*)/,
+  );
+  const ownerMatch = metaSection.match(
+    /(?:Właściciel strony|Website Owner):\*\*\s*(.*)/,
+  );
+  const siteMatch = metaSection.match(
+    /(?:Adres strony|Website Address):\*\*\s*\[(.*?)\]/,
+  );
   const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/;
-  // Look for email in the whole file if not in top metadata, though usually it is at top
   const emailMatch = fileContent.match(emailRegex);
 
   // Generate Table of Contents from H2 headers
@@ -55,7 +65,6 @@ async function getPrivacyData(): Promise<PrivacyData> {
   renderer.heading = ({ text, depth }) => {
     if (depth === 2) {
       // Remove generic bold tags for the ID but keep text clean
-      // We strip both markdown syntax (** or __) and HTML tags (<strong>)
       const cleanText = text
         .replace(/<\/?strong>/g, "")
         .replace(/\*\*/g, "")
@@ -67,10 +76,8 @@ async function getPrivacyData(): Promise<PrivacyData> {
         .replace(/[^\w\s-]/g, "")
         .replace(/\s+/g, "-");
 
-      toc.push({ id, title: cleanText }); // Use clean text for TOC
+      toc.push({ id, title: cleanText });
 
-      // Use cleanText for display as well to avoid "My **Header**" looking like raw md
-      // Added font-extrabold, mt-16 (reduced from 24), mb-8 for spacing and weight
       return `<h2 id="${id}" class="scroll-mt-32 relative group font-extrabold mb-8 mt-16 text-foreground">
         <span class="absolute -left-8 top-1 opacity-0 group-hover:opacity-100 transition-opacity text-primary-color dark:text-brand">#</span>
         ${cleanText}
@@ -79,7 +86,6 @@ async function getPrivacyData(): Promise<PrivacyData> {
     return `<h${depth}>${text}</h${depth}>`;
   };
 
-  // Configure marked
   const html = await marked(rawContent, { renderer });
 
   return {
@@ -95,8 +101,14 @@ async function getPrivacyData(): Promise<PrivacyData> {
   };
 }
 
-export default async function PrivacyPolicyPage() {
-  const data = await getPrivacyData();
+export default async function PrivacyPolicyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const data = await getPrivacyData(locale);
+  const t = await getTranslations("PrivacyPolicy");
 
   return (
     <div className="min-h-screen bg-bg-color dark:bg-background pt-24 pb-20 px-4 md:px-8 overflow-x-hidden">
@@ -113,7 +125,7 @@ export default async function PrivacyPolicyPage() {
             className="inline-flex items-center gap-2 text-sm font-medium text-secondary hover:text-primary-color dark:hover:text-brand transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            Powrót do strony głównej
+            {t("back_button")}
           </Link>
         </motion.div>
 
@@ -131,8 +143,7 @@ export default async function PrivacyPolicyPage() {
                 {data.title}
               </h1>
               <p className="text-lg text-secondary max-w-2xl">
-                Twoja prywatność jest dla mnie priorytetem. Poniżej znajdziesz
-                szczegółowe informacje o tym, jak dbam o Twoje dane.
+                {t("description")}
               </p>
 
               {/* Metadata Badges */}
@@ -140,7 +151,7 @@ export default async function PrivacyPolicyPage() {
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-zinc-800/50 border border-border backdrop-blur-sm text-sm shadow-sm">
                   <Calendar className="w-4 h-4 text-primary-color dark:text-brand" />
                   <span className="text-secondary-color dark:text-secondary">
-                    Aktualizacja:{" "}
+                    {t("labels.updated")}{" "}
                     <strong className="text-foreground">
                       {data.lastUpdated}
                     </strong>
@@ -149,7 +160,7 @@ export default async function PrivacyPolicyPage() {
                 <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 dark:bg-zinc-800/50 border border-border backdrop-blur-sm text-sm shadow-sm">
                   <Shield className="w-4 h-4 text-green-500" />
                   <span className="text-secondary-color dark:text-secondary">
-                    Właściciel:{" "}
+                    {t("labels.owner")}{" "}
                     <strong className="text-foreground">{data.owner}</strong>
                   </span>
                 </div>
@@ -178,7 +189,7 @@ export default async function PrivacyPolicyPage() {
             <div className="sticky top-32 p-6 rounded-2xl border border-border bg-white/40 dark:bg-zinc-900/40 backdrop-blur-md shadow-sm">
               <div className="flex items-center gap-2 mb-4 text-primary-color dark:text-brand font-bold uppercase tracking-wider text-xs">
                 <Scale className="w-4 h-4" />
-                Spis treści
+                {t("labels.toc")}
               </div>
               <nav className="space-y-1">
                 {data.toc.map((item) => (
@@ -193,13 +204,15 @@ export default async function PrivacyPolicyPage() {
               </nav>
 
               <div className="mt-8 pt-6 border-t border-border">
-                <p className="text-xs text-secondary mb-2">Masz pytania?</p>
+                <p className="text-xs text-secondary mb-2">
+                  {t("labels.questions")}
+                </p>
                 <a
                   href={`mailto:${data.contactEmail}`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary-color dark:text-brand hover:underline"
                 >
                   <Mail className="w-4 h-4" />
-                  Napisz do mnie
+                  {t("labels.write_to_me")}
                 </a>
               </div>
             </div>
@@ -218,13 +231,15 @@ export default async function PrivacyPolicyPage() {
 
             {/* Bottom Contact Section for Mobile */}
             <div className="lg:hidden mt-12 pt-8 border-t border-border">
-              <h3 className="text-xl font-bold mb-4">Masz pytania?</h3>
+              <h3 className="text-xl font-bold mb-4">
+                {t("labels.questions")}
+              </h3>
               <a
                 href={`mailto:${data.contactEmail}`}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary-color dark:bg-brand text-white font-medium hover:opacity-90 transition-opacity"
               >
                 <Mail className="w-5 h-5" />
-                Napisz na: {data.contactEmail}
+                {t("labels.write_to_me")}: {data.contactEmail}
               </a>
             </div>
           </motion.article>

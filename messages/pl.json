@@ -50,6 +50,17 @@
       }
     }
   },
+  "PrivacyPolicy": {
+    "back_button": "Powrót do strony głównej",
+    "description": "Twoja prywatność jest dla mnie priorytetem. Poniżej znajdziesz szczegółowe informacje o tym, jak dbam o Twoje dane.",
+    "labels": {
+      "updated": "Aktualizacja:",
+      "owner": "Właściciel:",
+      "toc": "Spis treści",
+      "questions": "Masz pytania?",
+      "write_to_me": "Napisz do mnie"
+    }
+  },
   "Contact": {
     "form": {
       "name": "Imię",

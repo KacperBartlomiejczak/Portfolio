@@ -73,6 +73,10 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "https://www.kacperbartlomiejczak.pl",
+    languages: {
+      pl: "/pl",
+      en: "/en",
+    },
   },
 
   referrer: "origin-when-cross-origin",

@@ -50,6 +50,17 @@
       }
     }
   },
+  "PrivacyPolicy": {
+    "back_button": "Back to Home",
+    "description": "Your privacy is my priority. Below you will find detailed information about how I take care of your data.",
+    "labels": {
+      "updated": "Last updated:",
+      "owner": "Owner:",
+      "toc": "Table of Contents",
+      "questions": "Have questions?",
+      "write_to_me": "Write to me"
+    }
+  },
   "Contact": {
     "form": {
       "name": "Name",
