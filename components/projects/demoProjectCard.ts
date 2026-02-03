@@ -1,7 +1,3 @@
-// We keep the structure but remove hardcoded text where possible, or we will map it in the component.
-// Actually, to use useTranslations, we need to map over keys or use a key in this object.
-// Let's add a 'key' property to link to translation files.
-
 export const demoProjectCard = [
   {
     id: 1,
