@@ -16,7 +16,7 @@ export const demoProjectCard = [
     id: 2,
     translationKey: "anime",
     tags: ["Next.js", "Jikan API", "Tailwind CSS", "Framer Motion"],
-    websiteLink: "https://helloanime.com",
+    websiteLink: "https://hello-anime-dun.vercel.app/",
     repoLink: "https://github.com/KacperBartlomiejczak/HelloAnime",
     projectImg: "/project2.webp",
   },
