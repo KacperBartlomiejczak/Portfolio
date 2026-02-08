@@ -10,7 +10,7 @@ import ContactDialogHeader from "./contactDialogHeader";
 import toast from "react-hot-toast";
 import { useTranslations } from "next-intl";
 
-interface formInput {
+interface FormInput {
   name: string;
   email: string;
   message: string;
@@ -27,9 +27,9 @@ export default function ContactDialog() {
     reset,
     setError,
     formState: { errors },
-  } = useForm<formInput>();
+  } = useForm<FormInput>();
 
-  const onSubmit: SubmitHandler<formInput> = async (data) => {
+  const onSubmit: SubmitHandler<FormInput> = async (data) => {
     // ustaw błędy per pole (dokładnie który input jest pusty)
     let hadEmpty = false;
     if (!data.name || !data.name.trim()) {
@@ -61,8 +61,8 @@ export default function ContactDialog() {
       const emailjs = (await import("@emailjs/browser")).default;
 
       const response = await emailjs.send(
-        "service_wv83fim",
-        "template_wb1zldu",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
         {
           name: data.name,
           email: data.email,
@@ -70,14 +70,15 @@ export default function ContactDialog() {
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
       );
-      console.log("Succes!", response.status, response.text);
+      console.log("Success!", response.status, response.text);
       toast.success(t("success"));
 
       setIsOpen(false);
       setIsEmpty(false);
       reset();
-    } catch (error: any) {
-      console.log("Failed...", error?.text ?? error);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.log("Failed:", errorMessage);
       toast.error(t("error"));
     } finally {
       setIsSended(false);

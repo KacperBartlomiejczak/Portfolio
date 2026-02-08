@@ -28,7 +28,9 @@ export default function Nav() {
       const next = !prev;
       try {
         localStorage.setItem("isDark", String(next));
-      } catch {}
+      } catch (error) {
+        console.warn("Failed to save dark mode preference:", error);
+      }
       return next;
     });
   };
@@ -47,7 +49,9 @@ export default function Nav() {
     try {
       const saved = localStorage.getItem("isDark");
       if (saved !== null) setIsDark(saved === "true");
-    } catch {}
+    } catch (error) {
+      console.warn("Failed to read dark mode preference:", error);
+    }
   }, []);
 
   //Making body overflow hidden when navigation is open
@@ -64,9 +68,10 @@ export default function Nav() {
   }, [isOpen]);
 
   //adding background logic
+  const SCROLL_THRESHOLD = 50;
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
     window.addEventListener("scroll", handleScroll);
 

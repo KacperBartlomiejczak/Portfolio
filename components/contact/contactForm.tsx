@@ -65,8 +65,8 @@ export default function ContactForm() {
       const emailjs = (await import("@emailjs/browser")).default;
 
       const response = await emailjs.send(
-        "service_wv83fim",
-        "template_wb1zldu",
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
         {
           name: data.name,
           email: data.email,
@@ -78,8 +78,9 @@ export default function ContactForm() {
       console.log("Success!", response.status, response.text);
       toast.success(t("success"));
       reset();
-    } catch (error: any) {
-      console.log("Failed...", error?.text ?? error);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.log("Failed:", errorMessage);
       toast.error(t("error"));
     } finally {
       setIsSended(false);

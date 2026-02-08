@@ -34,6 +34,7 @@ export const AnalyticsProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
     if (consent === "all") enableAnalytics();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
