@@ -64,23 +64,31 @@ export default function ContactForm() {
     try {
       const emailjs = (await import("@emailjs/browser")).default;
 
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration is missing. Please check your environment variables.");
+      }
+
       const response = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+        serviceId,
+        templateId,
         {
           name: data.name,
           email: data.email,
           subject: data.subject,
           message: data.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+        publicKey,
       );
       console.log("Success!", response.status, response.text);
       toast.success(t("success"));
       reset();
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : String(error);
-      console.log("Failed:", errorMessage);
+      console.error("Failed to send email:", errorMessage);
       toast.error(t("error"));
     } finally {
       setIsSended(false);
