@@ -35,7 +35,10 @@
       "stack": "Technologie"
     },
     "aria": {
-      "open_details": "Otwórz szczegóły projektu {title}"
+      "open_details": "Otwórz szczegóły projektu {title}",
+      "next": "Następny projekt",
+      "previous": "Poprzedni projekt",
+      "goto": "Przejdź do projektu {number}"
     },
     "items": {
       "todo": {
@@ -47,6 +50,11 @@
         "title": "HelloAnime!",
         "subtitle": "Twoje centrum świata Anime",
         "description": "HelloAnime! to nowoczesna platforma do odkrywania anime, wykorzystująca Jikan API. Przeglądaj, szukaj i sprawdzaj szczegóły swoich ulubionych serii w pięknym, responsywnym interfejsie."
+      },
+      "kas": {
+        "title": "System Wykrywania Przemytu",
+        "subtitle": "Inspekcja celna wspierana przez AI",
+        "description": "Projekt hackathonowy dla Krajowej Administracji Skarbowej wykorzystujący wytrenowany model ML do wykrywania przemycanych towarów na zdjęciach. Stworzyłem frontend z komunikacją WebSocket w czasie rzeczywistym do połączenia z backendem silnika inferencji ML."
       }
     }
   },

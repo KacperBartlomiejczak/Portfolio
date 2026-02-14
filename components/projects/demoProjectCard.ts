@@ -16,4 +16,13 @@ export const demoProjectCard = [
     repoLink: "https://github.com/KacperBartlomiejczak/HelloAnime",
     projectImg: "/project2.webp",
   },
+
+  {
+    id: 3,
+    translationKey: "kas",
+    tags: ["React", "WebSocket", "TypeScript", "ML Integration"],
+    websiteLink: "#",
+    repoLink: "#",
+    projectImg: "/project3.webp",
+  },
 ];

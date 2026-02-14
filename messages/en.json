@@ -35,7 +35,10 @@
       "stack": "Stack"
     },
     "aria": {
-      "open_details": "Open details for {title}"
+      "open_details": "Open details for {title}",
+      "next": "Next project",
+      "previous": "Previous project",
+      "goto": "Go to project {number}"
     },
     "items": {
       "todo": {
@@ -47,6 +50,11 @@
         "title": "HelloAnime!",
         "subtitle": "Your Anime world center",
         "description": "HelloAnime! is a modern platform for discovering anime, using the Jikan API. Browse, search, and check details of your favorite series in a beautiful, responsive interface."
+      },
+      "kas": {
+        "title": "Smuggling Detection System",
+        "subtitle": "AI-powered customs inspection",
+        "description": "Hackathon project for the National Tax Administration (KAS) utilizing a trained ML model to detect smuggled goods in images. Built the frontend with real-time WebSocket communication to connect with the backend ML inference engine."
       }
     }
   },
