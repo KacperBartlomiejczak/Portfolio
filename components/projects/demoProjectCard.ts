@@ -21,8 +21,8 @@ export const demoProjectCard = [
     id: 3,
     translationKey: "kas",
     tags: ["React", "WebSocket", "TypeScript", "ML Integration"],
-    websiteLink: "#",
-    repoLink: "#",
+    websiteLink: "https://github.com/KacperBartlomiejczak/HackNation-wyszukiwarka",
+    repoLink: "https://github.com/KacperBartlomiejczak/HackNation-wyszukiwarka",
     projectImg: "/project3.webp",
   },
 ];
