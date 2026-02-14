@@ -141,6 +141,7 @@ export default async function RootLayout({
                 },
               }}
             />
+            <CookieConsent />
           </AnalyticsProvider>
         </NextIntlClientProvider>
       </body>

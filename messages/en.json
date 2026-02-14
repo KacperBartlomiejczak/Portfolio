@@ -138,6 +138,12 @@
       "discord_aria": "Visit my discord server"
     }
   },
+  "Cookies": {
+    "message": "I use cookies to ensure the best experience on the site. Some are essential, others help me analyze traffic and improve content. More information in the",
+    "privacy_link": "privacy policy",
+    "button_necessary": "Only necessary",
+    "button_accept": "Accept all"
+  },
   "Footer": {
     "sitemap": "Sitemap",
     "legal": "Legal Info",

@@ -138,6 +138,12 @@
       "discord_aria": "Odwiedź mój serwer discord"
     }
   },
+  "Cookies": {
+    "message": "Używam plików cookie, aby zapewnić najlepsze wrażenia na stronie. Niektóre są niezbędne, inne pomagają mi analizować ruch i ulepszać treści. Więcej informacji znajdziesz w",
+    "privacy_link": "polityce prywatności",
+    "button_necessary": "Tylko niezbędne",
+    "button_accept": "Akceptuję wszystkie"
+  },
   "Footer": {
     "sitemap": "Mapa strony",
     "legal": "Informacje prawne",
