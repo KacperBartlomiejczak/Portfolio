@@ -65,25 +65,6 @@ export default function AboutMeTechnology() {
           <motion.li
             key={id}
             variants={itemVariants}
-            animate={
-              isMobile
-                ? undefined
-                : {
-                    y: [0, -10, 0],
-                  }
-            }
-            transition={
-              isMobile
-                ? undefined
-                : {
-                    y: {
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.2, // Offset floating for natural effect
-                    },
-                  }
-            }
             whileHover={{ scale: 1.1, rotate: 5, y: -15 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleMobileClick(id)}
@@ -93,11 +74,10 @@ export default function AboutMeTechnology() {
               <Component width="46" />
             </div>
             <span
-              className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-opacity text-xs md:text-sm font-medium whitespace-nowrap bg-gray-900 text-white px-2 py-1 rounded shadow-lg dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10 ${
-                isMobile && activeId === id
+              className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-opacity text-xs md:text-sm font-medium whitespace-nowrap bg-gray-900 text-white px-2 py-1 rounded shadow-lg dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10 ${isMobile && activeId === id
                   ? "opacity-100"
                   : "opacity-0 group-hover:opacity-100"
-              }`}
+                }`}
             >
               {name}
             </span>
