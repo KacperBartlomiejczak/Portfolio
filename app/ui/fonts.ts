@@ -5,9 +5,9 @@ import {
 
 export const inter = InterVariable({
   subsets: ["latin"],
-
   display: "swap",
   variable: "--font-inter",
+  preload: true,
 });
 
 export const firaCode = FiraCodeVariable({
@@ -15,4 +15,5 @@ export const firaCode = FiraCodeVariable({
 
   display: "swap",
   variable: "--font-fira-code",
+  preload: true,
 });
