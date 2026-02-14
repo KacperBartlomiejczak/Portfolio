@@ -4,6 +4,7 @@ import { inter, firaCode } from "@/app/ui/fonts";
 import classes from "@/components/ui/button.module.css";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useMobile } from "@/context/mobileContext";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -20 },
@@ -24,6 +25,7 @@ const itemVariants = {
 
 export default function AboutMeHeading() {
   const t = useTranslations("About");
+  const isMobile = useMobile();
 
   return (
     <motion.div
@@ -47,7 +49,7 @@ export default function AboutMeHeading() {
       </motion.p>
       <motion.div
         variants={itemVariants}
-        whileHover={{ scale: 1.05 }}
+        whileHover={isMobile ? undefined : { scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <a

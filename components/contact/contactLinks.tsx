@@ -62,17 +62,17 @@ export default function ContactLinks() {
 
   return (
     <div className="w-full flex flex-row flex-wrap items-center my-5 p-4 gap-5 justify-center md:gap-8">
-      <a
+      <motion.a
         href="mailto:kacperbartlomiejczak@proton.me"
         aria-label={t("mail_aria")}
         className="relative w-full md:w-[40%]"
         target="_blank"
+        variants={linkVariants}
+        initial="initial"
+        whileHover="hover"
+        whileTap="tap"
       >
-        <motion.div
-          variants={linkVariants}
-          initial="initial"
-          whileHover="hover"
-          whileTap="tap"
+        <div
           className={`relative border-2 border-primary-color text-primary-color p-3 rounded-xl flex flex-row justify-between items-center cursor-pointer overflow-hidden dark:border-brand dark:text-brand group ${firaCode.className}`}
         >
           {/* Animated background */}
@@ -105,8 +105,8 @@ export default function ContactLinks() {
               className="fill-current stroke-current group-hover:text-white transition-colors duration-300"
             />
           </motion.div>
-        </motion.div>
-      </a>
+        </div>
+      </motion.a>
 
       <ContactLink
         href="https://www.linkedin.com/in/kacper-bartlomiejczak-b12a19385/"

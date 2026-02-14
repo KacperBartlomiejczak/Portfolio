@@ -8,6 +8,7 @@ import CookieConsent from "@/components/cookies/cookies";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsProvider } from "@/context/analysticsContext";
+import { MobileProvider } from "@/context/mobileContext";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -127,22 +128,24 @@ export default async function RootLayout({
         className={`${firaCode.variable} bg-bg-color scroll-pt-24 md:scroll-pt-24 `}
       >
         <NextIntlClientProvider messages={messages}>
-          <AnalyticsProvider>
-            <main className="w-full relative bg-bg-color dark:bg-background overflow-x-hidden">
-              <Nav />
-              {children}
-            </main>
-            <Toaster
-              position="top-right"
-              toastOptions={{
-                duration: 3000,
-                style: {
-                  fontFamily: inter.style.fontFamily,
-                },
-              }}
-            />
-            <CookieConsent />
-          </AnalyticsProvider>
+          <MobileProvider>
+            <AnalyticsProvider>
+              <main className="w-full relative bg-bg-color dark:bg-background overflow-x-hidden">
+                <Nav />
+                {children}
+              </main>
+              <Toaster
+                position="top-right"
+                toastOptions={{
+                  duration: 3000,
+                  style: {
+                    fontFamily: inter.style.fontFamily,
+                  },
+                }}
+              />
+              <CookieConsent />
+            </AnalyticsProvider>
+          </MobileProvider>
         </NextIntlClientProvider>
       </body>
     </html>

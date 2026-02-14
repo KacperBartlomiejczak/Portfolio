@@ -2,7 +2,7 @@ import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
 import React, { useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useMobile } from "@/context/mobileContext";
 
 interface CardProps {
   id: number;
@@ -26,7 +26,7 @@ const ProjectCard = ({
   const title = tItem("title");
   const subtitle = tItem("subtitle");
 
-  const isMobile = useIsMobile();
+  const isMobile = useMobile();
 
   // Keyboard handler for accessibility
   const handleKeyDown = useCallback(

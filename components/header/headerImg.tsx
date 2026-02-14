@@ -1,17 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useMobile } from "@/context/mobileContext";
 
 export default function HeaderImg() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(
-      typeof window !== "undefined" &&
-        ("ontouchstart" in window || navigator.maxTouchPoints > 0),
-    );
-  }, []);
+  const isMobile = useMobile();
 
   return (
     <div className="relative">
@@ -21,30 +14,30 @@ export default function HeaderImg() {
           isMobile
             ? { scale: 1, opacity: 1, y: 0 }
             : {
-                scale: 1,
-                opacity: 1,
-                y: [0, -30, 0],
-              }
+              scale: 1,
+              opacity: 1,
+              y: [0, -30, 0],
+            }
         }
         transition={
           isMobile
             ? {
-                duration: 0.8,
-                ease: "easeOut",
-              }
+              duration: 0.8,
+              ease: "easeOut",
+            }
             : {
-                scale: {
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20,
-                },
-                opacity: { duration: 0.5 },
-                y: {
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }
+              scale: {
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              },
+              opacity: { duration: 0.5 },
+              y: {
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              },
+            }
         }
         whileHover={isMobile ? undefined : { scale: 1.1, rotate: 5 }}
         className="relative bg-transparent w-52 h-52 z-0 md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[350px] xl:w-[450px] xl:h-[450px] rounded-full hover:ring-2 ring-primary-color ring-offset-4 focus:ring-2 dark:ring-brand dark:ring-offset-background"

@@ -5,10 +5,12 @@ import { Send } from "@/public/svg/logos";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useMobile } from "@/context/mobileContext";
 
 export default function ContactButtons({ isSended }: { isSended: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
   const t = useTranslations("Contact.form");
+  const isMobile = useMobile();
 
   // Animation variants for Send button
   const sendButtonVariants = {
@@ -88,14 +90,13 @@ export default function ContactButtons({ isSended }: { isSended: boolean }) {
       type="submit"
       variants={sendButtonVariants}
       initial="initial"
-      whileHover={!isSended ? "hover" : undefined}
+      whileHover={!isSended && !isMobile ? "hover" : undefined}
       whileTap={!isSended ? "tap" : undefined}
       animate={isSended ? "disabled" : "initial"}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className={`w-full px-8 py-4 bg-primary-color rounded-xl text-white border-2 border-primary-color cursor-pointer text-center relative dark:bg-brand dark:border-brand font-semibold text-lg ${inter.className} ${
-        isSended ? "pr-12" : ""
-      }`}
+      onHoverStart={!isMobile ? () => setIsHovered(true) : undefined}
+      onHoverEnd={!isMobile ? () => setIsHovered(false) : undefined}
+      className={`w-full px-8 py-4 bg-primary-color rounded-xl text-white border-2 border-primary-color cursor-pointer text-center relative dark:bg-brand dark:border-brand font-semibold text-lg ${inter.className} ${isSended ? "pr-12" : ""
+        }`}
       disabled={isSended}
       aria-label={isSended ? t("sending") : t("send")}
     >

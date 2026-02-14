@@ -9,7 +9,8 @@ import {
   TypescriptLogo,
 } from "@/public/svg/logos";
 import { inter } from "@/app/ui/fonts";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useMobile } from "@/context/mobileContext";
 
 const TECHNOLOGIES = [
   { id: 1, name: "React", Component: ReactLogo },
@@ -35,13 +36,8 @@ const itemVariants = {
 };
 
 export default function AboutMeTechnology() {
-  // Detect if device is mobile/touch-enabled
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMobile();
   const [activeId, setActiveId] = useState<number | null>(null);
-
-  useEffect(() => {
-    setIsMobile("ontouchstart" in window || navigator.maxTouchPoints > 0);
-  }, []);
 
   const handleMobileClick = (id: number) => {
     if (!isMobile) return;
@@ -65,7 +61,7 @@ export default function AboutMeTechnology() {
           <motion.li
             key={id}
             variants={itemVariants}
-            whileHover={{ scale: 1.1, rotate: 5, y: -15 }}
+            whileHover={isMobile ? undefined : { scale: 1.1, rotate: 5, y: -15 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleMobileClick(id)}
             className="relative group cursor-pointer"
@@ -75,8 +71,8 @@ export default function AboutMeTechnology() {
             </div>
             <span
               className={`absolute -bottom-10 left-1/2 -translate-x-1/2 transition-opacity text-xs md:text-sm font-medium whitespace-nowrap bg-gray-900 text-white px-2 py-1 rounded shadow-lg dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10 ${isMobile && activeId === id
-                  ? "opacity-100"
-                  : "opacity-0 group-hover:opacity-100"
+                ? "opacity-100"
+                : "opacity-0 group-hover:opacity-100"
                 }`}
             >
               {name}
