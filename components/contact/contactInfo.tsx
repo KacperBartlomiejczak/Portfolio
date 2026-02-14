@@ -82,10 +82,8 @@ export default function ContactInfo() {
   ];
 
   const [randomQuote, setRandomQuote] = useState(quotes[0]);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     setRandomQuote(quotes[Math.floor(Math.random() * quotes.length)]);
   }, [t]);
 

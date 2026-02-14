@@ -43,7 +43,8 @@ export default function ContactInput({
 }: ContactInputProps) {
   const t = useTranslations("Contact.form.placeholders");
   const icon = getIcon(htmlFor);
-  const placeholder = t(htmlFor as any);
+  // Type assertion is safe here as htmlFor is limited to "name" | "email" | "subject" | "message"
+  const placeholder = t(htmlFor as "name" | "email" | "subject" | "message");
 
   let content = (
     <div className="group">

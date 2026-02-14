@@ -82,7 +82,17 @@
    pnpm install
    ```
 
-3. **Launch**:
+3. **Environment Setup**:
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Then edit `.env.local` with your actual credentials:
+   - EmailJS credentials (for contact form)
+   - Google Analytics tracking ID (optional)
+
+4. **Launch**:
    ```bash
    pnpm run dev
    ```
