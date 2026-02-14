@@ -20,7 +20,7 @@
   "About": {
     "title": "About Me",
     "heading": "Passion for code, obsession with details.",
-    "description": "Hi, I'm Kacper — a frontend developer from Toruń. I build fast and accessible sites in React/Next.js, caring about SEO, performance and clean code. Every day I study computer science at UMK, and after hours I test ideas at hackathons and while traveling (I like coding where the cafe has good internet and even better coffee). I like projects where design meets usability: clear navigation, decent Lighthouse and real impact on business.",
+    "description": "Hi, I'm Kacper — a frontend developer from Toruń who treats code like a hobby horse race: with full commitment and a bit of healthy madness. I build fast and accessible sites in React/Next.js, optimizing every millisecond like it's a personal challenge. By day, I study Computer Science at UMK; by night, I test ideas at hackathons and in cafes (preferably ones with fast Wi-Fi and even faster espresso ☕). Yes, that's me on a hobby horse in the photo — because life's too short to take everything seriously, but code? Code should always be clean, performant, and pixel-perfect.",
     "cv_button": "Download CV",
     "cv_aria": "Check my CV"
   },

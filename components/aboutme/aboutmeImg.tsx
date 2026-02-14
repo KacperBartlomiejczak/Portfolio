@@ -32,10 +32,11 @@ export default function AboutMeImg() {
       >
         <Image
           src="/aboutmeImg.webp"
-          alt="Chłopak z koniem na kiju"
           fill
-          className="rounded-full object-cover object-center ring-offset-3 transition-all duration-300 group-hover:ring-4 focus:ring-4 ring-primary-color/50 dark:ring-offset-background dark:ring-brand/50"
-          sizes="(max-width: 768px) 208px, (max-width: 1024px) 288px, (max-width: 1280px) 320px, 360px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+          alt="Man on hobby horse"
+          className="object-cover rounded-3xl"
+          quality={60}
         />
       </motion.div>
     </div>

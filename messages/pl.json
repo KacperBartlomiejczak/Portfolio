@@ -20,7 +20,7 @@
   "About": {
     "title": "O mnie",
     "heading": "Pasja do kodu, obsesja na punkcie detali.",
-    "description": "Cześć, tu Kacper — frontend developer z Torunia. Buduję szybkie i dostępne strony w React/Next.js, dbając o SEO, wydajność i czysty kod. Na co dzień studiuję informatykę na UMK, a po godzinach testuję pomysły na hackathonach i w podróży (lubię kodować tam, gdzie kawiarnia ma dobry internet i jeszcze lepszą kawę). Lubię projekty, w których design spotyka się z użytecznością: czytelna nawigacja, porządny Lighthouse i realny wpływ na biznes.",
+    "description": "Cześć, tu Kacper — frontend developer z Torunia, który traktuje kod jak wyścig na hobby horsie: z pełnym zaangażowaniem i odrobiną zdrowego szaleństwa. Buduję szybkie i dostępne strony w React/Next.js, optymalizując każdą milisekundę jakby to było osobiste wyzwanie. Za dnia studiuję informatykę na UMK, nocami testuję pomysły na hackathonach i w kawiarniach (najlepiej tych z szybkim Wi-Fi i jeszcze szybszym espresso ☕). Tak, to ja na zdjęciu z hobby horsem — bo życie jest za krótkie, żeby brać wszystko na poważnie, ale kod? Kod powinien być zawsze czysty, wydajny i piksel w piksel.",
     "cv_button": "Pobierz CV",
     "cv_aria": "Sprawdź moje cv"
   },
