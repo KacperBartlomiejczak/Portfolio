@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 import Hamburger from "./hamburger";
 
@@ -28,7 +29,7 @@ export default function Nav() {
       const next = !prev;
       try {
         localStorage.setItem("isDark", String(next));
-      } catch {}
+      } catch { }
       return next;
     });
   };
@@ -47,21 +48,11 @@ export default function Nav() {
     try {
       const saved = localStorage.getItem("isDark");
       if (saved !== null) setIsDark(saved === "true");
-    } catch {}
+    } catch { }
   }, []);
 
-  //Making body overflow hidden when navigation is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+  // Lock scroll when navigation is open (conditionally)
+  useScrollLock(isOpen);
 
   //adding background logic
   useEffect(() => {
@@ -77,9 +68,8 @@ export default function Nav() {
 
   return (
     <nav
-      className={`p-3 w-full flex flex-row justify-center items-center fixed top-0  ${
-        isScrolled ? "bg-bg-color dark:bg-background" : "transparent"
-      } transition-colors z-30 lg:p-6`}
+      className={`p-3 w-full flex flex-row justify-center items-center fixed top-0  ${isScrolled ? "bg-bg-color dark:bg-background" : "transparent"
+        } transition-colors z-30 lg:p-6`}
       aria-label="Główna nawigacja"
     >
       <div className="container flex flex-row items-center justify-between z-20">

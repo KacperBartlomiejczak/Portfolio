@@ -1,11 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { X, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import ProjectTech from "./projectTech";
-import { useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { useScrollLock } from "@/hooks/useScrollLock";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface ProjectDetailsProps {
   id: number;
@@ -33,90 +32,82 @@ export default function ProjectDetails({
   const subtitle = tItem("subtitle");
   const description = tItem("description");
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, []);
+  // Lock scroll when modal is open
+  useScrollLock();
+
+  const isMobile = useIsMobile();
 
   return (
     <div className="fixed inset-0 z-50 grid place-items-center p-4">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+      {/* Backdrop */}
+      <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/80 backdrop-blur-md"
+        className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200"
       />
-      <motion.div
-        layoutId={`card-${id}`}
-        layout // Enable layout animation
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] bg-white dark:bg-[#1a1a2e] rounded-3xl overflow-y-auto scrollbar-hide shadow-2xl flex flex-col md:flex-row border border-gray-200 dark:border-white/10"
+
+      {/* Modal Content */}
+      <div
+        className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] 
+                   bg-white dark:bg-gray-900/95 rounded-2xl overflow-y-auto 
+                   shadow-xl flex flex-col md:flex-row 
+                   border border-gray-200/60 dark:border-white/5
+                   animate-in zoom-in-95 fade-in duration-200"
         onClick={(e) => e.stopPropagation()}
+        data-scrollable="true"
       >
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 bg-white/80 dark:bg-black/40 hover:bg-white dark:hover:bg-black/60 backdrop-blur-md rounded-full transition-colors text-gray-900 dark:text-white shadow-sm"
+          className="absolute top-3 right-3 z-20 p-2 
+                     bg-white dark:bg-gray-800 
+                     hover:bg-gray-100 dark:hover:bg-gray-700 
+                     rounded-full transition-colors 
+                     text-gray-900 dark:text-white 
+                     shadow-sm border border-gray-200/60 dark:border-white/5"
+          aria-label="Close"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 h-5" />
         </button>
 
         {/* Hero Image Section */}
-        <div className="w-full md:w-3/5 relative h-52 min-h-[200px] md:h-auto md:min-h-[500px] shrink-0">
-          <motion.div
-            layoutId={`image-${id}`}
-            className="absolute inset-0 w-full h-full"
-          >
-            <Image
-              src={projectImg}
-              alt={title}
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-linear-to-r from-white via-transparent to-transparent opacity-90 dark:from-[#1a1a2e] dark:opacity-90 md:opacity-100" />
-            <div className="absolute inset-0 bg-linear-to-t from-white to-transparent dark:from-[#1a1a2e] md:hidden" />
-          </motion.div>
+        <div className="w-full md:w-3/5 relative h-48 md:h-auto md:min-h-[500px] shrink-0">
+          <Image
+            src={projectImg}
+            alt={title}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Content Section */}
-        <div className="w-full md:w-2/5 p-6 md:p-8 flex flex-col justify-center relative z-10">
-          <motion.div layoutId={`content-${id}`}>
-            <motion.h2
-              layoutId={`title-${id}`}
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2"
-            >
+        <div className="w-full md:w-2/5 p-5 md:p-8 flex flex-col justify-center relative z-10">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
               {title}
-            </motion.h2>
-            <motion.p
-              layoutId={`subtitle-${id}`}
-              className="text-primary-color font-medium text-lg mb-6"
-            >
+            </h2>
+            <p className="text-primary-color font-medium text-base md:text-lg mb-5">
               {subtitle}
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="space-y-6"
-          >
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base">
+          <div className="space-y-5">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm md:text-base">
               {description}
             </p>
 
+            {/* Tech Stack */}
             <div>
-              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">
+              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2.5">
                 {t("labels.stack")}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-semibold text-gray-700 dark:text-white bg-gray-100 dark:bg-white/5 px-3 py-1.5 rounded-full border border-gray-200 dark:border-white/10"
+                    className="text-xs font-medium text-gray-700 dark:text-gray-300 
+                               bg-gray-100 dark:bg-white/5 px-2.5 py-1 rounded-full 
+                               border border-gray-200/50 dark:border-white/5"
                   >
                     {tag}
                   </span>
@@ -124,29 +115,37 @@ export default function ProjectDetails({
               </div>
             </div>
 
-            <div className="flex gap-4 pt-4 mt-4 border-t border-gray-100 dark:border-white/5">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-4 mt-4 border-t border-gray-100 dark:border-white/5">
               <a
                 href={websiteLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-primary-color text-white rounded-xl hover:bg-purple-600 transition-all font-medium shadow-md shadow-primary-color/20"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 
+                           bg-primary-color text-white rounded-xl 
+                           hover:bg-purple-600 transition-all font-medium 
+                           shadow-sm text-sm"
               >
-                <ExternalLink size={18} />
+                <ExternalLink size={16} />
                 {t("buttons.live")}
               </a>
               <a
                 href={repoLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white rounded-xl hover:bg-gray-200 dark:hover:bg-white/10 transition-all font-medium border border-gray-200 dark:border-white/5"
+                className="flex-1 flex items-center justify-center gap-2 px-5 py-2.5 
+                           bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white 
+                           rounded-xl hover:bg-gray-200 dark:hover:bg-white/10 
+                           transition-all font-medium 
+                           border border-gray-200/60 dark:border-white/5 text-sm"
               >
-                <Github size={18} />
+                <Github size={16} />
                 {t("buttons.code")}
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

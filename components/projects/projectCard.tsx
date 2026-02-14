@@ -1,9 +1,8 @@
 import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
 import React, { useCallback } from "react";
-import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface CardProps {
   id: number;
@@ -27,6 +26,8 @@ const ProjectCard = ({
   const title = tItem("title");
   const subtitle = tItem("subtitle");
 
+  const isMobile = useIsMobile();
+
   // Keyboard handler for accessibility
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -39,102 +40,71 @@ const ProjectCard = ({
   );
 
   return (
-    <motion.div
-      layoutId={`card-${id}`}
+    <div
       onClick={onClick}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="button"
       aria-label={t("aria.open_details", { title })}
-      className="group relative w-full rounded-2xl cursor-pointer 
-                 h-[350px] sm:h-[380px] md:h-[420px]
+      className="group relative w-full rounded-xl cursor-pointer 
+                 h-[300px] sm:h-[300px] md:h-[320px]
                  focus-visible:outline-none focus-visible:ring-2 
                  focus-visible:ring-primary-color focus-visible:ring-offset-2 
-                 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-gray-900"
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
-      transition={{
-        type: "spring",
-        stiffness: 400,
-        damping: 25,
-      }}
+                 focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-gray-900
+                 flex flex-col bg-white dark:bg-gray-900/60 
+                 border border-gray-200/60 dark:border-white/5 
+                 overflow-hidden 
+                 shadow-sm hover:shadow-md 
+                 dark:shadow-black/20 dark:hover:shadow-black/40
+                 hover:border-primary-color/20
+                 transition-all duration-200
+                 active:scale-[0.98]"
     >
-      {/* Card Container - Simplified */}
-      <div className="relative h-full flex flex-col bg-white dark:bg-gray-900/60 
-                      border border-gray-200 dark:border-white/10 
-                      rounded-2xl overflow-hidden 
-                      shadow-lg hover:shadow-2xl 
-                      dark:shadow-black/40 dark:hover:shadow-black/60
-                      transition-all duration-300 
-                      group-hover:border-primary-color/40">
+      {/* Image Section */}
+      <div className="relative w-full h-44 sm:h-40 md:h-44 shrink-0">
+        <Image
+          src={projectImg}
+          alt={`Projekt ${title}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          loading="lazy"
+        />
+      </div>
 
-        {/* Image Section */}
-        <motion.div
-          layoutId={`image-${id}`}
-          className="relative w-full h-48 sm:h-52 shrink-0"
-        >
-          <Image
-            src={projectImg}
-            alt={`Projekt ${title}`}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            loading="lazy"
-          />
-          {/* Simplified gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-        </motion.div>
+      {/* Content Section */}
+      <div className="relative p-4 sm:p-5 flex flex-col gap-2 flex-1">
+        {/* Title & Subtitle */}
+        <div className="flex flex-col gap-1">
+          <h3
+            className={`${inter.className} text-xl sm:text-xl md:text-2xl font-bold 
+                       text-gray-900 dark:text-white tracking-tight line-clamp-1`}
+          >
+            {title}
+          </h3>
 
-        {/* Content Section - Clean & Minimal */}
-        <div className="relative p-5 sm:p-6 flex flex-col gap-3 flex-2 md:flex-1">
-          {/* Title & Subtitle */}
-          <div className="flex flex-col gap-1">
-            <motion.h3
-              layoutId={`title-${id}`}
-              className={`${inter.className} text-xl sm:text-2xl font-bold 
-                         text-gray-900 dark:text-white tracking-tight`}
+          <p className="text-primary-color font-medium text-sm sm:text-sm line-clamp-1">
+            {subtitle}
+          </p>
+        </div>
+
+        {/* Tags - Max 3 on mobile, 4 on desktop */}
+        <div className="flex flex-wrap gap-1.5 mt-auto mb-2">
+          {tags.slice(0, isMobile ? 3 : 4).map((tag) => (
+            <span
+              key={tag}
+              className="text-xs font-medium 
+                         text-gray-700 dark:text-gray-300
+                         bg-gray-100 dark:bg-white/5 
+                         px-2.5 py-1 rounded-full
+                         border border-gray-200/50 dark:border-white/5"
             >
-              {title}
-            </motion.h3>
-
-            <motion.p
-              layoutId={`subtitle-${id}`}
-              className="text-primary-color font-medium text-sm sm:text-base"
-            >
-              {subtitle}
-            </motion.p>
-          </div>
-
-          {/* Tags - Max 3, minimal style */}
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-medium 
-                           text-gray-700 dark:text-gray-300
-                           bg-gray-100 dark:bg-white/10 
-                           px-3 py-1 rounded-full
-                           border border-gray-200 dark:border-white/10
-                           transition-colors duration-200
-                           group-hover:bg-gray-200 dark:group-hover:bg-white/15
-                           group-hover:border-primary-color/30"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Hover CTA - Minimal */}
-          <div className="flex items-center gap-1 text-xs font-medium
-                          text-gray-500 dark:text-gray-400
-                          opacity-0 group-hover:opacity-100 
-                          transition-opacity duration-300">
-            <span>{t("buttons.details")}</span>
-            <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </div>
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
