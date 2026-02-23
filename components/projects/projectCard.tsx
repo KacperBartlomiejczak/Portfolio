@@ -47,7 +47,7 @@ const ProjectCard = ({
       role="button"
       aria-label={t("aria.open_details", { title })}
       className="group relative w-full rounded-xl cursor-pointer 
-                 h-[300px] sm:h-[300px] md:h-[320px]
+                 h-[300px] sm:h-[300px] md:h-[330px]
                  focus-visible:outline-none focus-visible:ring-2 
                  focus-visible:ring-primary-color focus-visible:ring-offset-2 
                  focus-visible:ring-offset-zinc-50 dark:focus-visible:ring-offset-gray-900
@@ -89,7 +89,7 @@ const ProjectCard = ({
         </div>
 
         {/* Tags - Max 3 on mobile, 4 on desktop */}
-        <div className="flex flex-wrap gap-1.5 mt-auto mb-2">
+        <div className="flex flex-wrap gap-1.5 mt-auto mb-6">
           {tags.slice(0, isMobile ? 3 : 4).map((tag) => (
             <span
               key={tag}
