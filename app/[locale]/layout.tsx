@@ -23,9 +23,9 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL("https://www.kacperbartlomiejczak.pl"),
-    title: "Kacper Bartłomiejczak – Frontend developer",
+    title: "Kacper Bartłomiejczak – Fullstack developer",
     description:
-      "Portfolio i projekty Kacpra Bartłomiejczaka – frontend developera (React, Next.js, TypeScript, Tailwind). Szybkie, czytelne i skuteczne strony internetowe.",
+      "Portfolio i projekty Kacpra Bartłomiejczaka – Fullstack developera (React, Next.js, TypeScript, Tailwind, Drizzle ORM, PostgreSQL). Szybkie, czytelne i skuteczne strony internetowe.",
     authors: [
       {
         name: "Kacper Bartłomiejczak",
@@ -44,6 +44,9 @@ export async function generateMetadata({
       "portfolio",
       "web developer",
       "programista front-end",
+      "Backend",
+      "Drizzle ORM",
+      "PostgreSQL",
     ],
 
     openGraph: {
@@ -108,7 +111,6 @@ export async function generateMetadata({
     category: "technology",
   };
 }
-
 
 export default async function RootLayout({
   children,
