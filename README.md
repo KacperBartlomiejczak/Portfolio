@@ -1,107 +1,91 @@
-# 🌐 Modern Portfolio Website
+# Portfolio
 
-![Project Status](https://img.shields.io/badge/status-active-success?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38B2AC?style=for-the-badge&logo=tailwindcss)
+Personal portfolio website built with Next.js, emphasizing performance, responsive design, and smooth animations.
 
-> **Welcome to my digital playground!**  
-> This is a high-performance, multi-language personal portfolio built with a focus on modern aesthetics (Deep Space Glassmorphism) and cutting-edge web technologies.
+## Tech Stack
 
----
+- **Framework:** Next.js 16 (React 19)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS v4, `clsx`, `tailwind-merge`
+- **Animations:** Framer Motion
+- **UI Components:** Radix UI (Dialog, Label), Lucide React
+- **Form Handling:** React Hook Form
+- **Internationalization:** `next-intl`
+- **Email Delivery:** EmailJS, Nodemailer
+- **Markdown Parsing:** `marked`
 
-## ✨ Key Features
+## Features
 
-- **� Full Internationalization (i18n)** – Seamlessly switch between **English** and **Polish** thanks to `next-intl`.
-- **� Deep Space Glassmorphism** – A bespoke design system utilizing modern CSS features and **Tailwind CSS 4** for a premium, translucent aesthetic.
-- **📱 Responsive by Design** – Optimized for every screen size, from high-resolution monitors to mobile devices.
-- **🎞️ Fluid Animations** – Integrated **Framer Motion** and **tw-animate-css** for immersive user interactions.
-- **� Robust Communication** – Contact forms powered by **React Hook Form** with dual support for **EmailJS** (client-side) and **Nodemailer** (server-side).
-- **🚀 Peak Performance** – Leveraging Next.js App Router, Speed Insights, and advanced CSS optimization for near-instant load times.
+- Fully responsive design using Tailwind CSS.
+- Smooth page transitions and micro-interactions with Framer Motion.
+- Internationalization support.
+- Contact form integration with email delivery.
+- Dynamic project showcasing.
 
----
-
-## 🛠️ Tech Stack
-
-### Core
-
-- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) + [PostCSS](https://postcss.org/)
-- **UI Components**: [Radix UI](https://www.radix-ui.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-
-### Tools & Libraries
-
-- **i18n**: [next-intl](https://next-intl-docs.vercel.app/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Forms**: [React Hook Form](https://react-hook-form.com/)
-- **Mailing**: [EmailJS](https://www.emailjs.com/) & [Nodemailer](https://nodemailer.com/)
-- **Performance**: [@vercel/speed-insights](https://vercel.com/docs/speed-insights)
-
----
-
-## � Project Structure
-
-```bash
-├── app/                  # Next.js App Router
-│   ├── [locale]/         # Internationalization routing
-│   ├── globals.css       # Design system & Tailwind 4 config
-│   └── sitemap.ts        # Dynamic sitemap generation
-├── components/           # Modular UI architecture
-│   ├── contact/          # Multi-provider contact system
-│   ├── projects/         # Dynamic project gallery
-│   └── ui/               # Reusable Radix-based primitives
-├── i18n/                 # Configuration for next-intl
-├── messages/             # Translation dictionaries (EN, PL)
-├── public/               # Optimized assets (WebP format)
-└── lib/                  # Shared utilities & configurations
-```
-
----
-
-## 🚀 Development
+## Getting Started
 
 ### Prerequisites
 
-- **Node.js**: Latest LTS
-- **Package Manager**: [pnpm](https://pnpm.io/)
+Ensure you have [Node.js](https://nodejs.org/) (v20+ recommended) and `pnpm` installed.
 
-### Getting Started
+### Installation
 
-1. **Clone & Enter**:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/kacperbartlomiejczak/Portfolio.git
-   cd Portfolio
+   git clone <repository-url>
    ```
 
-2. **Install**:
+2. Navigate into the directory:
 
+   ```bash
+   cd Portfolio-1
+   ```
+
+3. Install dependencies:
    ```bash
    pnpm install
    ```
 
-3. **Launch**:
-   ```bash
-   pnpm run dev
-   ```
+### Running the Development Server
 
-### Scripts
+Start the application locally:
 
-- `pnpm run dev`: Start development server.
-- `pnpm run build`: Production build.
-- `pnpm run analyze`: Visualize bundle size.
-- `pnpm run lint`: Run ESLint checks.
+```bash
+pnpm dev
+```
 
----
+The application will be available at `http://localhost:3000`.
 
-## 👤 Author
+### Building for Production
 
-**Kacper Bartłomiejczak**
+To create an optimized production build:
 
-- GitHub: [@kacperbartlomiejczak](https://github.com/kacperbartlomiejczak)
+```bash
+pnpm build
+```
 
----
+To start the built application:
 
-_Built with passion for clean code and beautiful design. 🚀_
+```bash
+pnpm start
+```
+
+## Environment Variables
+
+Create a `.env.local` file in the root of your project and configure the necessary environment variables required for EmailJS/Nodemailer and any other external services.
+
+```env
+# Example environment variables
+# NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+# NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+# NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+```
+
+## Available Scripts
+
+- `pnpm dev` - Starts the development server.
+- `pnpm build` - Builds the application for production.
+- `pnpm start` - Starts the production server.
+- `pnpm lint` - Runs ESLint to check for code quality.
+- `pnpm analyze` - Builds the application and analyzes the bundle size.
