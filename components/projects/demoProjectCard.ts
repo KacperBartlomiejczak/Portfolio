@@ -23,6 +23,7 @@ export const demoProjectCard = [
     tags: ["React", "WebSocket", "TypeScript", "ML Integration"],
     websiteLink: "https://github.com/KacperBartlomiejczak/HackNation-wyszukiwarka",
     repoLink: "https://github.com/KacperBartlomiejczak/HackNation-wyszukiwarka",
-    projectImg: "/project3.webp",
+    projectImg: "/project4.webp",
   },
+
 ];
