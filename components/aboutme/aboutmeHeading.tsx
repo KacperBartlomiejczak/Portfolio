@@ -1,10 +1,12 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import { inter, firaCode } from "@/app/ui/fonts";
 import classes from "@/components/ui/button.module.css";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useMobile } from "@/context/mobileContext";
+import toast from "react-hot-toast";
 
 const containerVariants = {
   hidden: { opacity: 0, x: -20 },
@@ -26,6 +28,25 @@ const itemVariants = {
 export default function AboutMeHeading() {
   const t = useTranslations("About");
   const isMobile = useMobile();
+  const [isDownloaded, setIsDownloaded] = useState(false);
+
+  const handleDownload = useCallback(() => {
+    if (isDownloaded) return;
+
+    const link = document.createElement("a");
+    link.href = "/KacperCV.pdf";
+    link.download = "KacperCV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    toast.success(t("cv_downloaded"));
+    setIsDownloaded(true);
+
+    setTimeout(() => {
+      setIsDownloaded(false);
+    }, 1000);
+  }, [isDownloaded, t]);
 
   return (
     <motion.div
@@ -49,31 +70,33 @@ export default function AboutMeHeading() {
       </motion.p>
       <motion.div
         variants={itemVariants}
-        whileHover={isMobile ? undefined : { scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={isMobile || isDownloaded ? undefined : { scale: 1.05 }}
+        whileTap={isDownloaded ? undefined : { scale: 0.95 }}
       >
-        <a
-          href="/KacperCV.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          download
+        <button
+          onClick={handleDownload}
+          disabled={isDownloaded}
           aria-label={t("cv_aria")}
-          className={`relative group overflow-hidden flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-colors focus:bg-[#2b8883]  md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d]`}
+          className={`relative group overflow-hidden flex bg-cta px-4 py-2 rounded-xl font-bold text-white cursor-pointer ${inter.className} antialiased hover:bg-[#2b8883] transition-all focus:bg-[#2b8883] md:px-6 md:py-3 ${classes.buttonAnimation} text-lg lg:px-8 lg:py-3 xl:px-10 xl:text-xl dark:bg-accent dark:hover:bg-[#2cb68d] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-cta dark:disabled:hover:bg-accent`}
         >
           {/* Shimmer effect */}
-          <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: "100%" }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              repeatDelay: 3,
-              ease: "linear",
-            }}
-            className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"
-          />
-          <span className="relative z-10">{t("cv_button")}</span>
-        </a>
+          {!isDownloaded && (
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: "100%" }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                repeatDelay: 3,
+                ease: "linear",
+              }}
+              className="absolute inset-0 w-1/2 h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"
+            />
+          )}
+          <span className="relative z-10">
+            {isDownloaded ? t("cv_downloaded") : t("cv_button")}
+          </span>
+        </button>
       </motion.div>
     </motion.div>
   );

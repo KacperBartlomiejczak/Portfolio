@@ -22,7 +22,8 @@
     "heading": "Pasja do kodu, obsesja na punkcie detali.",
     "description": "Cześć, tu Kacper — frontend developer z Torunia, który traktuje kod jak wyścig na hobby horsie: z pełnym zaangażowaniem i odrobiną zdrowego szaleństwa. Buduję szybkie i dostępne strony w React/Next.js, optymalizując każdą milisekundę jakby to było osobiste wyzwanie. Za dnia studiuję informatykę na UMK, nocami testuję pomysły na hackathonach i w kawiarniach (najlepiej tych z szybkim Wi-Fi i jeszcze szybszym espresso ☕). Tak, to ja na zdjęciu z hobby horsem — bo życie jest za krótkie, żeby brać wszystko na poważnie, ale kod? Kod powinien być zawsze czysty, wydajny i piksel w piksel.",
     "cv_button": "Pobierz CV",
-    "cv_aria": "Sprawdź moje cv"
+    "cv_aria": "Sprawdź moje cv",
+    "cv_downloaded": "CV zostało pobrane"
   },
   "Projects": {
     "title": "Projekty",
@@ -94,7 +95,7 @@
         "name": "Wpisz swoje imię",
         "email": "Wpisz swój email",
         "subject": "Temat wiadomości",
-        "message": "Powiedz nam co masz na myśli..."
+        "message": "Powiedz mi co masz na myśli..."
       }
     },
     "info": {
