@@ -5,8 +5,7 @@ import { firaCode, inter } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
 import CookieConsent from "@/components/cookies/cookies";
-import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { AnalyticsProvider } from "@/context/analysticsContext";
 import { MobileProvider } from "@/context/mobileContext";
 import { NextIntlClientProvider } from "next-intl";
