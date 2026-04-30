@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import Nav from "@/components/nav/nav";
 import CookieConsent from "@/components/cookies/cookies";
 
-import { AnalyticsProvider } from "@/context/analysticsContext";
+import { AnalyticsProvider } from "@/context/analyticsContext";
 import { MobileProvider } from "@/context/mobileContext";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";

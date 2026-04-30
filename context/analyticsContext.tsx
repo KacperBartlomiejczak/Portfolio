@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from "react";
 
-import { initAnalytics } from "@/lib/analystics";
+import { initAnalytics } from "@/lib/analytics";
 
 interface AnalyticsContextType {
   analyticsEnabled: boolean;

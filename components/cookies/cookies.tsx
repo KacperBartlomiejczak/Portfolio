@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAnalytics } from "@/context/analysticsContext";
+import { useAnalytics } from "@/context/analyticsContext";
 import { useTranslations, useLocale } from "next-intl";
 
 export default function CookieConsent() {
