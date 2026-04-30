@@ -1,6 +1,6 @@
 import { inter } from "@/app/ui/fonts";
 import Image from "next/image";
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useMobile } from "@/context/mobileContext";
 
@@ -14,7 +14,7 @@ interface CardProps {
 }
 
 const ProjectCard = ({
-  id,
+  
   translationKey,
   tags,
   projectImg,

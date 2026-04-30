@@ -14,16 +14,19 @@ export function useScrollLock(enabled: boolean = true) {
         if (!enabled) return;
 
         const body = document.body;
+        const html = document.documentElement;
 
         // Calculate scrollbar width to prevent layout shift
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+        const scrollBarWidth = window.innerWidth - html.clientWidth;
 
         // Store original styles
-        const originalOverflow = body.style.overflow;
+        const originalBodyOverflow = body.style.overflow;
+        const originalHtmlOverflow = html.style.overflow;
         const originalPaddingRight = body.style.paddingRight;
 
         // Apply scroll lock
         body.style.overflow = "hidden";
+        html.style.overflow = "hidden";
 
         // Add padding to prevent layout shift if scrollbar exists
         if (scrollBarWidth > 0) {
@@ -57,7 +60,8 @@ export function useScrollLock(enabled: boolean = true) {
         // Cleanup function
         return () => {
             // Restore original styles
-            body.style.overflow = originalOverflow;
+            body.style.overflow = originalBodyOverflow;
+            html.style.overflow = originalHtmlOverflow;
             body.style.paddingRight = originalPaddingRight;
 
             // Remove event listeners

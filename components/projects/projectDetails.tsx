@@ -48,7 +48,7 @@ export default function ProjectDetails({
       {/* Modal Content */}
       <div
         className="relative w-full max-w-5xl max-h-[85vh] md:max-h-[90vh] 
-                   bg-white dark:bg-gray-900/95 rounded-2xl overflow-y-auto 
+                   bg-white dark:bg-gray-900/95 rounded-2xl overflow-y-auto overscroll-contain
                    shadow-xl flex flex-col md:flex-row 
                    border border-gray-200/60 dark:border-white/5
                    animate-in zoom-in-95 fade-in duration-200"
